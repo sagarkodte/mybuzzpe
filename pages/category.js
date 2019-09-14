@@ -4,7 +4,10 @@ import axios from 'axios';
 import serverUrl from '../config';
 import { toast } from 'react-toastify'
 import Link from 'next/link';
+
+
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
 import Slider from "react-slick";
 
 export default class Index extends React.Component {
@@ -13,14 +16,16 @@ export default class Index extends React.Component {
     this.state = {
       quesList: [],
       modal: false,
-      que: { question: '', options: [] },
-      optList: [],
-      opt: { options: '' },
       current: 0,
-      checked: '',
-      isSelected: false
+      allQuestions: [],
+      checkboxValue: [],
+      message: '',
+      allResult: [],
+      newA:[]
     };
     // this.toggle = this.toggle.bind(this);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
   }
 
   componentDidMount = () => {
@@ -29,23 +34,24 @@ export default class Index extends React.Component {
     })
       .then((response) => {
         this.toggle();
-        // console.log(response.data.data);
-        response.data.data.forEach(function (item, index) {
-          item.options.forEach(function (item1, index1) {
-            item1.selected = 0;
-          });
-        });
-        console.log('News', response.data.data);
-        this.setState({ quesList: response.data.data }, function () {
-          this.setState({ que: this.state.quesList[this.state.current] });
-        });
+        this.setState({ allQuestions: response.data.data })
+        console.log(this.state.allQuestions);
+        // response.data.data.forEach(function (item, index) {
+        //   item.options.forEach(function (item1, index1) {
+        //     item1.selected = 0;
+        //   });
+        // });
+        // console.log('News', response.data.data);
+        // this.setState({ quesList: response.data.data }, function () {
+        //   this.setState({ que: this.state.quesList[this.state.current] });
+        // });
 
 
       })
       .catch((error) => {
         //console.log(error);
       });
-
+      this.getAllresult();
   }
 
   toggle = () => {
@@ -54,42 +60,83 @@ export default class Index extends React.Component {
     }));
   }
 
-  nextQue = () => {
-    this.setState({ current: this.state.current + 1 }, function () {
-      console.log('Ye5 ', this.state.current);
-      this.setState({ que: this.state.quesList[this.state.current] })
-    });
 
-    if (this.state.isSelected) {
-      console.log(3)
-    }
-
-  }
 
   getRadioValue(event) {
-    console.log(event.target.value);
+    const { checked, value } = event.target;
+    if (checked) {
+      let a = [];
+      a.push(value);
+      this.state.checkboxValue[this.state.current] = a;
+    }
+    console.log(this.state.current, this.state.checkboxValue);
   }
   getCheckboxValue(event) {
     const { checked, value } = event.target;
-    this.setState({ isSelected: true })
-    console.log(checked)
     if (checked) {
-      this.setState({ checked: value }, function () {
-        console.log(this.state.checked)
-      })
+      let a = this.state.checkboxValue[this.state.current] ? this.state.checkboxValue[this.state.current] : [];
+      a.push(value);
+      this.state.checkboxValue[this.state.current] = a;
+    } else {
+      let a = this.state.checkboxValue[this.state.current];
+      delete a.splice(a.indexOf(value), 1);
+      this.state.checkboxValue[this.state.current] = a;
     }
+    console.log(this.state.current, this.state.checkboxValue);
+  }
+  next() {
+    if (this.state.checkboxValue[this.state.current] != undefined && this.state.checkboxValue[this.state.current].length) {
+      this.slider.slickNext();
+      this.setState({ current: this.state.current + 1 });
+      this.setState({ message: '' });
+    } else {
+      this.setState({ message: 'Please select atleast one option.' });
+    }
+  }
+  previous() {
+    this.slider.slickPrev();
+    this.setState({ current: this.state.current - 1 });
+    this.setState({ message: '' });
+  }
+  finish = () => {
+    let newA = [];
+    this.state.checkboxValue.forEach(function (index) {
+      index.forEach(function (index1) {
+        newA.push(index1);
+      });
+    });
+    this.setState({newA});
+    if (this.state.checkboxValue[this.state.current] != undefined && this.state.checkboxValue[this.state.current].length) {
+      this.setState({ message: '' });
+      this.getAllresult();
+    } else {
+      this.setState({ message: 'Please select atleast one option.' });
+    }
+  }
 
-
+  getAllresult = () => {
+    axios.post(serverUrl.url + '/api/business/search', {
+      category: this.props.url.query.path,
+      query: this.state.newA.toString()
+    })
+      .then((response) => {
+        this.setState({ allResult: response.data.data })
+        console.log(this.state.allResult)
+      })
+      .catch((error) => {
+        //console.log(error);
+      });
   }
 
   render() {
     var settings = {
-      dots: true,
-      infinite: true,
+      dots: false,
+      infinite: false,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
     };
+
     return (
       <Layout>
         <div className="container page">
@@ -175,7 +222,40 @@ export default class Index extends React.Component {
                 <div className="tab-content">
                   <div id="list-view" className="tab-pane fade active show">
                     <div className="row">
-                      {this.state.categoriesList}
+                      {
+                        this.state.allResult.map((item, i) =>
+                          <div className="featured-box" >
+                            <figure>
+                              <span className="price-save">
+                                10% Save
+                          </span>
+                              <div className="icon">
+                                <span className="bg-green"><i className="lni-heart" /></span>
+                                <span><i className="lni-bookmark" /></span>
+                              </div>
+                              <a href="#"><img className="img-fluid" src={item.uploadedPhotos[0]} /></a>
+                            </figure>
+                            <div className="feature-content">
+
+                              <h4><a href="ads-details.html">{item.businessName}</a></h4>
+                              <div className="meta-tag">
+                                <span>
+                                  {item.addressarea} {item.addressPincode}
+                                </span>
+                              </div>
+                              <p className="dsc">
+                                {item.businessTags.toString()}
+
+                              </p>
+                              <div className="listing-bottom">
+                                <p className="contactNumber float-left" >{item.businessContactNumbers}</p>
+                                <Link href={'drtrt'}><a className="btn btn-common float-right">View Details</a></Link>
+                              </div>
+                            </div>
+                          </div>
+
+                        )
+                      }
 
                     </div>
                   </div>
@@ -197,18 +277,31 @@ export default class Index extends React.Component {
 
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalBody>
-            {/* <Slider {...settings}>
-              <p>kjdnjkdsk</p>
-            </Slider> */}
+            <Slider
+              swipe={false}
+              arrows={false}
+              ref={c => (this.slider = c)}
+              {...settings}
+            >
+              {this.state.allQuestions.map((item, i) =>
+                <div key={i}>
+                  <h5>{item.question}</h5>
+                  {item.options.map((opt, i) =>
+                    <div key={i}>
+                      {item.type === 'radio' ? <span className="optRadio" ><input onChange={this.getRadioValue.bind(this)} type='radio' name="options" value={opt.title} /></span> : <span><input className="checkbox" onChange={(event) => this.getCheckboxValue(event)} type='checkbox' name='options[]' value={opt.title} /></span>}{opt.title}
+                    </div>
+                  )}
 
-            {this.state.que.question}
-            {this.state.que.options.map((item, i) =>
-              <div>{this.state.que.type === 'radio' ? <div className="optRadio" onChange={this.getRadioValue.bind(this)[i]}><input type='radio' name="options" value={item.title} /></div> : <div><input className="checkbox" onChange={(event) => this.getCheckboxValue(event)[i]} type='checkbox' name='options[]' value={item.title} /></div>}{item.title}</div>
-            )}
+                </div>
+
+              )}
+            </Slider>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-            <Button color="secondary" onClick={this.nextQue}>Next</Button>
+            <p>{this.state.message}</p>
+            {this.state.current > 0 ? <Button color="primary" onClick={this.previous}>Previous</Button> : ''}
+            {this.state.current < this.state.allQuestions.length - 1 ? <Button color="secondary" onClick={this.next}>Next</Button> : ''}
+            {this.state.current == this.state.allQuestions.length - 1 ? <Button color="secondary" onClick={this.finish}>Finish</Button> : ''}
           </ModalFooter>
         </Modal>
 
