@@ -29,8 +29,12 @@ export default class extends React.Component {
   componentDidMount = () => {
     if (localStorage.getItem('token') !== null) {
       console.log('Data Available');
-      this.setState({ token: localStorage.getItem('token') });
+      this.setState({ token: localStorage.getItem('token') },function(){
+          console.log(this.state.token)
+      });
+
     }
+
   }
 
   addBusiness = () => {
@@ -38,18 +42,24 @@ export default class extends React.Component {
     var businessDetails = {
       "businessName": this.state.businessName,
       "businessDescription": this.state.businessDescription,
+      "addressArea":'govt',
       "addressLine1": this.state.addressLine1,
       "addressCity": this.state.addressCity,
       "addressState": this.state.addressState,
       "addressPincode": this.state.addressPincode,
-      "businessCategory": this.state.businessCategory
+      "businessCategory": '/i,/r',
+      "businessContactNumbers":'9664067927',
+      "businessTags":'php,fdfd'
+
+
     }
     console.log('businessDetails :', businessDetails);
     if (this.validateForm()) {
-      axios.post(Config.url + '/api/business/add', businessDetails, {
+
+      axios.post(Config.url + '/api/Business/add', businessDetails, {
         headers: {
           'Content-Type': 'application/json',
-          'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5pbGVzaEBncnIubGEiLCJmaXJzdG5hbWUiOiJOaWxlc2giLCJsYXN0bmFtZSI6IllhZGF2IiwiX2lkIjoiNWQxMGIxZGY4Y2I0M2EzMTQ2Yzc3OTgwIiwiaWF0IjoxNTYxMzg3NDAwLCJleHAiOjIwMjc5NDc0MDB9.IrYC4gdWDp6McEwUmhJ18CLY5vM0QNHdItAWIa9_sKA'
+          'x-access-token': this.state.token
         }
       }).then(res => {
         console.log('res business :', res);
@@ -69,9 +79,9 @@ export default class extends React.Component {
         }, 3000);
       }).catch(error => {
         console.log('errr :', error);
-        if (error.response.data) {
-          this.setState({ error: error.response.data.message });
-        }
+        // if (error.response.data) {
+        //   this.setState({ error: error.response.data.message });
+        // }
         //return error;
       });
     }
@@ -142,7 +152,7 @@ export default class extends React.Component {
         console.log('handle change5 :', eventName, e.target.value);
         break;
       // case 'businessCategory':
-      //   this.setState({businessCategory:e.target.value, errors:''}); 
+      //   this.setState({businessCategory:e.target.value, errors:''});
       //   break;
       case 'businessDescription':
         console.log('handle change5 :', eventName, e.target.value);
@@ -233,10 +243,10 @@ export default class extends React.Component {
       }
     }
 
-    if (!this.state.businessCategory) {
-      formIsValid = false;
-      errors["businessCategory"] = "*Please enter category.";
-    }
+    // if (!this.state.businessCategory) {
+    //   formIsValid = false;
+    //   errors["businessCategory"] = "*Please enter category.";
+    // }
 
     if (!this.state.businessDescription) {
       formIsValid = false;

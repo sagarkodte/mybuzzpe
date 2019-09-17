@@ -65,7 +65,7 @@ export default class Index extends React.Component{
 
       console.log('pro desc :',product);
 
-     let  businessDetails = 
+     let  businessDetails =
           <div className="product-info row">
             <div className="col-lg-12 col-md-12 col-xs-12">
               <div className="product-img">
@@ -243,12 +243,12 @@ export default class Index extends React.Component{
     }
   }
 
-  render() {  
+  render() {
     console.log('this.state.businessDetails :',this.state.businessDetails);
     return (<Layout>
         <div className="container">
           {this.state.businessDetails}
-        </div> 
+        </div>
     </Layout>);
   }
 }

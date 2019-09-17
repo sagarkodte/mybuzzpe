@@ -5,7 +5,7 @@ import login from '../pages/login.js'
 import Router from 'next/router'
 
 export default class extends React.Component{
- 
+
 constructor(props){
   super(props);
   this.state={
@@ -54,12 +54,12 @@ constructor(props){
             <script src="/static/js/wow.js"></script>
             <script src="/static/js/owl.carousel.min.js"></script>
             <script src="/static/js/main.js"></script>
-            
+
         </Head>
         <div className="app">
             <header>
                 {/* <h1><Link href={{ pathname: '/' }}><a>gallery</a></Link></h1> */}
-                
+
                 <nav className="navbar navbar-expand-lg ">
                     <div className="container">
                         <a className="navbar-brand" href="javascript:void(0)"><img src="http://3.17.162.108:8200/assets/img/logo.png"/></a>
@@ -225,7 +225,7 @@ constructor(props){
                         <ul className="contact-footer">
                             <li>
                             <a href="mailto:support@buzcafe.com"><strong><i className="lni-envelope" /></strong><span>support@buzcafe.com</span>
-                            </a>                    
+                            </a>
                             </li>
                             <li>
                             <div className="store">

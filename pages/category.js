@@ -301,7 +301,7 @@ export default class Index extends React.Component {
             <p>{this.state.message}</p>
             {this.state.current > 0 ? <Button color="primary" onClick={this.previous}>Previous</Button> : ''}
             {this.state.current < this.state.allQuestions.length - 1 ? <Button color="secondary" onClick={this.next}>Next</Button> : ''}
-            {this.state.current == this.state.allQuestions.length - 1 ? <Button color="secondary" onClick={this.finish}>Finish</Button> : ''}
+            {this.state.current == this.state.allQuestions.length - 1 ? <Button color="secondary" onClick={()=>{this.finish();this.toggle()}}>Finish</Button> : ''}
           </ModalFooter>
         </Modal>
 
