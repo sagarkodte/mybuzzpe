@@ -4,9 +4,10 @@ import register from '../pages/register.js';
 import login from '../pages/login.js'
 import Router from 'next/router'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './header.js'
 
 export default class extends React.Component{
- 
+
 constructor(props){
   super(props);
   this.state={
@@ -46,55 +47,13 @@ constructor(props){
             <title>{"Welcome to Buzcafe"}</title>
             <meta charSet='utf-8' />
             <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-         
+
             <link rel="stylesheet" href="/static/css/main.css" />
-          
-            
+
+
         </Head>
         <div className="app">
-            <header>
-                <nav className="navbar navbar-expand-lg ">
-                    <div className="container">
-                        <a className="navbar-brand" href="javascript:void(0)"><img src="http://3.17.162.108:8200/assets/img/logo.png"/></a>
-                        <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
-                        <span className="navbar-toggler-icon" />
-                        </button>
-                        <div className="collapse navbar-collapse" id="navb">
-                            <ul className="navbar-nav mr-auto">
-                                <li className="nav-item">
-                                <a className="nav-link" href="javascript:void(0)"> Home </a>
-                                </li>
-                                <li className="nav-item">
-                                <a className="nav-link" href="javascript:void(0)">ABOUT US</a>
-                                </li>
-                                <li className="nav-item">
-                                <a className="nav-link disabled" href="javascript:void(0)">CONTACT</a>
-                                </li>
-                            </ul>
-                            <form className="form-inline my-2 my-lg-0">
-                                <input onChange={this.getSearchvalue} value={this.state.searchValue} className="form-control mr-sm-2" type="text" placeholder="Search" />
-                                <button className="btn btn-success my-2 my-sm-0" type="button">Search</button>
-                            </form>
-                            {this.state.token?<div className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle btn btn-outline-dark profile-drop" href="JavaScript:Void(0);" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src={this.state.user.avatar}  className="profile-cir" /> Sanket Parab <b className="caret"><i className="lni-arrow-down" /></b>
-                                </a>
-                                <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item" href="dashboard">My Account </a>
-                                    <a className="dropdown-item" href="profile">Profile </a>
-                                    <a className="dropdown-item" href="profilesetting">Setting</a>
-                                    <div className="dropdown-divider" />
-                                    <Link href="/"><a className="dropdown-item" onClick={this.handleLogout} >Logout</a></Link>
-                                </div>
-                            </div>:''}
-                            {this.state.token?'':<div className="header-top-right float-right">
-                               <Link href="/login"><a  className="header-top-button"><i className="lni-lock" /> Log In</a></Link> |
-                               <Link href="/register"><a  className="header-top-button"><i className="lni-pencil" /> Register</a></Link>
-                            </div>}
-                        </div>
-                    </div>
-                </nav>
-            </header>
+           <Header/>
             { children }
             <footer>
                 <section className="footer-Content">
@@ -134,7 +93,7 @@ constructor(props){
                         <ul className="contact-footer">
                             <li>
                             <a href="mailto:support@buzcafe.com"><strong><i className="lni-envelope" /></strong><span>support@buzcafe.com</span>
-                            </a>                    
+                            </a>
                             </li>
                             <li>
                             <div className="store">
