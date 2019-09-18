@@ -37,6 +37,7 @@ constructor(props){
 
   render(){
     const children = this.props.children
+    console.log(children)
    // console.log('user dat ',this.state.user.avatar);
     // console.log('user fname :',this.state.user.firstname);
     // console.log('usedr lname :',this.state.user.lastname);
