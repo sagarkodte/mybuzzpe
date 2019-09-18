@@ -11,7 +11,8 @@ constructor(props){
   super(props);
   this.state={
       token:'',
-      user:''
+      user:'',
+      searchValue:''
   };
 }
 
@@ -32,6 +33,9 @@ constructor(props){
         Router.push('/');
     }
     e.preventDefault();
+ }
+ getSearchvalue = (event) => {
+     console.log(event.target.value)
  }
 
   render(){
@@ -68,7 +72,7 @@ constructor(props){
                                 </li>
                             </ul>
                             <form className="form-inline my-2 my-lg-0">
-                                <input className="form-control mr-sm-2" type="text" placeholder="Search" />
+                                <input onChange={this.getSearchvalue} value={this.state.searchValue} className="form-control mr-sm-2" type="text" placeholder="Search" />
                                 <button className="btn btn-success my-2 my-sm-0" type="button">Search</button>
                             </form>
                             {this.state.token?<div className="nav-item dropdown">

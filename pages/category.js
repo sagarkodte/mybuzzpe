@@ -29,11 +29,16 @@ export default class Index extends React.Component {
   }
 
   componentDidMount = () => {
+
+    console.log(this.props.url)
+
     axios.post(serverUrl.url + '/api/question/list', {
       category: this.props.url.query.path,
     })
       .then((response) => {
+
         this.toggle();
+
         this.setState({ allQuestions: response.data.data })
         console.log(this.state.allQuestions);
         // response.data.data.forEach(function (item, index) {
