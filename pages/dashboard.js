@@ -10,15 +10,15 @@ export default class extends React.Component{
   constructor(props){
     super(props);
     this.state={
-        
+
     };
   }
 
   componentDidMount(){
- 
+
   }
 
-  
+
   render() {
     return (<Layout>
             <div className="page-content">
@@ -112,7 +112,7 @@ export default class extends React.Component{
                           </div>
                           {/* Card Body */}
                           <div className="card-body">
-                            <div className="chart-area"><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div className /></div><div className="chartjs-size-monitor-shrink"><div className /></div></div><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div className /></div><div className="chartjs-size-monitor-shrink"><div className /></div></div>
+                            <div className="chart-area"><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div /></div><div className="chartjs-size-monitor-shrink"><div /></div></div><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div /></div><div className="chartjs-size-monitor-shrink"><div /></div></div>
                               <canvas id="myAreaChart" style={{display: 'block', width: '458px', height: '320px'}} width={458} height={320} className="chartjs-render-monitor" />
                             </div>
                           </div>
@@ -139,7 +139,7 @@ export default class extends React.Component{
                           </div>
                           {/* Card Body */}
                           <div className="card-body">
-                            <div className="chart-pie pt-4 pb-2"><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div className /></div><div className="chartjs-size-monitor-shrink"><div className /></div></div><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div className /></div><div className="chartjs-size-monitor-shrink"><div className /></div></div>
+                            <div className="chart-pie pt-4 pb-2"><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div /></div><div className="chartjs-size-monitor-shrink"><div /></div></div><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div /></div><div className="chartjs-size-monitor-shrink"><div /></div></div>
                               <canvas id="myPieChart" width={193} height={245} className="chartjs-render-monitor" style={{display: 'block', width: '193px', height: '245px'}} />
                             </div>
                             <div className="mt-4 text-center small">
@@ -190,7 +190,7 @@ export default class extends React.Component{
 									</div>
 								  </div>
 
-								 
+
 								  <div class="row">
 									<div class="col-lg-6 mb-4">
 									  <div class="card bg-primary text-white shadow">
@@ -246,7 +246,7 @@ export default class extends React.Component{
 
 								<div class="col-lg-6 mb-4">
 
-						
+
 								  <div class="card shadow mb-4">
 									<div class="card-header py-3">
 									  <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
@@ -260,7 +260,7 @@ export default class extends React.Component{
 									</div>
 								  </div>
 
-							
+
 								  <div class="card shadow mb-4">
 									<div class="card-header py-3">
 									  <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>

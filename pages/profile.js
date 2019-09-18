@@ -10,15 +10,15 @@ export default class extends React.Component{
   constructor(props){
     super(props);
     this.state={
-        
+
     };
   }
 
   componentDidMount(){
- 
+
   }
 
-  
+
   render() {
     return (<Layout>
             <div className="page-content">
@@ -97,7 +97,7 @@ export default class extends React.Component{
                         <div className="panel panel-default">
                           <div className="panel-heading" role="tab" id="headingOne5">
                             <h4 className="panel-title">
-                              <a role="button" data-parent="#accordion5" href="#collapseOne5" aria-expanded="true" aria-controls="collapseOne5" data-toggle="collapse" className>
+                              <a role="button" data-parent="#accordion5" href="#collapseOne5" aria-expanded="true" aria-controls="collapseOne5" data-toggle="collapse" >
                                 <i className="icon fa fa-user" />
                                 Upgrade to Bussines</a>
                             </h4>
@@ -116,7 +116,7 @@ export default class extends React.Component{
                                 <div className="form-group mb-3">
                                   <label className="control-label">Currencies Accepted<span>*</span></label><br />
                                   {/* <div class="form-check form-check-inline">
-   
+
                                                          <input class="form-check-input" type="radio" name="currency" id="inlineRadio1" value="INR">
                                                          <label class="form-check-label" for="inlineRadio1">INR</label>
                                                       </div>

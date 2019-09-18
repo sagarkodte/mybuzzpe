@@ -21,11 +21,11 @@ export default class extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log('dasdh boeadr ', localStorage.getItem("user"));
-        this.setState({
-            token: localStorage.getItem("token"),
-            user: JSON.parse(localStorage.getItem("user")),
-        });
+        // console.log('dasdh boeadr ', localStorage.getItem("user"));
+        // this.setState({
+        //     token: localStorage.getItem("token"),
+        //     user: JSON.parse(localStorage.getItem("user")),
+        // });
     }
 
     handleLogout = (e) => {
@@ -40,7 +40,7 @@ export default class extends React.Component {
         e.preventDefault();
     }
     getSearchvalue = (event) => {
-        this.setState({ Searchvalue: event.target.value }, function () {
+        this.setState({ Searchvalue: event.target.value }, function() {
             console.log(this.state.Searchvalue)
         })
     }
@@ -49,9 +49,9 @@ export default class extends React.Component {
 
         Router.push({
             pathname: '/category',
-            search: '?path='+this.state.Searchvalue,
+            search: '?path=' + this.state.Searchvalue,
             //state: { detail: path }
-          });
+        });
 
         // axios.post(serverUrl.url + '/api/business/search', {
         //     query: this.state.Searchvalue
@@ -90,7 +90,7 @@ export default class extends React.Component {
 
             </Head>
             <div className="app">
-                <Header/>
+                <Header />
                 <div className="page">
                     <div className="container">
                         <div className="row">
@@ -187,10 +187,10 @@ export default class extends React.Component {
                                             <p>BuzCafe offers convenience to the entire process of transferring electronic cash.</p>
                                         </div>
                                         <ul className="mt-3 footer-social">
-                                            <li><a className="facebook" href="JavaScript:Void(0);"><i className="lni-facebook-filled" /></a></li>
-                                            <li><a className="twitter" href="JavaScript:Void(0);"><i className="lni-twitter-filled" /></a></li>
-                                            <li><a className="linkedin" href="JavaScript:Void(0);"><i className="lni-linkedin-fill" /></a></li>
-                                            <li><a className="google-plus" href="JavaScript:Void(0);"><i className="lni-google-plus" /></a></li>
+                                            <li><a className="facebook" href=""><i className="lni-facebook-filled" /></a></li>
+                                            <li><a className="twitter" href=""><i className="lni-twitter-filled" /></a></li>
+                                            <li><a className="linkedin" href=""><i className="lni-linkedin-fill" /></a></li>
+                                            <li><a className="google-plus" href=""><i className="lni-google-plus" /></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -218,8 +218,8 @@ export default class extends React.Component {
                                             </li>
                                             <li>
                                                 <div className="store">
-                                                    <a className="appstore" href="javascript:void(0)" disabled="disabled"><i className="lni-apple" />  App Store (Comming Soon)</a>
-                                                    <a className="playstore" href="javascript:void(0)" disabled="disabled"><i className="lni-playstore" /> Play Store (Comming Soon)</a>
+                                                    <a className="appstore" href="" disabled="disabled"><i className="lni-apple" />  App Store (Comming Soon)</a>
+                                                    <a className="playstore" href="" disabled="disabled"><i className="lni-playstore" /> Play Store (Comming Soon)</a>
                                                 </div>
                                             </li>
                                         </ul>

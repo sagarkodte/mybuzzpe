@@ -92,8 +92,7 @@ export default class extends React.Component {
                         <th>Closing Time</th> */}
                                 </tr>
                             </thead>
-                            <tbody>
-                                {this.state.businessList}
+                            <tbody>{this.state.businessList}
                                 {/* <tr>
                                     <td>
                                        <div class="custom-control custom-checkbox">

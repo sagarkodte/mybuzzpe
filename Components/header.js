@@ -66,20 +66,20 @@ class Header extends Component {
 
                     <nav className="navbar navbar-expand-lg ">
                         <div className="container">
-                            <a className="navbar-brand" href="javascript:void(0)"><img src="http://3.17.162.108:8200/assets/img/logo.png" /></a>
+                            <a className="navbar-brand" href=""><img src="http://3.17.162.108:8200/assets/img/logo.png" /></a>
                             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
                                 <span className="navbar-toggler-icon" />
                             </button>
                             <div className="collapse navbar-collapse" id="navb">
                                 <ul className="navbar-nav mr-auto">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="javascript:void(0)"> Home </a>
+                                        <Link href="/"><a className="nav-link"> Home </a></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="javascript:void(0)">ABOUT US</a>
+                                          <Link href="/"><a className="nav-link" >ABOUT US</a></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link disabled" href="javascript:void(0)">CONTACT</a>
+                                        <Link href="/"><a className="nav-link" >CONTACT</a></Link>
                                     </li>
                                 </ul>
                                 <form className="form-inline my-2 my-lg-0">
@@ -87,7 +87,7 @@ class Header extends Component {
                                     <button onClick={this.searchResult} className="btn btn-success my-2 my-sm-0" type="button">Search</button>
                                 </form>
                                 {this.state.token ? <div className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle btn btn-outline-dark profile-drop" href="JavaScript:Void(0);" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a className="nav-link dropdown-toggle btn btn-outline-dark profile-drop" href=";" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <img src={this.state.user.avatar} className="profile-cir" /> {this.state.user.firstname} {this.state.user.lastname} <b className="caret"><i className="lni-arrow-down" /></b>
                                     </a>
                                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
