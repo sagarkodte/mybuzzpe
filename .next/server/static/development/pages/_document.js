@@ -115,7 +115,7 @@ module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "c
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js?9a34":
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js":
 /*!******************************************************************************!*\
   !*** ../buzzpe/node_modules/@babel/runtime-corejs2/core-js/object/assign.js ***!
   \******************************************************************************/
@@ -452,7 +452,7 @@ var _stringify = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-c
 
 var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js"));
 
-var _assign = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js?9a34"));
+var _assign = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js"));
 
 var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js"));
 
