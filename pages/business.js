@@ -28,45 +28,23 @@ export default class Index extends React.Component{
     axios.post(Config.url+'/api/business/singlelist',data,{headers: {
         'Content-Type': 'application/json'
       }}).then(res =>{
+
       console.log('categories of 2 :',res.data.data);
 
-      var businessId ={
-        "businessId": "5d11ec2a9e0d020d6f3a95af"
-      }
+      this.setState({businessDetails:res.data.data});
 
-      // var product=[],service=[];
-      let product='',service='';
-      axios.post(Config.url+'/api/catalog/list-short',businessId,{headers: {
-        'Content-Type': 'application/json'
-      }}).then(res =>{
-        console.log('api is called');
-       console.log('businessId :',res.data.productData);
-       console.log('businessId :',res.data.serviceData);
-      //  product.push(res.data.productData);
-      //  service.push(res.data.serviceData);
-      product=res.data.productData.map((value,key)=>{
-        console.log('description s :',value.description);
-        //productDesc.push(value.description);
-        return {
-          description:value.description
-        }
-      });
-      service=res.data.serviceData.map((value,key)=>{
-        console.log('description s :',value.description);
-        //serviceDesc.push(value.description);
-        return{
-          description:value.description
-        }
-      });
-      }).catch(error => {
-        // return error;
-        //this.setState({businessDetails:'Data not found'});
-      });
+    }).catch(error => {
+      // return error;
 
-      console.log('pro desc :',product);
+    });
+    }
+  }
 
-     let  businessDetails =
-          <div className="product-info row">
+  render() {
+    console.log('this.state.businessDetails :',this.state.businessDetails);
+    return (<Layout>
+        <div className="container">
+             <div className="product-info row">
             <div className="col-lg-12 col-md-12 col-xs-12">
               <div className="product-img">
                 <img className="img-fluid" src="http://blog.brac.net/wp-content/uploads/2016/09/common-banner-1200x480.jpg" />
@@ -75,58 +53,16 @@ export default class Index extends React.Component{
             <div className="col-lg-8 col-md-12 col-xs-12">
               <div className="details-box">
                 <div className="ads-details-info">
-                  <h2>{res.data.data.businessName}</h2>
+                  <h2>{this.state.businessDetails.businessName}</h2>
                   <div className="details-meta">
                     <span><a href="#"><i className="lni-alarm-clock" /> Product </a></span>
                     <span><a href="#"><i className="lni-map-marker" /> Services</a></span>
                     <span><a href="#"><i className="lni-eye" /> 299 View</a></span>
                   </div>
                   <p className="mb-4">
-                    {res.data.data.businessDescription}
+                    {this.state.businessDetails.businessDescription}
                   </p>
-                  <h4 className="title-small mb-3">Specification:</h4>
-                  <ul className="list-specification">
-                    <li><i className="lni-check-mark-circle" /> 256GB PCIe flash storage</li>
-                    <li><i className="lni-check-mark-circle" /> 2.7 GHz dual-core Intel Core i5</li>
-                    <li><i className="lni-check-mark-circle" /> Turbo Boost up to 3.1GHz</li>
-                    <li><i className="lni-check-mark-circle" /> Intel Iris Graphics 6100</li>
-                    <li><i className="lni-check-mark-circle" /> 8GB memory</li>
-                    <li><i className="lni-check-mark-circle" /> 10 hour battery life</li>
-                    <li><i className="lni-check-mark-circle" /> 13.3" Retina Display</li>
-                    <li><i className="lni-check-mark-circle" /> 1 Year international warranty</li>
-                  </ul>
-                  <p className="mb-4">
-                    Up for sale we have a vintage Raleigh Sport Men’s Bicycle. This bike does have some general wear and surface corrosion on some of the parts but is overall in good shape. It has been checked out and does work. Brakes and gears work. Seat is fully intact. Frame and fenders are in nice shape with minimal wear. A few minor dents in the fenders but most of the paint is intact.
-                 </p>
                 </div>
-
-                <div className="row">
-                  <div className="col-md-12 text-center ">
-                    <nav className="nav-justified ">
-                      <div className="nav nav-tabs " id="nav-tab" role="tablist">
-                        <a className="nav-item nav-link active" id="pop1-tab" data-toggle="tab" href="#pop1" role="tab" aria-controls="pop1" aria-selected="true">Product</a>
-                        <a className="nav-item nav-link" id="pop2-tab" data-toggle="tab" href="#pop2" role="tab" aria-controls="pop2" aria-selected="false">Services</a>
-
-                      </div>
-                    </nav>
-                    <div className="tab-content" id="nav-tabContent">
-                      <div className="tab-pane fade show active" id="pop1" role="tabpanel" aria-labelledby="pop1-tab">
-                        <div className="pt-3" />
-                        {/* <p>1. There's another way to do this for layouts that doesn't have to put the navbar inside the container, and which doesn't require any CSS or Bootstrap overrides.
-                    Simply place a div with the Bootstrap container class around the navbar. This will center the links inside the navbar:</p> */}
-                        <p>{productDesc}</p>
-                      </div>
-                      <div className="tab-pane fade" id="pop2" role="tabpanel" aria-labelledby="pop2-tab">
-                        <div className="pt-3" />
-                        {/* <p>2. There's another way to do this for layouts that doesn't have to put the navbar inside the container, and which doesn't require any CSS or Bootstrap overrides.
-                          Simply place a div with the Bootstrap container class around the navbar. This will center the links inside the navbar:</p> */}
-                  <p>{serviceDesc}</p>
-                  </div>
-
-                    </div>
-                  </div>
-                </div>
-
                 <div className="tag-bottom">
                   <div className="float-left">
                     <ul className="advertisement">
@@ -168,14 +104,14 @@ export default class Index extends React.Component{
                         <span><i className="lni-phone-handset" />(123) 123-456</span>
                       </div>
                     </div>
-                    <p>{res.data.data.addressLine1}{res.data.data.addressLine2}<br/>{res.data.data.addressCity},{res.data.data.addressState},{res.data.data.addressPincode}</p>
+                    <p>{this.state.businessDetails.addressLine1}{this.state.businessDetails.addressLine2}<br/>{this.state.businessDetails.addressCity},{this.state.businessDetails.addressState},{this.state.businessDetails.addressPincode}</p>
 
                     <button className="btn btn-common fullwidth mt-4">Send Enquiry</button>
                     <hr></hr>
                     {/* <p style={{ color: '#333', fontSize: '15px' }}><b>Hours of Operation</b> (View All)</p> */}
                     <p style={{ color: '#333', fontSize: '15px' }}><b>Hours of Operation</b></p>
                     <p>Today 9.00am - 11.30pm</p>
-                    <p>{res.data.data.workingMonday?'Monday'+' '+res.data.data.workingMonday.from+''+' am '+' - '+res.data.data.workingMonday.to+''+' pm ':'Closed'}</p>
+                    <p>{this.state.businessDetails.workingMonday?'Monday'+' '+this.state.businessDetails.workingMonday.from+''+' am '+' - '+this.state.businessDetails.workingMonday.to+''+' pm ':'Closed'}</p>
                     <p></p>
                     <p></p>
                     <p></p>
@@ -233,21 +169,6 @@ export default class Index extends React.Component{
               </aside>
             </div>
           </div>
-
-      this.setState({businessDetails:businessDetails});
-
-    }).catch(error => {
-      // return error;
-      this.setState({businessDetails:'Data not found'});
-    });
-    }
-  }
-
-  render() {
-    console.log('this.state.businessDetails :',this.state.businessDetails);
-    return (<Layout>
-        <div className="container">
-          {this.state.businessDetails}
         </div>
     </Layout>);
   }

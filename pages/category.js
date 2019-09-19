@@ -21,7 +21,7 @@ export default class Index extends React.Component {
       checkboxValue: [],
       message: '',
       allResult: [],
-      newA:[]
+      newA: []
     };
     // this.toggle = this.toggle.bind(this);
     this.next = this.next.bind(this);
@@ -56,7 +56,7 @@ export default class Index extends React.Component {
       .catch((error) => {
         //console.log(error);
       });
-      this.getAllresult();
+    this.getAllresult();
   }
 
   toggle = () => {
@@ -110,7 +110,7 @@ export default class Index extends React.Component {
         newA.push(index1);
       });
     });
-    this.setState({newA});
+    this.setState({ newA });
     if (this.state.checkboxValue[this.state.current] != undefined && this.state.checkboxValue[this.state.current].length) {
       this.setState({ message: '' });
       this.getAllresult();
@@ -254,7 +254,7 @@ export default class Index extends React.Component {
                               </p>
                               <div className="listing-bottom">
                                 <p className="contactNumber float-left" >{item.businessContactNumbers}</p>
-                                <Link href={'drtrt'}><a className="btn btn-common float-right">View Details</a></Link>
+                                <Link href={'business?path='+ item._id}><a className="btn btn-common float-right">View Details</a></Link>
                               </div>
                             </div>
                           </div>
@@ -306,7 +306,7 @@ export default class Index extends React.Component {
             <p>{this.state.message}</p>
             {this.state.current > 0 ? <Button color="primary" onClick={this.previous}>Previous</Button> : ''}
             {this.state.current < this.state.allQuestions.length - 1 ? <Button color="secondary" onClick={this.next}>Next</Button> : ''}
-            {this.state.current == this.state.allQuestions.length - 1 ? <Button color="secondary" onClick={()=>{this.finish();this.toggle()}}>Finish</Button> : ''}
+            {this.state.current == this.state.allQuestions.length - 1 ? <Button color="secondary" onClick={() => { this.finish(); this.toggle() }}>Finish</Button> : ''}
           </ModalFooter>
         </Modal>
 

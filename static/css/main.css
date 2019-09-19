@@ -6125,3 +6125,6 @@ h4.panel-title{margin:10px 0px !important;}
 .optRadio input {
 	position:static !important
 }
+.modal-open{
+	padding-right:0 !important
+}
