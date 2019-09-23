@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1128,1187 +1128,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./Components/twoColumnLayout.js":
-/*!***************************************!*\
-  !*** ./Components/twoColumnLayout.js ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _default; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _pages_register_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pages/register.js */ "./pages/register.js");
-/* harmony import */ var _pages_login_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pages/login.js */ "./pages/login.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../config */ "./config.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_config__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./header.js */ "./Components/header.js");
-
-
-
-
-
-
-
-var _jsxFileName = "/workspace/mybuzzpe/Components/twoColumnLayout.js";
-
-
-
-
-
-
-
-
-
-
-var _default =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(_default, _React$Component);
-
-  function _default(props) {
-    var _this;
-
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, _default);
-
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(_default).call(this, props));
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "componentDidMount", function () {// console.log('dasdh boeadr ', localStorage.getItem("user"));
-      // this.setState({
-      //     token: localStorage.getItem("token"),
-      //     user: JSON.parse(localStorage.getItem("user")),
-      // });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleLogout", function (e) {
-      // Router.push('/');
-      if (_this.state.token !== ' ' && _this.state.user !== ' ') {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-        _this.state.token = '';
-        _this.state.user = '';
-        next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push('/');
-      }
-
-      e.preventDefault();
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getSearchvalue", function (event) {
-      _this.setState({
-        Searchvalue: event.target.value
-      }, function () {
-        console.log(this.state.Searchvalue);
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "searchResult", function () {
-      next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push({
-        pathname: '/category',
-        search: '?path=' + _this.state.Searchvalue //state: { detail: path }
-
-      }); // axios.post(serverUrl.url + '/api/business/search', {
-      //     query: this.state.Searchvalue
-      // })
-      //     .then((response) => {
-      //         this.setState({ allResult: response.data.data })
-      //         console.log(this.state.allResult)
-      //     })
-      //     .catch((error) => {
-      //         //console.log(error);
-      //     });
-    });
-
-    _this.state = {
-      token: '',
-      user: '',
-      isLogin: false,
-      Searchvalue: ''
-    };
-    _this.getSearchvalue = _this.getSearchvalue.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
-    return _this;
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(_default, [{
-    key: "render",
-    value: function render() {
-      var children = this.props.children; // console.log('user dat ',this.state.user.avatar);
-      // console.log('user fname :',this.state.user.firstname);
-      // console.log('usedr lname :',this.state.user.lastname);
-
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 76
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 77
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("title", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        },
-        __self: this
-      }, "Welcomne to Buzcafe"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
-        charSet: "utf-8",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 79
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
-        name: "viewport",
-        content: "initial-scale=1.0, width=device-width",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 81
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "/static/css/main.css",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 82
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "/static/css/owl.carousel.css",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("script", {
-        src: "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 84
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("script", {
-        src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 85
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("script", {
-        src: "/static/js/jquery.slicknav.js",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 86
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("script", {
-        src: "/static/js/wow.js",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 87
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("script", {
-        src: "/static/js/owl.carousel.min.js",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 88
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("script", {
-        src: "/static/js/main.js",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 89
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "app",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 92
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_header_js__WEBPACK_IMPORTED_MODULE_15__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 93
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "page",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 94
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "container",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 95
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 96
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "col-sm-12 col-md-4 col-lg-3 page-sidebar",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 97
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("aside", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 98
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "sidebar-box",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 99
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "user",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 100
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("figure", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 101
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "#",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 102
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: "assets/img/author/img1.jpg",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 102
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "usercontent",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 104
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 105
-        },
-        __self: this
-      }, "Hello William!"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h4", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 106
-        },
-        __self: this
-      }, "Administrator"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("nav", {
-        className: "navdashboard",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 109
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 110
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 111
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "dashboard",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "active",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "fas fa-tachometer-alt",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 113
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 114
-        },
-        __self: this
-      }, "Dashboard")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 117
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "profile",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 118
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 118
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "far fa-user-circle",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 119
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 120
-        },
-        __self: this
-      }, "Profile ")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 123
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "kyc",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 124
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 124
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "far fa-file-alt",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 125
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 126
-        },
-        __self: this
-      }, "KYC ")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 129
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "profilesetting",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 130
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 130
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "fas fa-cog",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 131
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 132
-        },
-        __self: this
-      }, "Account Setting")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 135
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "shopDetails",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 136
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 136
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "far fa-edit",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 137
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 138
-        },
-        __self: this
-      }, "Shop Details")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 141
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "coupon",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 142
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 142
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "fas fa-tags",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 143
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 144
-        },
-        __self: this
-      }, "Coupan")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 147
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "transactionHistory",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 148
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 148
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "fas fa-history",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 149
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 150
-        },
-        __self: this
-      }, "Transaction History")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 153
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "wallet",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 154
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 154
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "fas fa-wallet",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 155
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 156
-        },
-        __self: this
-      }, "Wallet")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 159
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "/",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 160
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        onClick: this.handleLogout,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 160
-        },
-        __self: this
-      }, " ", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "fas fa-sign-out-alt",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 160
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 160
-        },
-        __self: this
-      }, "Logout"))))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "widget",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 165
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h4", {
-        className: "widget-title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 166
-        },
-        __self: this
-      }, "Advertisement"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "add-box",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 167
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        className: "img-fluid",
-        src: "http://3.17.162.108:8200/assets/img/img1.jpg",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 168
-        },
-        __self: this
-      }))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "col-sm-12 col-md-4 col-lg-9",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 173
-        },
-        __self: this
-      }, children)))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("footer", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 179
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
-        className: "footer-Content",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 180
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "container",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 181
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 182
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "col-lg-4 col-md-4 col-xs-6 col-mb-12",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 183
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "widget",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 184
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "footer-logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 185
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: "http://3.17.162.108:8200/assets/img/logo.png",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 185
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "textwidget",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 186
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 187
-        },
-        __self: this
-      }, "BuzCafe offers convenience to the entire process of transferring electronic cash.")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
-        className: "mt-3 footer-social",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 189
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 190
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "facebook",
-        href: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 190
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "lni-facebook-filled",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 190
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 191
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "twitter",
-        href: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 191
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "lni-twitter-filled",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 191
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 192
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "linkedin",
-        href: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 192
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "lni-linkedin-fill",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 192
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 193
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "google-plus",
-        href: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 193
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "lni-google-plus",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 193
-        },
-        __self: this
-      })))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "col-lg-4 col-md-4 col-xs-6 col-mb-12",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 197
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "widget",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 198
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
-        className: "block-title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 199
-        },
-        __self: this
-      }, "Quick Link"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
-        className: "menu",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 200
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 201
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "/services",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 201
-        },
-        __self: this
-      }, "- Services")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 202
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "/about",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 202
-        },
-        __self: this
-      }, "- About Us")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 203
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "/blog",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 203
-        },
-        __self: this
-      }, "- Blog")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 204
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "/faq",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 204
-        },
-        __self: this
-      }, "- FAQ's")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 205
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "/testimonials",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 205
-        },
-        __self: this
-      }, "- Testimonials")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 206
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "/termsncondition",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 206
-        },
-        __self: this
-      }, "- Terms & Condition")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 207
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "/privacypolicy",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 207
-        },
-        __self: this
-      }, "- Privacy Policy"))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "col-lg-4 col-md-4 col-xs-6 col-mb-12",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 211
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "widget",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 212
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
-        className: "block-title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 213
-        },
-        __self: this
-      }, "Contact Info"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
-        className: "contact-footer",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 214
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 215
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "mailto:support@buzcafe.com",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 216
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("strong", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 216
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "lni-envelope",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 216
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 216
-        },
-        __self: this
-      }, "support@buzcafe.com"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 219
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "store",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 220
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "appstore",
-        href: "",
-        disabled: "disabled",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 221
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "lni-apple",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 221
-        },
-        __self: this
-      }), "  App Store (Comming Soon)"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        className: "playstore",
-        href: "",
-        disabled: "disabled",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 222
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
-        className: "lni-playstore",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 222
-        },
-        __self: this
-      }), " Play Store (Comming Soon)"))))))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        id: "copyright",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 231
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "container",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 232
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 233
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "col-md-12",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 234
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "site-info text-center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 235
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 236
-        },
-        __self: this
-      }, "Designed and Developed by ", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "https://buzcafe.com/",
-        rel: "nofollow",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 236
-        },
-        __self: this
-      }, "Buzcafe"))))))))));
-    }
-  }]);
-
-  return _default;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
-
-
-
-/***/ }),
-
-/***/ "./Services/businessService.js":
-/*!*************************************!*\
-  !*** ./Services/businessService.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
-var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js"));
-
-var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ "axios"));
-
-var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ "./config.js"));
-
-module.exports.addBusiness = function () {
-  var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var headers = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  return new _promise.default(function (resolve, reject) {
-    if (headers.length == 0) reject('Token missing');
-
-    _axios.default.post(_config.default.url + '/api/business/add', data, headers).then(function (res) {
-      resolve(res.data);
-    }).catch(function (error) {
-      reject(error);
-    });
-  });
-};
-
-/***/ }),
-
-/***/ "./Services/categoryService.js":
-/*!*************************************!*\
-  !*** ./Services/categoryService.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
-var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js"));
-
-var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ "axios"));
-
-var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ "./config.js"));
-
-module.exports.getMainCategories = function () {
-  return new _promise.default(function (resolve, reject) {
-    _axios.default.get(_config.default.url + '/api/category/main').then(function (res) {
-      resolve(res.data);
-    }).catch(function (error) {
-      reject(error);
-    });
-  });
-};
-
-module.exports.getSubCategories = function (path) {
-  return new _promise.default(function (resolve, reject) {
-    _axios.default.post(_config.default.url + '/api/category/children', {
-      category: path
-    }).then(function (res) {
-      resolve(res.data);
-    }).catch(function (error) {
-      reject(error);
-    });
-  });
-};
-
-/***/ }),
-
 /***/ "./config.js":
 /*!*******************!*\
   !*** ./config.js ***!
@@ -2333,6 +1152,17 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/assign.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/assign */ "core-js/library/fn/object/assign");
 
 /***/ }),
 
@@ -2377,17 +1207,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/get-prototype
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype-of */ "core-js/library/fn/object/set-prototype-of");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/promise.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/promise.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/library/fn/promise");
 
 /***/ }),
 
@@ -2576,6 +1395,39 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+
+function _extends() {
+  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
 }
 
 /***/ }),
@@ -3141,46 +1993,39 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/addBusiness.js":
-/*!******************************!*\
-  !*** ./pages/addBusiness.js ***!
-  \******************************/
+/***/ "./pages/category.js":
+/*!***************************!*\
+  !*** ./pages/category.js ***!
+  \***************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _default; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-select */ "react-select");
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_select__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _Components_twoColumnLayout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Components/twoColumnLayout */ "./Components/twoColumnLayout.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Components_dashBoardLayout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Components/dashBoardLayout */ "./Components/dashBoardLayout.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../config */ "./config.js");
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_config__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _Services_categoryService__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Services/categoryService */ "./Services/categoryService.js");
-/* harmony import */ var _Services_categoryService__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_Services_categoryService__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _Services_businessService__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Services/businessService */ "./Services/businessService.js");
-/* harmony import */ var _Services_businessService__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_Services_businessService__WEBPACK_IMPORTED_MODULE_14__);
-
-
-
-
-
-
-
-var _jsxFileName = "/workspace/mybuzzpe/pages/addBusiness.js";
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-toastify */ "react-toastify");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_toastify__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-slick */ "react-slick");
+/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_slick__WEBPACK_IMPORTED_MODULE_15__);
 
 
 
@@ -3189,633 +2034,988 @@ var _jsxFileName = "/workspace/mybuzzpe/pages/addBusiness.js";
 
 
 
+var _jsxFileName = "/workspace/mybuzzpe/pages/category.js";
 
-var _default =
+
+
+
+
+
+
+
+
+var Index =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(_default, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Index, _React$Component);
 
-  function _default(props) {
-    var _this$state;
-
+  function Index(props) {
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, _default);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Index);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(_default).call(this, props));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Index).call(this, props));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "componentDidMount", function () {
-      if (localStorage.getItem('token') !== null) {
-        console.log('Data Available');
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "componentDidMount", function () {
+      console.log(_this.props.url);
+      axios__WEBPACK_IMPORTED_MODULE_10___default.a.post(_config__WEBPACK_IMPORTED_MODULE_11___default.a.url + '/api/question/list', {
+        category: _this.props.url.query.path
+      }).then(function (response) {
+        _this.toggle();
 
         _this.setState({
-          token: localStorage.getItem('token')
-        }, function () {
-          console.log(this.state.token);
+          allQuestions: response.data.data
+        });
+
+        console.log(_this.state.allQuestions); // response.data.data.forEach(function (item, index) {
+        //   item.options.forEach(function (item1, index1) {
+        //     item1.selected = 0;
+        //   });
+        // });
+        // console.log('News', response.data.data);
+        // this.setState({ quesList: response.data.data }, function () {
+        //   this.setState({ que: this.state.quesList[this.state.current] });
+        // });
+      }).catch(function (error) {//console.log(error);
+      });
+
+      _this.getAllresult();
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "toggle", function () {
+      _this.setState(function (prevState) {
+        return {
+          modal: !prevState.modal
+        };
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "finish", function () {
+      var newA = [];
+
+      _this.state.checkboxValue.forEach(function (index) {
+        index.forEach(function (index1) {
+          newA.push(index1);
+        });
+      });
+
+      _this.setState({
+        newA: newA
+      });
+
+      if (_this.state.checkboxValue[_this.state.current] != undefined && _this.state.checkboxValue[_this.state.current].length) {
+        _this.setState({
+          message: ''
+        });
+
+        _this.getAllresult();
+      } else {
+        _this.setState({
+          message: 'Please select atleast one option.'
         });
       }
+    });
 
-      _Services_categoryService__WEBPACK_IMPORTED_MODULE_13___default.a.getMainCategories().then(function (res) {
-        var a = [];
-        res.data.forEach(function (item) {
-          a.push({
-            value: item.path,
-            label: item.name
-          });
-        });
-
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "getAllresult", function () {
+      axios__WEBPACK_IMPORTED_MODULE_10___default.a.post(_config__WEBPACK_IMPORTED_MODULE_11___default.a.url + '/api/business/search', {
+        category: _this.props.url.query.path,
+        query: _this.state.newA.toString()
+      }).then(function (response) {
         _this.setState({
-          categoryArray: a
-        }, function () {
-          console.log(this.state.categoryArray);
+          allResult: response.data.data
         });
-      }).catch(function (error) {
-        console.log('error 8', error);
+
+        console.log(_this.state.allResult);
+      }).catch(function (error) {//console.log(error);
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleChange", function (event) {
-      _this.setState(Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])({}, event.target.name, event.target.value));
-    });
+    _this.state = {
+      quesList: [],
+      modal: false,
+      current: 0,
+      allQuestions: [],
+      checkboxValue: [],
+      message: '',
+      allResult: [],
+      newA: []
+    }; // this.toggle = this.toggle.bind(this);
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleCategoryChange", function (selectedOption) {
-      _this.setState({
-        selectedOption: selectedOption
-      }, function () {
-        var _this2 = this;
-
-        _Services_categoryService__WEBPACK_IMPORTED_MODULE_13___default.a.getSubCategories(this.state.selectedOption.value).then(function (res) {
-          var a = [];
-          res.data.forEach(function (item) {
-            a.push({
-              value: item.path,
-              label: item.name
-            });
-          });
-
-          _this2.setState({
-            subCategoryArray: a
-          }, function () {
-            console.log(this.state.subCategoryArray);
-          });
-        }).catch(function (error) {
-          console.log('error 8', error);
-        });
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleSubCategoryChange", function (selectedOption) {
-      _this.setState({
-        selectedSubOption: selectedOption
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "addBusiness", function () {
-      var cat = _this.state.selectedOption;
-      var subCat = _this.state.selectedSubOption;
-      var businessCategory = [];
-      subCat.push(cat);
-      subCat.forEach(function (item) {
-        businessCategory.push(item.value);
-      });
-
-      _this.setState({
-        businessCategory: businessCategory
-      }, function () {
-        _Services_businessService__WEBPACK_IMPORTED_MODULE_14___default.a.addBusiness({
-          'businessName': this.state.businessName,
-          'businessDescription': this.state.businessDescription,
-          'addressLine1': this.state.addressLine1,
-          'addressCity': this.state.addressCity,
-          'addressState': this.state.addressState,
-          'addressPincode': this.state.addressPincode,
-          'businessContactNumbers': this.state.businessContactNumbers,
-          'addressArea': this.state.addressArea,
-          'businessCategory': this.state.businessCategory,
-          'businessTags': this.state.businessTags
-        }, {
-          headers: {
-            'x-access-token': this.state.token
-          }
-        }).then(function (res) {
-          console.log('res3', res);
-        }).catch(function (err) {
-          console.log('err3', err);
-        });
-      });
-    });
-
-    _this.state = (_this$state = {
-      token: '',
-      businessName: '',
-      businessDescription: '',
-      addressLine1: '',
-      addressCity: '',
-      addressState: '',
-      addressPincode: '',
-      categoryType: 'Select Category Type',
-      category: 'Select Category',
-      subCategory: 'Select Sub Category',
-      businessContactNumbers: '',
-      businessTags: '',
-      categoryList: '',
-      subCategoryList: '',
-      subCategoryArray: [],
-      errors: {},
-      success: '',
-      error: '',
-      // new vars
-      categoryArray: [],
-      selectedOption: null
-    }, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "subCategoryArray", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "selectedSubOption", null), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "businessCategory", []), _this$state);
+    _this.next = _this.next.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
+    _this.previous = _this.previous.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(_default, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Index, [{
+    key: "getRadioValue",
+    value: function getRadioValue(event) {
+      var _event$target = event.target,
+          checked = _event$target.checked,
+          value = _event$target.value;
+
+      if (checked) {
+        var a = [];
+        a.push(value);
+        this.state.checkboxValue[this.state.current] = a;
+      }
+
+      console.log(this.state.current, this.state.checkboxValue);
+    }
+  }, {
+    key: "getCheckboxValue",
+    value: function getCheckboxValue(event) {
+      var _event$target2 = event.target,
+          checked = _event$target2.checked,
+          value = _event$target2.value;
+
+      if (checked) {
+        var a = this.state.checkboxValue[this.state.current] ? this.state.checkboxValue[this.state.current] : [];
+        a.push(value);
+        this.state.checkboxValue[this.state.current] = a;
+      } else {
+        var _a = this.state.checkboxValue[this.state.current];
+        delete _a.splice(_a.indexOf(value), 1);
+        this.state.checkboxValue[this.state.current] = _a;
+      }
+
+      console.log(this.state.current, this.state.checkboxValue);
+    }
+  }, {
+    key: "next",
+    value: function next() {
+      if (this.state.checkboxValue[this.state.current] != undefined && this.state.checkboxValue[this.state.current].length) {
+        this.slider.slickNext();
+        this.setState({
+          current: this.state.current + 1
+        });
+        this.setState({
+          message: ''
+        });
+      } else {
+        this.setState({
+          message: 'Please select atleast one option.'
+        });
+      }
+    }
+  }, {
+    key: "previous",
+    value: function previous() {
+      this.slider.slickPrev();
+      this.setState({
+        current: this.state.current - 1
+      });
+      this.setState({
+        message: ''
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Components_twoColumnLayout__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 114
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "page-content",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 115
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "inner-box",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 116
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "dashboard-box d-sm-flex align-items-center justify-content-between ",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 117
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
-        className: "dashbord-title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 118
-        },
-        __self: this
-      }, "Add new business")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "dashboard-wrapper",
-        id: "shopDetails",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 121
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "col-md-12 col-sm-12 col-sx-12",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 122
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 123
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 124
-        },
-        __self: this
-      }, "Business Name*"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "businessName",
-        value: this.state.businessName,
-        type: "text",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 125
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 126
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 126
-        },
-        __self: this
-      }, this.state.errors.businessName))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 128
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 129
-        },
-        __self: this
-      }, "Address Line 1 *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressLine1",
-        value: this.state.addressLine1,
-        type: "text",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 130
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 131
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 131
-        },
-        __self: this
-      }, this.state.errors.addressLine1))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 133
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 134
-        },
-        __self: this
-      }, "Address Area *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressarea",
-        value: this.state.addressarea,
-        type: "text",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 135
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 136
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 136
-        },
-        __self: this
-      }, this.state.errors.addressarea))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 138
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 139
-        },
-        __self: this
-      }, "Address City *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressCity",
-        value: this.state.addressCity,
-        type: "text",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 140
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 141
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 141
-        },
-        __self: this
-      }, this.state.errors.addressCity))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 143
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 144
-        },
-        __self: this
-      }, "Address State*"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressState",
-        value: this.state.addressState,
-        type: "text",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 145
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+      var settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_Components_dashBoardLayout__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 146
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "container page",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 147
         },
         __self: this
-      }, this.state.errors.addressState))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 148
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "col-lg-3 col-md-12 col-xs-12 page-sidebar",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 149
         },
         __self: this
-      }, "Pincode *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressPincode",
-        value: this.state.addressPincode,
-        type: "text",
-        onChange: this.handleChange,
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("aside", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 150
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "widget_search",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 151
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("form", {
+        role: "search",
+        id: "search-form",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 152
         },
         __self: this
-      }, this.state.errors.addressPincode))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("input", {
+        type: "search",
+        className: "form-control",
+        autoComplete: "off",
+        name: "s",
+        placeholder: "Search...",
+        id: "search-input",
+        defaultValue: true,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 153
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
+        type: "submit",
+        id: "search-submit",
+        className: "search-btn",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 154
         },
         __self: this
-      }, "Contact Number *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "businessContactNumbers",
-        value: this.state.businessContactNumbers,
-        type: "text",
-        onChange: this.handleChange,
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+        className: "lni-search",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155
+          lineNumber: 154
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+      })))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "widget categories",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156
+          lineNumber: 157
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 156
-        },
-        __self: this
-      }, this.state.errors.businessContactNumbers))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h4", {
+        className: "widget-title",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 158
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
+      }, "All Categories"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("ul", {
+        className: "categories-list",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 159
         },
         __self: this
-      }, "Select Category:"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        onChange: this.handleCategoryChange,
-        options: this.state.categoryArray,
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 160
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "#",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 161
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+        className: "lni-dinner",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 162
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
+      }), " Hotel & Travels ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        className: "category-counter",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 163
+          lineNumber: 162
         },
         __self: this
-      }, "Select Sub Category:"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        value: this.state.selectedSubOption,
-        isMulti: true,
-        onChange: function onChange() {
-          return _this3.handleSubCategoryChange.apply(_this3, arguments);
-        },
-        options: this.state.subCategoryArray,
+      }, "(5)"))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164
+          lineNumber: 165
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "#",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 166
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+        className: "lni-control-panel",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 167
         },
         __self: this
-      }, "Business Tags*"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "businessTags",
-        value: this.state.businessTags,
-        type: "text",
-        onChange: this.handleChange,
+      }), " Services ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        className: "category-counter",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168
+          lineNumber: 167
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+      }, "(8)"))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169
+          lineNumber: 170
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169
+          lineNumber: 171
         },
         __self: this
-      }, this.state.errors.businessTags))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+        className: "lni-github",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 172
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
+      }), " Pets ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        className: "category-counter",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 172
         },
         __self: this
-      }, "Business Description"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("textarea", {
-        className: "form-control",
-        placeholder: "",
-        name: "businessDescription",
-        value: this.state.businessDescription,
-        onChange: this.handleChange,
-        rows: 3,
-        "data-error": "Write your message",
-        required: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 174
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+      }, "(2)"))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 175
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 176
         },
         __self: this
-      }, this.state.errors.businessDescription))), this.state.success !== '' ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "alert alert-success",
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+        className: "lni-coffee-cup",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 177
+        },
+        __self: this
+      }), " Restaurants ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        className: "category-counter",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 177
+        },
+        __self: this
+      }, "(3)"))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 180
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "#",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+        className: "lni-home",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 182
+        },
+        __self: this
+      }), " Real Estate ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        className: "category-counter",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 182
+        },
+        __self: this
+      }, "(4)"))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 185
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "#",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 186
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+        className: "lni-pencil",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 187
         },
         __self: this
-      }, this.state.success) : '', this.state.error ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "alert alert-danger",
+      }), " Jobs ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        className: "category-counter",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 187
+        },
+        __self: this
+      }, "(5)"))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 190
         },
         __self: this
-      }, this.state.error) : '', react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
-        className: "btn btn-common",
-        type: "button",
-        onClick: this.addBusiness,
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193
+          lineNumber: 191
         },
         __self: this
-      }, "Submit"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
-        className: "btn btn-common",
-        type: "button",
-        onClick: this.onCanel,
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+        className: "lni-display",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194
+          lineNumber: 192
         },
         __self: this
-      }, "Cancel")))));
+      }), " Electronics ", react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        className: "category-counter",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 192
+        },
+        __self: this
+      }, "(9)"))))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "widget",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 197
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h4", {
+        className: "widget-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 198
+        },
+        __self: this
+      }, "Advertisement"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "add-box",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("img", {
+        className: "img-fluid",
+        src: "assets/img/img1.jpg",
+        alt: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 200
+        },
+        __self: this
+      }))))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "col-lg-9 col-md-12 col-xs-12 page-content",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 205
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "product-filter",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 206
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "short-name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 207
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 208
+        },
+        __self: this
+      }, "Showing (1 - 12 products of 7371 products)")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "Show-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 210
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 211
+        },
+        __self: this
+      }, "Show Items"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("form", {
+        className: "woocommerce-ordering",
+        method: "post",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 212
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 213
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("select", {
+        name: "order",
+        className: "orderby",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 214
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("option", {
+        selected: "selected",
+        value: "menu-order",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 215
+        },
+        __self: this
+      }, "49 items"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("option", {
+        value: "popularity",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 216
+        },
+        __self: this
+      }, "popularity"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("option", {
+        value: "popularity",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 217
+        },
+        __self: this
+      }, "Average ration"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("option", {
+        value: "popularity",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 218
+        },
+        __self: this
+      }, "newness"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("option", {
+        value: "popularity",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 219
+        },
+        __self: this
+      }, "price")))))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "adds-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 226
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "tab-content",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 227
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        id: "list-view",
+        className: "tab-pane fade active show",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 228
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 229
+        },
+        __self: this
+      }, this.state.allResult.map(function (item, i) {
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+          className: "featured-box",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 232
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("figure", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 233
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+          className: "price-save",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 234
+          },
+          __self: this
+        }, "10% Save"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+          className: "icon",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 237
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+          className: "bg-green",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 238
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+          className: "lni-heart",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 238
+          },
+          __self: this
+        })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 239
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
+          className: "lni-bookmark",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 239
+          },
+          __self: this
+        }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+          href: "#",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 241
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("img", {
+          className: "img-fluid",
+          src: item.uploadedPhotos[0],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 241
+          },
+          __self: this
+        }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+          className: "feature-content",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 243
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h4", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 245
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+          href: "ads-details.html",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 245
+          },
+          __self: this
+        }, item.businessName)), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+          className: "meta-tag",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 246
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 247
+          },
+          __self: this
+        }, item.addressarea, " ", item.addressPincode)), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("p", {
+          className: "dsc",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 251
+          },
+          __self: this
+        }, item.businessTags.toString()), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+          className: "listing-bottom",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 255
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("p", {
+          className: "contactNumber float-left",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 256
+          },
+          __self: this
+        }, item.businessContactNumbers), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
+          href: 'business?path=' + item._id,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 257
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+          className: "btn btn-common float-right",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 257
+          },
+          __self: this
+        }, "View Details")))));
+      }))))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "pagination-bar",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 269
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("nav", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 270
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("ul", {
+        className: "pagination justify-content-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 271
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
+        className: "page-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 272
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        className: "page-link active",
+        href: "#",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 272
+        },
+        __self: this
+      }, "1")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
+        className: "page-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 273
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        className: "page-link",
+        href: "#",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 273
+        },
+        __self: this
+      }, "2")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
+        className: "page-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 274
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        className: "page-link",
+        href: "#",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 274
+        },
+        __self: this
+      }, "3")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("li", {
+        className: "page-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 275
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
+        className: "page-link",
+        href: "#",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 275
+        },
+        __self: this
+      }, "Next")))))))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_14__["Modal"], {
+        isOpen: this.state.modal,
+        toggle: this.toggle,
+        className: this.props.className,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 283
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_14__["ModalBody"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 284
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_15___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        swipe: false,
+        arrows: false,
+        ref: function ref(c) {
+          return _this2.slider = c;
+        }
+      }, settings, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 285
+        },
+        __self: this
+      }), this.state.allQuestions.map(function (item, i) {
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+          key: i,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 292
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h5", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 293
+          },
+          __self: this
+        }, item.question), item.options.map(function (opt, i) {
+          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+            key: i,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 295
+            },
+            __self: this
+          }, item.type === 'radio' ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+            className: "optRadio",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 296
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("input", {
+            onChange: _this2.getRadioValue.bind(_this2),
+            type: "radio",
+            name: "options",
+            value: opt.title,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 296
+            },
+            __self: this
+          })) : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("span", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 296
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("input", {
+            className: "checkbox",
+            onChange: function onChange(event) {
+              return _this2.getCheckboxValue(event);
+            },
+            type: "checkbox",
+            name: "options[]",
+            value: opt.title,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 296
+            },
+            __self: this
+          })), opt.title);
+        }));
+      }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_14__["ModalFooter"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 305
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 306
+        },
+        __self: this
+      }, this.state.message), this.state.current > 0 ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_14__["Button"], {
+        color: "primary",
+        onClick: this.previous,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 307
+        },
+        __self: this
+      }, "Previous") : '', this.state.current < this.state.allQuestions.length - 1 ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_14__["Button"], {
+        color: "secondary",
+        onClick: this.next,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 308
+        },
+        __self: this
+      }, "Next") : '', this.state.current == this.state.allQuestions.length - 1 ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_14__["Button"], {
+        color: "secondary",
+        onClick: function onClick() {
+          _this2.finish();
+
+          _this2.toggle();
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 309
+        },
+        __self: this
+      }, "Finish") : '')));
     }
   }]);
 
-  return _default;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+  return Index;
+}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
 
 
 
@@ -5241,14 +4441,14 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 3:
-/*!************************************!*\
-  !*** multi ./pages/addBusiness.js ***!
-  \************************************/
+/***/ 4:
+/*!*********************************!*\
+  !*** multi ./pages/category.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /workspace/mybuzzpe/pages/addBusiness.js */"./pages/addBusiness.js");
+module.exports = __webpack_require__(/*! /workspace/mybuzzpe/pages/category.js */"./pages/category.js");
 
 
 /***/ }),
@@ -5272,6 +4472,17 @@ module.exports = require("axios");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/json/stringify");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/assign":
+/*!***************************************************!*\
+  !*** external "core-js/library/fn/object/assign" ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/assign");
 
 /***/ }),
 
@@ -5316,17 +4527,6 @@ module.exports = require("core-js/library/fn/object/get-prototype-of");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/set-prototype-of");
-
-/***/ }),
-
-/***/ "core-js/library/fn/promise":
-/*!*********************************************!*\
-  !*** external "core-js/library/fn/promise" ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/library/fn/promise");
 
 /***/ }),
 
@@ -5418,14 +4618,36 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-select":
-/*!*******************************!*\
-  !*** external "react-select" ***!
-  \*******************************/
+/***/ "react-slick":
+/*!******************************!*\
+  !*** external "react-slick" ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("react-select");
+module.exports = require("react-slick");
+
+/***/ }),
+
+/***/ "react-toastify":
+/*!*********************************!*\
+  !*** external "react-toastify" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-toastify");
+
+/***/ }),
+
+/***/ "reactstrap":
+/*!*****************************!*\
+  !*** external "reactstrap" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("reactstrap");
 
 /***/ }),
 
@@ -5441,4 +4663,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=addBusiness.js.map
+//# sourceMappingURL=category.js.map

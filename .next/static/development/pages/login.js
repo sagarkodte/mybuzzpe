@@ -15028,7 +15028,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!****************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=%2Fworkspace%2Fmybuzzpe%2Fpages%2Flogin.js ***!
   \****************************************************************************************************************/
@@ -15051,5 +15051,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js","styles"]]]);
+},[[4,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=login.js.map
