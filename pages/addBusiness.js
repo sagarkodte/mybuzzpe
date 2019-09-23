@@ -96,7 +96,7 @@ export default class extends React.Component {
           'addressPincode' : this.state.addressPincode,
           'businessContactNumbers' : this.state.businessContactNumbers,
           'addressArea' : this.state.addressArea,
-          'businessCategory' : this.state.businessCategory,
+          'businessCategory' : (this.state.businessCategory).toString(),
           'businessTags' : this.state.businessTags
         }, {
           headers: {
