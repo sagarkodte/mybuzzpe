@@ -40,53 +40,57 @@ export default class extends React.Component {
             suggestions: [],
             budgetType: [{ value: 'Monthly', label: 'Monthly' },
             { value: 'Hourly', label: 'Hourly' }],
-            SelectedbudgetType:'',
-            services:''
+            SelectedbudgetType: '',
+            services: '',
+            file: null,
+            showUploadFile: false,
+            projectID: ''
         };
     }
 
     componentDidMount = () => {
         if (localStorage.getItem('token') !== null) {
             console.log('Data Available');
-            this.setState({ token: localStorage.getItem('token') }, function () {
+            this.setState({ token: localStorage.getItem('token') }, function() {
                 console.log(this.state.token)
             });
         }
         category.getMainCategories().then(res => {
             let a = [];
-            res.data.forEach(function (item) {
+            res.data.forEach(function(item) {
                 a.push({ value: item.path, label: item.name });
             });
-            this.setState({ categoryArray: a }, function () {
+            this.setState({ categoryArray: a }, function() {
                 console.log(this.state.categoryArray);
             });
         }).catch(error => {
             console.log('error 8', error)
         });
     }
+
     handleDelete(i) {
         const tags = this.state.tags.slice(0)
         tags.splice(i, 1)
-        this.setState({ tags }, function () {
+        this.setState({ tags }, function() {
             var array = []
-            this.state.tags.map((item,i)=>{
+            this.state.tags.map((item, i) => {
                 array.push(item.name)
                 array.join(',')
                 console.log(array)
-                this.setState({services:array})
+                this.setState({ services: array })
             })
         })
     }
 
     handleAddition(tag) {
         const tags = [].concat(this.state.tags, tag)
-        this.setState({ tags }, function () {
+        this.setState({ tags }, function() {
             var array = []
-            this.state.tags.map((item,i)=>{
+            this.state.tags.map((item, i) => {
                 array.push(item.name)
                 array.join(',')
                 console.log(array)
-                this.setState({services:array})
+                this.setState({ services: array })
 
             })
         })
@@ -110,13 +114,13 @@ export default class extends React.Component {
         });
     }
     handleCategoryChange = selectedOption => {
-        this.setState({ selectedOption }, function () {
+        this.setState({ selectedOption }, function() {
             category.getSubCategories(this.state.selectedOption.value).then(res => {
                 let a = [];
-                res.data.forEach(function (item) {
+                res.data.forEach(function(item) {
                     a.push({ value: item.path, label: item.name });
                 });
-                this.setState({ subCategoryArray: a }, function () {
+                this.setState({ subCategoryArray: a }, function() {
                     console.log(this.state.subCategoryArray);
                 });
             }).catch(error => {
@@ -126,22 +130,22 @@ export default class extends React.Component {
     }
     getBudgetType = (selectedOption) => {
         console.log(selectedOption.value)
-        this.setState({SelectedbudgetType:selectedOption.value})
+        this.setState({ SelectedbudgetType: selectedOption.value })
 
     }
     handleSubCategoryChange = selectedOption => {
         this.setState({ selectedSubOption: selectedOption });
     }
-    addBusiness = () => {
+    addProject = () => {
         let cat = this.state.selectedOption;
         let subCat = this.state.selectedSubOption;
         let projectCategory = []
         subCat.push(cat);
-        subCat.forEach(function (item) {
+        subCat.forEach(function(item) {
             projectCategory.push(item.value);
         });
 
-        this.setState({ projectCategory: projectCategory }, function () {
+        this.setState({ projectCategory: projectCategory }, function() {
             business.addProject({
                 'description': this.state.projectDescription,
                 'category': (this.state.projectCategory).toString(),
@@ -150,17 +154,55 @@ export default class extends React.Component {
                 'budgetType': this.state.SelectedbudgetType,
                 'note': this.state.note,
             }, {
-                    headers: {
-                        'x-access-token': this.state.token
-                    }
+                headers: {
+                    'x-access-token': this.state.token
                 }
+            }
             ).then(res => {
-                console.log('res3', res);
+                console.log('res3', res.data);
+                this.setState({ projectID: res.data._id }, function() {
+                    console.log(this.state.projectID)
+                    this.setState({ showUploadFile: true }, function() {
+                        this.scrollToTop()
+                    })
+                })
+
+
             }).catch(err => {
                 console.log('err3', err);
             });
         });
     }
+    onSubmit = (e) => {
+        e.preventDefault()
+        this.uploadFile(this.state.file);
+    }
+    onChange = (e) => {
+        this.setState({ file: e.target.files[0] })
+    }
+
+    uploadFile = (file) => {
+        const formData = new FormData();
+        formData.append('sampleFile', file)
+        formData.append('projectId', this.state.projectID)
+        axios.post(Config.url + '/api/project/uploadfile', formData, {
+            headers: {
+                'content-type': 'multipart/form-data',
+                'x-access-token': this.state.token
+            }
+        }).then(res => {
+            console.log(res);
+        }).catch(error => {
+            // return error;
+        });
+    }
+    scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    }
+
     render() {
 
         return (<Layout>
@@ -168,9 +210,10 @@ export default class extends React.Component {
                 <div className="inner-box">
                     <div className="dashboard-box d-sm-flex align-items-center justify-content-between ">
                         <h2 className="dashbord-title">Add new project</h2>
-                        {/* <Link href="addBusiness"><a data-toggle="modal"  className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Create</a></Link> */}
+                        {/* <Link href="addProject"><a data-toggle="modal"  className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Create</a></Link> */}
                     </div>
-                    <div className="col-md-12 col-sm-12 col-sx-12">
+                    <div ref={(el) => { this.uploadDiv = el; }} class="dashboard-wrapper" id="shopDetails"></div>
+                    {this.state.showUploadFile ? '' : <div className="col-md-12 col-sm-12 col-sx-12">
                         <div className="form-group mb-3">
                             <label className="control-label">Project Description</label>
                             <textarea className="form-control" placeholder="" name="projectDescription" value={this.state.projectDescription} onChange={this.handleChange} rows={3} data-error="Write your message" required />
@@ -196,7 +239,7 @@ export default class extends React.Component {
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Budget</label>
-                            <input className="form-control input-md" name="budgetAmt" value={this.state.budgetAmt} type="text" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="budgetAmt" value={this.state.budgetAmt} type="number" onChange={this.handleChange} />
                             <p><font color="red">{this.state.errors.budgetAmt}</font></p>
                         </div>
                         <div className="form-group mb-3">
@@ -208,16 +251,23 @@ export default class extends React.Component {
                             <textarea className="form-control" placeholder="" name="note" value={this.state.note} onChange={this.handleChange} rows={3} data-error="Write your message" required />
                             <p><font color="red">{this.state.errors.note}</font></p>
                         </div>
-                        
+
                         {this.state.success !== '' ? <div className="alert alert-success">
                             {this.state.success}
                         </div> : ''}
                         {this.state.error ? <div className="alert alert-danger">
                             {this.state.error}
                         </div> : ''}
-                        <button className="btn btn-common" type="button" onClick={this.addBusiness}>Submit</button>
+                        <button className="btn btn-common" type="button" onClick={this.addProject}>Submit</button>
                         <button className="btn btn-common" type="button" onClick={this.onCanel}>Cancel</button>
-                    </div>
+                    </div>}
+                    {this.state.showUploadFile ? <div className="col-md-12 col-sm-12 col-sx-12"><div className="form-group mb-3">
+                        <label className="control-label">Add Project Related File</label>
+                        <form onSubmit={this.onSubmit}>
+                            <input className="type_file" type="file" onChange={this.onChange} />
+                            <button className="btn btn-common" type="submit">Upload File</button>
+                        </form>
+                    </div></div> : ''}
                 </div>
             </div>
         </Layout>);

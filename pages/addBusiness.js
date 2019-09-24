@@ -15,8 +15,9 @@ export default class extends React.Component {
             businessName: '',
             businessDescription: '',
             addressLine1: '',
-            addressCity: '',
             addressState: '',
+            addressArea: '',
+            addressCity: '',
             addressPincode: '',
             categoryType: 'Select Category Type',
             category: 'Select Category',
@@ -34,7 +35,10 @@ export default class extends React.Component {
             selectedOption: null,
             subCategoryArray: [],
             selectedSubOption: null,
-            businessCategory: []
+            businessCategory: [],
+            file: null,
+            showUploadFile: false,
+            projectID: ''
         };
     }
 
@@ -45,71 +49,110 @@ export default class extends React.Component {
                 console.log(this.state.token)
             });
         }
-        category.getMainCategories().then(res=> {
-          let a = [];
-          res.data.forEach(function(item) {
-            a.push({value: item.path, label: item.name});
-          });
-          this.setState({categoryArray: a}, function(){
-            console.log(this.state.categoryArray);
-          });
-        }).catch(error=> {
-          console.log('error 8', error)
+        category.getMainCategories().then(res => {
+            let a = [];
+            res.data.forEach(function(item) {
+                a.push({ value: item.path, label: item.name });
+            });
+            this.setState({ categoryArray: a }, function() {
+                console.log(this.state.categoryArray);
+            });
+        }).catch(error => {
+            console.log('error 8', error)
         });
     }
     handleChange = (event) => {
-      this.setState({[event.target.name]: event.target.value});
+        this.setState({ [event.target.name]: event.target.value });
     }
     handleCategoryChange = selectedOption => {
-      this.setState({ selectedOption }, function(){
-        category.getSubCategories(this.state.selectedOption.value).then(res=> {
-          let a = [];
-          res.data.forEach(function(item) {
-            a.push({value: item.path, label: item.name});
-          });
-          this.setState({subCategoryArray: a}, function(){
-            console.log(this.state.subCategoryArray);
-          });
-        }).catch(error=> {
-          console.log('error 8', error)
+        this.setState({ selectedOption }, function() {
+            category.getSubCategories(this.state.selectedOption.value).then(res => {
+                let a = [];
+                res.data.forEach(function(item) {
+                    a.push({ value: item.path, label: item.name });
+                });
+                this.setState({ subCategoryArray: a }, function() {
+                    console.log(this.state.subCategoryArray);
+                });
+            }).catch(error => {
+                console.log('error 8', error)
+            });
         });
-      });
     }
     handleSubCategoryChange = selectedOption => {
-      this.setState({ selectedSubOption: selectedOption });
+        this.setState({ selectedSubOption: selectedOption });
     }
     addBusiness = () => {
-      let cat = this.state.selectedOption;
-      let subCat = this.state.selectedSubOption;
-      let businessCategory = []
-      subCat.push(cat);
-      subCat.forEach(function(item) {
-        businessCategory.push(item.value);
-      });
-      this.setState({businessCategory: businessCategory}, function() {
-        business.addBusiness({
-          'businessName' : this.state.businessName,
-          'businessDescription' : this.state.businessDescription,
-          'addressLine1' : this.state.addressLine1,
-          'addressCity' : this.state.addressCity,
-          'addressState' : this.state.addressState,
-          'addressPincode' : this.state.addressPincode,
-          'businessContactNumbers' : this.state.businessContactNumbers,
-          'addressArea' : this.state.addressArea,
-          'businessCategory' : (this.state.businessCategory).toString(),
-          'businessTags' : this.state.businessTags
-        }, {
-          headers: {
-              'x-access-token': this.state.token
-            }
-          }
-        ).then(res => {
-          console.log('res3', res);
-        }).catch(err => {
-          console.log('err3', err);
+        let cat = this.state.selectedOption;
+        let subCat = this.state.selectedSubOption;
+        let businessCategory = []
+        subCat.push(cat);
+        subCat.forEach(function(item) {
+            businessCategory.push(item.value);
         });
-      });
+        this.setState({ businessCategory: businessCategory }, function() {
+            business.addBusiness({
+                'businessName': this.state.businessName,
+                'businessDescription': this.state.businessDescription,
+                'addressLine1': this.state.addressLine1,
+                'addressArea': this.state.addressArea,
+                'addressCity': this.state.addressCity,
+                'addressState': this.state.addressState,
+                'addressPincode': this.state.addressPincode,
+                'businessContactNumbers': this.state.businessContactNumbers,
+                'businessCategory': (this.state.businessCategory).toString(),
+                'businessTags': this.state.businessTags
+            }, {
+                headers: {
+                    'x-access-token': this.state.token
+                }
+            }
+            ).then(res => {
+                console.log('res3', res);
+                this.setState({ projectID: res.data._id }, function() {
+                    console.log(this.state.projectID)
+                    this.setState({ showUploadFile: true }, function() {
+                        this.scrollToTop()
+                    })
+                })
+            }).catch(err => {
+                console.log('err3', err);
+            });
+        });
     }
+
+    onChange = (e) => {
+        this.setState({ file: e.target.files[0] })
+    }
+
+    onSubmit = (e) => {
+        e.preventDefault()
+        this.uploadFile(this.state.file);
+    }
+
+    uploadFile = (file) => {
+        const formData = new FormData();
+        formData.append('sampleFile', file)
+        formData.append('businessId', this.state.projectID)
+        axios.post(Config.url + '/api/business/uploadphotos', formData, {
+            headers: {
+                'content-type': 'multipart/form-data',
+                'x-access-token': this.state.token
+            }
+        }).then(res => {
+            console.log(res);
+        }).catch(error => {
+            // return error;
+        });
+    }
+
+    scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    }
+
     render() {
         return (<Layout>
             <div className="page-content">
@@ -118,8 +161,8 @@ export default class extends React.Component {
                         <h2 className="dashbord-title">Add new business</h2>
                         {/* <Link href="addBusiness"><a data-toggle="modal"  className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Create</a></Link> */}
                     </div>
-                    <div className="dashboard-wrapper" id="shopDetails"></div>
-                    <div className="col-md-12 col-sm-12 col-sx-12">
+                    <div ref={(el) => { this.uploadDiv = el; }} class="dashboard-wrapper" id="shopDetails"></div>
+                    {this.state.showUploadFile ? '' : <div className="col-md-12 col-sm-12 col-sx-12">
                         <div className="form-group mb-3">
                             <label className="control-label">Business Name*</label>
                             <input className="form-control input-md" name="businessName" value={this.state.businessName} type="text" onChange={this.handleChange} />
@@ -132,8 +175,8 @@ export default class extends React.Component {
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address Area *</label>
-                            <input className="form-control input-md" name="addressarea" value={this.state.addressarea} type="text" onChange={this.handleChange} />
-                            <p><font color="red">{this.state.errors.addressarea}</font></p>
+                            <input className="form-control input-md" name="addressArea" value={this.state.addressArea} type="text" onChange={this.handleChange} />
+                            <p><font color="red">{this.state.errors.addressArea}</font></p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address City *</label>
@@ -157,11 +200,11 @@ export default class extends React.Component {
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Select Category:</label>
-                            <Select onChange={this.handleCategoryChange} options={this.state.categoryArray}/>
+                            <Select onChange={this.handleCategoryChange} options={this.state.categoryArray} />
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Select Sub Category:</label>
-                            <Select value={this.state.selectedSubOption} isMulti onChange={(...args)=>this.handleSubCategoryChange(...args)} options={this.state.subCategoryArray}/>
+                            <Select value={this.state.selectedSubOption} isMulti onChange={(...args) => this.handleSubCategoryChange(...args)} options={this.state.subCategoryArray} />
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Business Tags*</label>
@@ -192,7 +235,14 @@ export default class extends React.Component {
                         </div> : ''}
                         <button className="btn btn-common" type="button" onClick={this.addBusiness}>Submit</button>
                         <button className="btn btn-common" type="button" onClick={this.onCanel}>Cancel</button>
-                    </div>
+                    </div>}
+                    {this.state.showUploadFile ? <div className="col-md-12 col-sm-12 col-sx-12"><div className="form-group mb-3">
+                        <label className="control-label">Add Image</label>
+                        <form onSubmit={this.onSubmit}>
+                            <input className="type_file" type="file" onChange={this.onChange} />
+                            <button className="btn btn-common" type="submit">Upload File</button>
+                        </form>
+                    </div></div> : ''}
                 </div>
             </div>
         </Layout>);

@@ -6267,3 +6267,8 @@ h4.panel-title{margin:10px 0px !important;}
 }
 
 /* React tags ends */
+
+.type_file {
+    border:1px solid #ced4da;
+    border-radius: 4px;
+}
