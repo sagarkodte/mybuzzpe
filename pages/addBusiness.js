@@ -7,6 +7,14 @@ import Link from 'next/link';
 import category from '../Services/categoryService';
 import business from '../Services/businessService';
 import { Alert } from "react-alert";
+import { toast, ToastContainer } from 'react-toastify';
+import Router from 'next/router'
+import Loader from '../Components/Loader';
+
+
+
+
+
 
 export default class extends React.Component {
     constructor(props) {
@@ -46,16 +54,16 @@ export default class extends React.Component {
     componentDidMount = () => {
         if (localStorage.getItem('token') !== null) {
             console.log('Data Available');
-            this.setState({ token: localStorage.getItem('token') }, function() {
+            this.setState({ token: localStorage.getItem('token') }, function () {
                 console.log(this.state.token)
             });
         }
         category.getMainCategories().then(res => {
             let a = [];
-            res.data.forEach(function(item) {
+            res.data.forEach(function (item) {
                 a.push({ value: item.path, label: item.name });
             });
-            this.setState({ categoryArray: a }, function() {
+            this.setState({ categoryArray: a }, function () {
                 console.log(this.state.categoryArray);
             });
         }).catch(error => {
@@ -66,13 +74,13 @@ export default class extends React.Component {
         this.setState({ [event.target.name]: event.target.value });
     }
     handleCategoryChange = selectedOption => {
-        this.setState({ selectedOption }, function() {
+        this.setState({ selectedOption }, function () {
             category.getSubCategories(this.state.selectedOption.value).then(res => {
                 let a = [];
-                res.data.forEach(function(item) {
+                res.data.forEach(function (item) {
                     a.push({ value: item.path, label: item.name });
                 });
-                this.setState({ subCategoryArray: a }, function() {
+                this.setState({ subCategoryArray: a }, function () {
                     console.log(this.state.subCategoryArray);
                 });
             }).catch(error => {
@@ -84,15 +92,14 @@ export default class extends React.Component {
         this.setState({ selectedSubOption: selectedOption });
     }
     addBusiness = () => {
-        const alert = useAlert();
         let cat = this.state.selectedOption;
         let subCat = this.state.selectedSubOption;
         let businessCategory = []
         subCat.push(cat);
-        subCat.forEach(function(item) {
+        subCat.forEach(function (item) {
             businessCategory.push(item.value);
         });
-        this.setState({ businessCategory: businessCategory }, function() {
+        this.setState({ businessCategory: businessCategory }, function () {
             business.addBusiness({
                 'businessName': this.state.businessName,
                 'businessDescription': this.state.businessDescription,
@@ -105,15 +112,15 @@ export default class extends React.Component {
                 'businessCategory': (this.state.businessCategory).toString(),
                 'businessTags': this.state.businessTags
             }, {
-                headers: {
-                    'x-access-token': this.state.token
+                    headers: {
+                        'x-access-token': this.state.token
+                    }
                 }
-            }
             ).then(res => {
                 console.log('res3', res);
-                this.setState({ projectID: res.data._id }, function() {
+                this.setState({ projectID: res.data._id }, function () {
                     console.log(this.state.projectID)
-                    this.setState({ showUploadFile: true }, function() {
+                    this.setState({ showUploadFile: true }, function () {
                         this.scrollToTop()
                     })
                 })
@@ -143,14 +150,15 @@ export default class extends React.Component {
             }
         }).then(res => {
             console.log(res);
-
+            toast("Business Added Successfully.!", {
+                onClose: () => Router.push({
+                    pathname: '/business-list',
+                    //state: { detail: path }
+                })
+            });
         }).catch(error => {
             // return error;
         });
-    }
-
-    hh = () => {
-        Alert.show('Oh look, an alert!')
     }
 
     scrollToTop = () => {
@@ -161,14 +169,17 @@ export default class extends React.Component {
     }
 
     render() {
+
         return (<Layout>
+            <ToastContainer />
+            <Loader/>
             <div className="page-content">
                 <div className="inner-box">
                     <div className="dashboard-box d-sm-flex align-items-center justify-content-between ">
                         <h2 className="dashbord-title">Add new business</h2>
                         {/* <Link href="addBusiness"><a data-toggle="modal"  className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Create</a></Link> */}
                     </div>
-                    <div ref={(el) => { this.uploadDiv = el; }} class="dashboard-wrapper" id="shopDetails"></div>
+                    <div ref={(el) => { this.uploadDiv = el; }} class="dashboard-wrapper" id="business-list"></div>
                     {this.state.showUploadFile ? '' : <div className="col-md-12 col-sm-12 col-sx-12">
                         <div className="form-group mb-3">
                             <label className="control-label">Business Name*</label>

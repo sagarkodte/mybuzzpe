@@ -212,7 +212,7 @@ export default class extends React.Component {
                         <h2 className="dashbord-title">Add new project</h2>
                         {/* <Link href="addProject"><a data-toggle="modal"  className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Create</a></Link> */}
                     </div>
-                    <div ref={(el) => { this.uploadDiv = el; }} class="dashboard-wrapper" id="shopDetails"></div>
+                    <div ref={(el) => { this.uploadDiv = el; }} class="dashboard-wrapper" id="business-list"></div>
                     {this.state.showUploadFile ? '' : <div className="col-md-12 col-sm-12 col-sx-12">
                         <div className="form-group mb-3">
                             <label className="control-label">Project Description</label>
