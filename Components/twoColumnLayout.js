@@ -135,7 +135,13 @@ export default class extends React.Component {
                                                 <li>
                                                     <Link href="shopDetails"><a >
                                                         <i className="far fa-edit" />
-                                                        <span>Shop Details</span>
+                                                        <span>Businesses</span>
+                                                    </a></Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="shopDetails"><a >
+                                                        <i className="far fa-edit" />
+                                                        <span>Projects</span>
                                                     </a></Link>
                                                 </li>
                                                 <li>

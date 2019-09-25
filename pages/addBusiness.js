@@ -6,6 +6,7 @@ import Config from '../config';
 import Link from 'next/link';
 import category from '../Services/categoryService';
 import business from '../Services/businessService';
+import { Alert } from "react-alert";
 
 export default class extends React.Component {
     constructor(props) {
@@ -83,6 +84,7 @@ export default class extends React.Component {
         this.setState({ selectedSubOption: selectedOption });
     }
     addBusiness = () => {
+        const alert = useAlert();
         let cat = this.state.selectedOption;
         let subCat = this.state.selectedSubOption;
         let businessCategory = []
@@ -141,9 +143,14 @@ export default class extends React.Component {
             }
         }).then(res => {
             console.log(res);
+
         }).catch(error => {
             // return error;
         });
+    }
+
+    hh = () => {
+        Alert.show('Oh look, an alert!')
     }
 
     scrollToTop = () => {
@@ -190,12 +197,12 @@ export default class extends React.Component {
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Pincode *</label>
-                            <input className="form-control input-md" name="addressPincode" value={this.state.addressPincode} type="text" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="addressPincode" value={this.state.addressPincode} type="number" onChange={this.handleChange} />
                             <p><font color="red">{this.state.errors.addressPincode}</font></p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Contact Number *</label>
-                            <input className="form-control input-md" name="businessContactNumbers" value={this.state.businessContactNumbers} type="text" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="businessContactNumbers" value={this.state.businessContactNumbers} type="number" onChange={this.handleChange} />
                             <p><font color="red">{this.state.errors.businessContactNumbers}</font></p>
                         </div>
                         <div className="form-group mb-3">
@@ -234,7 +241,7 @@ export default class extends React.Component {
                             {this.state.error}
                         </div> : ''}
                         <button className="btn btn-common" type="button" onClick={this.addBusiness}>Submit</button>
-                        <button className="btn btn-common" type="button" onClick={this.onCanel}>Cancel</button>
+                        <button className="btn btn-common" type="button" onClick={this.hh}>Cancel</button>
                     </div>}
                     {this.state.showUploadFile ? <div className="col-md-12 col-sm-12 col-sx-12"><div className="form-group mb-3">
                         <label className="control-label">Add Image</label>
