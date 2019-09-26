@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -104,7 +104,7 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "D:\\Buzzpe\\Components\\Loader.js";
+var _jsxFileName = "/workspace/mybuzzpe/Components/Loader.js";
 
 
 var Loader = function Loader() {
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\Buzzpe\\Components\\dashBoardLayout.js";
+var _jsxFileName = "/workspace/mybuzzpe/Components/dashBoardLayout.js";
 
 
 
@@ -744,7 +744,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\Buzzpe\\Components\\header.js";
+var _jsxFileName = "/workspace/mybuzzpe/Components/header.js";
 
 
 
@@ -1196,7 +1196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\Buzzpe\\Components\\twoColumnLayout.js";
+var _jsxFileName = "/workspace/mybuzzpe/Components/twoColumnLayout.js";
 
 
 
@@ -1661,7 +1661,7 @@ function (_React$Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        href: "business-list",
+        href: "project-list",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 142
@@ -2304,9 +2304,9 @@ function (_React$Component) {
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js?288e");
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
-var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js?795b"));
+var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js"));
 
 var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ "axios"));
 
@@ -2352,9 +2352,9 @@ module.exports.addProject = function () {
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js?288e");
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
-var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js?795b"));
+var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js"));
 
 var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ "axios"));
 
@@ -2400,18 +2400,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js?4a33":
-/*!*******************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js?f499":
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
   \***********************************************************************/
@@ -2422,18 +2411,7 @@ module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "c
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js?0581":
-/*!******************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/core-js/object/create.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/create */ "core-js/library/fn/object/create");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js?4aa6":
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/create.js ***!
   \**********************************************************************/
@@ -2444,18 +2422,7 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/create */ "co
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js?7d96":
-/*!***************************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/define-property */ "core-js/library/fn/object/define-property");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js?85f2":
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
   \*******************************************************************************/
@@ -2466,7 +2433,7 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js?061b":
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js":
 /*!********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js ***!
   \********************************************************************************/
@@ -2477,29 +2444,7 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/get-prototype
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js?d59f":
-/*!****************************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/get-prototype-of */ "core-js/library/fn/object/get-prototype-of");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js?289f":
-/*!****************************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype-of */ "core-js/library/fn/object/set-prototype-of");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js?4d16":
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js":
 /*!********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js ***!
   \********************************************************************************/
@@ -2510,7 +2455,7 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/promise.js?795b":
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/promise.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/promise.js ***!
   \****************************************************************/
@@ -2521,7 +2466,7 @@ module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js?67bb":
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/symbol.js ***!
   \***************************************************************/
@@ -2532,29 +2477,7 @@ module.exports = __webpack_require__(/*! core-js/library/fn/symbol */ "core-js/l
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js?74f4":
-/*!***********************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/core-js/symbol.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/symbol */ "core-js/library/fn/symbol");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js?3d5b":
-/*!********************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/symbol/iterator */ "core-js/library/fn/symbol/iterator");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js?5d58":
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js":
 /*!************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js ***!
   \************************************************************************/
@@ -2566,9 +2489,9 @@ module.exports = __webpack_require__(/*! core-js/library/fn/symbol/iterator */ "
 /***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/assertThisInitialized.js":
-/*!**************************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/helpers/assertThisInitialized.js ***!
-  \**************************************************************************************/
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/assertThisInitialized.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2585,9 +2508,9 @@ module.exports = _assertThisInitialized;
 /***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js":
-/*!*******************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js ***!
-  \*******************************************************************************/
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2602,13 +2525,13 @@ module.exports = _classCallCheck;
 /***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/createClass.js":
-/*!****************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/helpers/createClass.js ***!
-  \****************************************************************************/
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/createClass.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js?7d96");
+var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
 function _defineProperties(target, props) {
   for (var i = 0; i < props.length; i++) {
@@ -2679,7 +2602,7 @@ function _classCallCheck(instance, Constructor) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _createClass; });
-/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js?85f2");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 /* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -2712,7 +2635,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
-/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js?85f2");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 /* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
 
 function _defineProperty(obj, key, value) {
@@ -2742,9 +2665,9 @@ function _defineProperty(obj, key, value) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _getPrototypeOf; });
-/* harmony import */ var _core_js_object_get_prototype_of__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/get-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js?061b");
+/* harmony import */ var _core_js_object_get_prototype_of__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/get-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js");
 /* harmony import */ var _core_js_object_get_prototype_of__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_prototype_of__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _core_js_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js?4d16");
+/* harmony import */ var _core_js_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
 /* harmony import */ var _core_js_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -2767,7 +2690,7 @@ function _getPrototypeOf(o) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _inherits; });
-/* harmony import */ var _core_js_object_create__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/create */ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js?4aa6");
+/* harmony import */ var _core_js_object_create__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/create */ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js");
 /* harmony import */ var _core_js_object_create__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_create__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _setPrototypeOf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/setPrototypeOf.js");
 
@@ -2823,7 +2746,7 @@ function _possibleConstructorReturn(self, call) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _setPrototypeOf; });
-/* harmony import */ var _core_js_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js?4d16");
+/* harmony import */ var _core_js_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
 /* harmony import */ var _core_js_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_0__);
 
 function _setPrototypeOf(o, p) {
@@ -2847,9 +2770,9 @@ function _setPrototypeOf(o, p) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _typeof; });
-/* harmony import */ var _core_js_symbol_iterator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/symbol/iterator */ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js?5d58");
+/* harmony import */ var _core_js_symbol_iterator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/symbol/iterator */ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js");
 /* harmony import */ var _core_js_symbol_iterator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_symbol_iterator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _core_js_symbol__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/symbol */ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js?67bb");
+/* harmony import */ var _core_js_symbol__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/symbol */ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js");
 /* harmony import */ var _core_js_symbol__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_symbol__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -2873,15 +2796,15 @@ function _typeof(obj) {
 /***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js":
-/*!*******************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js ***!
-  \*******************************************************************************/
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _Object$getPrototypeOf = __webpack_require__(/*! ../core-js/object/get-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js?d59f");
+var _Object$getPrototypeOf = __webpack_require__(/*! ../core-js/object/get-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js");
 
-var _Object$setPrototypeOf = __webpack_require__(/*! ../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js?289f");
+var _Object$setPrototypeOf = __webpack_require__(/*! ../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
 
 function _getPrototypeOf(o) {
   module.exports = _getPrototypeOf = _Object$setPrototypeOf ? _Object$getPrototypeOf : function _getPrototypeOf(o) {
@@ -2895,13 +2818,13 @@ module.exports = _getPrototypeOf;
 /***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/inherits.js":
-/*!*************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/helpers/inherits.js ***!
-  \*************************************************************************/
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/inherits.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _Object$create = __webpack_require__(/*! ../core-js/object/create */ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js?0581");
+var _Object$create = __webpack_require__(/*! ../core-js/object/create */ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js");
 
 var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/setPrototypeOf.js");
 
@@ -2924,24 +2847,7 @@ module.exports = _inherits;
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js?1b8c":
-/*!**************************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js ***!
-  \**************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-module.exports = _interopRequireDefault;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js?288e":
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js":
 /*!******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js ***!
   \******************************************************************************/
@@ -2959,9 +2865,9 @@ module.exports = _interopRequireDefault;
 /***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/possibleConstructorReturn.js":
-/*!******************************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/helpers/possibleConstructorReturn.js ***!
-  \******************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/possibleConstructorReturn.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2982,13 +2888,13 @@ module.exports = _possibleConstructorReturn;
 /***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/setPrototypeOf.js":
-/*!*******************************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/helpers/setPrototypeOf.js ***!
-  \*******************************************************************************/
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/setPrototypeOf.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _Object$setPrototypeOf = __webpack_require__(/*! ../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js?289f");
+var _Object$setPrototypeOf = __webpack_require__(/*! ../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
 
 function _setPrototypeOf(o, p) {
   module.exports = _setPrototypeOf = _Object$setPrototypeOf || function _setPrototypeOf(o, p) {
@@ -3004,15 +2910,15 @@ module.exports = _setPrototypeOf;
 /***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/typeof.js":
-/*!***********************************************************************!*\
-  !*** ../buzzpe/node_modules/@babel/runtime-corejs2/helpers/typeof.js ***!
-  \***********************************************************************/
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/typeof.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _Symbol$iterator = __webpack_require__(/*! ../core-js/symbol/iterator */ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js?3d5b");
+var _Symbol$iterator = __webpack_require__(/*! ../core-js/symbol/iterator */ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js");
 
-var _Symbol = __webpack_require__(/*! ../core-js/symbol */ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js?74f4");
+var _Symbol = __webpack_require__(/*! ../core-js/symbol */ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js");
 
 function _typeof2(obj) { if (typeof _Symbol === "function" && typeof _Symbol$iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof _Symbol === "function" && obj.constructor === _Symbol && obj !== _Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
@@ -3046,9 +2952,9 @@ module.exports = _typeof;
 /***/ }),
 
 /***/ "./node_modules/next/dist/client/link.js":
-/*!*******************************************************!*\
-  !*** ../buzzpe/node_modules/next/dist/client/link.js ***!
-  \*******************************************************/
+/*!***********************************************!*\
+  !*** ./node_modules/next/dist/client/link.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3056,9 +2962,9 @@ module.exports = _typeof;
 
 /* global __NEXT_DATA__ */
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js?1b8c");
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
-var _stringify = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js?4a33"));
+var _stringify = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js"));
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
@@ -3299,9 +3205,9 @@ exports.default = Link;
 /***/ }),
 
 /***/ "./node_modules/next/link.js":
-/*!*******************************************!*\
-  !*** ../buzzpe/node_modules/next/link.js ***!
-  \*******************************************/
+/*!***********************************!*\
+  !*** ./node_modules/next/link.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3310,10 +3216,10 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/addBusiness.js":
-/*!******************************!*\
-  !*** ./pages/addBusiness.js ***!
-  \******************************/
+/***/ "./pages/addProject.js":
+/*!*****************************!*\
+  !*** ./pages/addProject.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3342,8 +3248,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Services_categoryService__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_Services_categoryService__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _Services_businessService__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Services/businessService */ "./Services/businessService.js");
 /* harmony import */ var _Services_businessService__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_Services_businessService__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var react_alert__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-alert */ "react-alert");
-/* harmony import */ var react_alert__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_alert__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var react_tag_autocomplete__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-tag-autocomplete */ "react-tag-autocomplete");
+/* harmony import */ var react_tag_autocomplete__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_tag_autocomplete__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-toastify */ "react-toastify");
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(react_toastify__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! next/router */ "next/router");
@@ -3356,7 +3262,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\Buzzpe\\pages\\addBusiness.js";
+var _jsxFileName = "/workspace/mybuzzpe/pages/addProject.js";
 
 
 
@@ -3414,8 +3320,27 @@ function (_React$Component) {
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleChange", function (event) {
-      _this.setState(Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])({}, event.target.name, event.target.value));
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getAllskills", function (query) {
+      console.log(query);
+      axios__WEBPACK_IMPORTED_MODULE_10___default.a.get(_config__WEBPACK_IMPORTED_MODULE_11___default.a.url + '/api/business/getallskills?p=' + query).then(function (res) {
+        var cata = res.data.data;
+        var arr = cata;
+        var newResponse = arr.map(function (name, id) {
+          return {
+            id: id,
+            name: name
+          };
+        });
+        console.log(newResponse);
+
+        _this.setState({
+          suggestions: newResponse
+        }); //this.setState({ categories: cata });
+        //console.log(this.state.categories)
+
+      }).catch(function (error) {
+        return error;
+      });
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleCategoryChange", function (selectedOption) {
@@ -3444,45 +3369,51 @@ function (_React$Component) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getBudgetType", function (selectedOption) {
+      console.log(selectedOption.value);
+
+      _this.setState({
+        SelectedbudgetType: selectedOption.value
+      });
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleSubCategoryChange", function (selectedOption) {
       _this.setState({
         selectedSubOption: selectedOption
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "addBusiness", function () {
-      var cat = _this.state.selectedOption;
-      var subCat = _this.state.selectedSubOption;
-      var businessCategory = [];
-      subCat.push(cat);
-      subCat.forEach(function (item) {
-        businessCategory.push(item.value);
-      });
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "addProject", function () {
+      if (_this.handleValidation()) {
+        if (_this.state.selectedOption && _this.state.selectedSubOption) {
+          var cat = _this.state.selectedOption;
+          var subCat = _this.state.selectedSubOption;
+          var projectCategory = [];
+          subCat.push(cat);
+          subCat.forEach(function (item) {
+            projectCategory.push(item.value);
+          });
 
-      _this.setState({
-        businessCategory: businessCategory
-      }, function () {
-        var _this3 = this;
+          _this.setState({
+            projectCategory: projectCategory
+          });
+        }
 
-        _Services_businessService__WEBPACK_IMPORTED_MODULE_14___default.a.addBusiness({
-          'businessName': this.state.businessName,
-          'businessDescription': this.state.businessDescription,
-          'addressLine1': this.state.addressLine1,
-          'addressArea': this.state.addressArea,
-          'addressCity': this.state.addressCity,
-          'addressState': this.state.addressState,
-          'addressPincode': this.state.addressPincode,
-          'businessContactNumbers': this.state.businessContactNumbers,
-          'businessCategory': this.state.businessCategory.toString(),
-          'businessTags': this.state.businessTags
+        _Services_businessService__WEBPACK_IMPORTED_MODULE_14___default.a.addProject({
+          'description': _this.state.fields["projectDescription"],
+          'category': _this.state.projectCategory.toString(),
+          'services': _this.state.services.toString(),
+          'budget': _this.state.fields["budgetAmt"],
+          'budgetType': _this.state.SelectedbudgetType,
+          'note': _this.state.note
         }, {
           headers: {
-            'x-access-token': this.state.token
+            'x-access-token': _this.state.token
           }
         }).then(function (res) {
-          console.log('res3', res);
+          console.log('res3', res.data);
 
-          _this3.setState({
+          _this.setState({
             projectID: res.data._id
           }, function () {
             console.log(this.state.projectID);
@@ -3495,13 +3426,7 @@ function (_React$Component) {
         }).catch(function (err) {
           console.log('err3', err);
         });
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onChange", function (e) {
-      _this.setState({
-        file: e.target.files[0]
-      });
+      }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onSubmit", function (e) {
@@ -3510,21 +3435,27 @@ function (_React$Component) {
       _this.uploadFile(_this.state.file);
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onChange", function (e) {
+      _this.setState({
+        file: e.target.files[0]
+      });
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "uploadFile", function (file) {
       var formData = new FormData();
       formData.append('sampleFile', file);
-      formData.append('businessId', _this.state.projectID);
-      axios__WEBPACK_IMPORTED_MODULE_10___default.a.post(_config__WEBPACK_IMPORTED_MODULE_11___default.a.url + '/api/business/uploadphotos', formData, {
+      formData.append('projectId', _this.state.projectID);
+      axios__WEBPACK_IMPORTED_MODULE_10___default.a.post(_config__WEBPACK_IMPORTED_MODULE_11___default.a.url + '/api/project/uploadfile', formData, {
         headers: {
           'content-type': 'multipart/form-data',
           'x-access-token': _this.state.token
         }
       }).then(function (res) {
         console.log(res);
-        Object(react_toastify__WEBPACK_IMPORTED_MODULE_16__["toast"])("Business Added Successfully.!", {
+        Object(react_toastify__WEBPACK_IMPORTED_MODULE_16__["toast"])("Project Added Successfully.!", {
           onClose: function onClose() {
             return next_router__WEBPACK_IMPORTED_MODULE_17___default.a.push({
-              pathname: '/business-list' //state: { detail: path }
+              pathname: '/project-list' //state: { detail: path }
 
             });
           }
@@ -3543,377 +3474,226 @@ function (_React$Component) {
     _this.state = (_this$state = {
       token: '',
       businessName: '',
-      businessDescription: '',
+      note: '',
       addressLine1: '',
-      addressState: '',
-      addressArea: '',
       addressCity: '',
+      addressState: '',
       addressPincode: '',
       categoryType: 'Select Category Type',
       category: 'Select Category',
       subCategory: 'Select Sub Category',
-      businessContactNumbers: '',
+      budgetAmt: '',
       businessTags: '',
       categoryList: '',
       subCategoryList: '',
       subCategoryArray: [],
       errors: {},
+      fields: {},
       success: '',
       error: '',
       // new vars
       categoryArray: [],
       selectedOption: null
-    }, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "subCategoryArray", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "selectedSubOption", null), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "businessCategory", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "file", null), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "showUploadFile", false), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "projectID", ''), _this$state);
+    }, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "subCategoryArray", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "selectedSubOption", null), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "projectCategory", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "tags", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "suggestions", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "budgetType", [{
+      value: 'Monthly',
+      label: 'Monthly'
+    }, {
+      value: 'Hourly',
+      label: 'Hourly'
+    }]), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "SelectedbudgetType", ''), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "services", ''), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "file", null), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "showUploadFile", false), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "projectID", ''), _this$state);
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(_default, [{
+    key: "handleDelete",
+    value: function handleDelete(i) {
+      var tags = this.state.tags.slice(0);
+      tags.splice(i, 1);
+      this.setState({
+        tags: tags
+      }, function () {
+        var _this3 = this;
+
+        var array = [];
+        this.state.tags.map(function (item, i) {
+          array.push(item.name);
+          array.join(',');
+          console.log(array);
+
+          _this3.setState({
+            services: array
+          });
+        });
+      });
+    }
+  }, {
+    key: "handleAddition",
+    value: function handleAddition(tag) {
+      var tags = [].concat(this.state.tags, tag);
+      this.setState({
+        tags: tags
+      }, function () {
+        var _this4 = this;
+
+        var array = [];
+        this.state.tags.map(function (item, i) {
+          array.push(item.name);
+          array.join(',');
+          console.log(array);
+
+          _this4.setState({
+            services: array
+          });
+        });
+      });
+    } // handleChange = (event) => {
+    //     this.setState({ [event.target.name]: event.target.value });
+    // }
+
+  }, {
+    key: "handleValidation",
+    value: function handleValidation() {
+      var fields = this.state.fields;
+      var errors = {};
+      var formIsValid = true; //Name
+
+      if (!fields["projectDescription"]) {
+        formIsValid = false;
+        errors["projectDescription"] = react_toastify__WEBPACK_IMPORTED_MODULE_16__["toast"].error('Required Project Description');
+      }
+
+      if (!fields["budgetAmt"]) {
+        formIsValid = false;
+        errors["budgetAmt"] = react_toastify__WEBPACK_IMPORTED_MODULE_16__["toast"].error('Required Budget Amount');
+      }
+
+      this.setState({
+        errors: errors
+      });
+      return formIsValid;
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(field, e) {
+      var fields = this.state.fields;
+      fields[field] = e.target.value;
+      this.setState({
+        fields: fields
+      });
+      console.log(this.state.fields);
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Components_twoColumnLayout__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 258
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_toastify__WEBPACK_IMPORTED_MODULE_16__["ToastContainer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Components_Loader__WEBPACK_IMPORTED_MODULE_18__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 259
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "page-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 176
+          lineNumber: 260
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "inner-box",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 261
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "dashboard-box d-sm-flex align-items-center justify-content-between ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 262
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
         className: "dashbord-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 263
         },
         __self: this
-      }, "Add new business")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "Add new project")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         ref: function ref(el) {
-          _this4.uploadDiv = el;
+          _this5.uploadDiv = el;
         },
         class: "dashboard-wrapper",
         id: "business-list",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 182
+          lineNumber: 266
         },
         __self: this
-      }), this.state.showUploadFile ? '' : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }), this.state.showUploadFile ? '' : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
+        name: "contactform",
+        className: "contactform",
+        onSubmit: this.addProject.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 268
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-12 col-sm-12 col-sx-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 269
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 270
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 271
         },
         __self: this
-      }, "Business Name*"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "businessName",
-        value: this.state.businessName,
-        type: "text",
-        onChange: this.handleChange,
+      }, "Project Description"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("textarea", {
+        className: "form-control",
+        placeholder: "",
+        name: "projectDescription",
+        value: this.state.fields["projectDescription"],
+        onChange: this.handleChange.bind(this, 'projectDescription'),
+        rows: 3,
+        "data-error": "Write your message",
+        required: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 272
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 187
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 187
-        },
-        __self: this
-      }, this.state.errors.businessName))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 275
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
-        },
-        __self: this
-      }, "Address Line 1 *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressLine1",
-        value: this.state.addressLine1,
-        type: "text",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 191
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 192
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 192
-        },
-        __self: this
-      }, this.state.errors.addressLine1))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 194
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 195
-        },
-        __self: this
-      }, "Address Area *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressArea",
-        value: this.state.addressArea,
-        type: "text",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 196
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 197
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 197
-        },
-        __self: this
-      }, this.state.errors.addressArea))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 199
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 200
-        },
-        __self: this
-      }, "Address City *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressCity",
-        value: this.state.addressCity,
-        type: "text",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 201
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 202
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 202
-        },
-        __self: this
-      }, this.state.errors.addressCity))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 204
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 205
-        },
-        __self: this
-      }, "Address State*"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressState",
-        value: this.state.addressState,
-        type: "text",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 206
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 207
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 207
-        },
-        __self: this
-      }, this.state.errors.addressState))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 209
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 210
-        },
-        __self: this
-      }, "Pincode *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "addressPincode",
-        value: this.state.addressPincode,
-        type: "number",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 211
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 212
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 212
-        },
-        __self: this
-      }, this.state.errors.addressPincode))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 214
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 215
-        },
-        __self: this
-      }, "Contact Number *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "businessContactNumbers",
-        value: this.state.businessContactNumbers,
-        type: "number",
-        onChange: this.handleChange,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 216
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 217
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 217
-        },
-        __self: this
-      }, this.state.errors.businessContactNumbers))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 219
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 220
+          lineNumber: 276
         },
         __self: this
       }, "Select Category:"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -3921,172 +3701,194 @@ function (_React$Component) {
         options: this.state.categoryArray,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 221
+          lineNumber: 277
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 223
+          lineNumber: 279
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 224
+          lineNumber: 280
         },
         __self: this
       }, "Select Sub Category:"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_8___default.a, {
         value: this.state.selectedSubOption,
         isMulti: true,
         onChange: function onChange() {
-          return _this4.handleSubCategoryChange.apply(_this4, arguments);
+          return _this5.handleSubCategoryChange.apply(_this5, arguments);
         },
         options: this.state.subCategoryArray,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 225
+          lineNumber: 281
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 227
+          lineNumber: 283
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 228
+          lineNumber: 284
         },
         __self: this
-      }, "Business Tags*"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
-        className: "form-control input-md",
-        name: "businessTags",
-        value: this.state.businessTags,
-        type: "text",
-        onChange: this.handleChange,
+      }, "Add Skills *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_tag_autocomplete__WEBPACK_IMPORTED_MODULE_15___default.a, {
+        handleInputChange: this.getAllskills,
+        minQueryLength: 1,
+        tags: this.state.tags,
+        suggestions: this.state.suggestions,
+        handleDelete: this.handleDelete.bind(this),
+        handleAddition: this.handleAddition.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 285
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 230
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 230
-        },
-        __self: this
-      }, this.state.errors.businessTags))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 293
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 294
         },
         __self: this
-      }, "Business Description"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("textarea", {
+      }, "Budget"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "form-control input-md",
+        name: "budgetAmt",
+        value: this.state.fields["budgetAmt"],
+        type: "number",
+        onChange: this.handleChange.bind(this, 'budgetAmt'),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 295
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "form-group mb-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 298
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "control-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 299
+        },
+        __self: this
+      }, "Budget Type"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        onChange: this.getBudgetType,
+        options: this.state.budgetType,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 300
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "form-group mb-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 302
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "control-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 303
+        },
+        __self: this
+      }, "Note"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("textarea", {
         className: "form-control",
         placeholder: "",
-        name: "businessDescription",
-        value: this.state.businessDescription,
+        name: "note",
+        value: this.state.note,
         onChange: this.handleChange,
         rows: 3,
         "data-error": "Write your message",
         required: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 304
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 236
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("font", {
-        color: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 236
-        },
-        __self: this
-      }, this.state.errors.businessDescription))), this.state.success !== '' ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      })), this.state.success !== '' ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "alert alert-success",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 248
+          lineNumber: 307
         },
         __self: this
       }, this.state.success) : '', this.state.error ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "alert alert-danger",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 251
+          lineNumber: 310
         },
         __self: this
       }, this.state.error) : '', react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         className: "btn btn-common",
         type: "button",
-        onClick: this.addBusiness,
+        onClick: this.addProject,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 254
+          lineNumber: 313
         },
         __self: this
       }, "Submit"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         className: "btn btn-common",
         type: "button",
-        onClick: this.hh,
+        onClick: this.onCanel,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 255
+          lineNumber: 314
         },
         __self: this
-      }, "Cancel")), this.state.showUploadFile ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "Cancel"))), this.state.showUploadFile ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-12 col-sm-12 col-sx-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 257
+          lineNumber: 316
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 257
+          lineNumber: 316
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 258
+          lineNumber: 317
         },
         __self: this
-      }, "Add Image"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
+      }, "Add Project Related File"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
         onSubmit: this.onSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 259
+          lineNumber: 318
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -4095,7 +3897,7 @@ function (_React$Component) {
         onChange: this.onChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 260
+          lineNumber: 319
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
@@ -4103,7 +3905,7 @@ function (_React$Component) {
         type: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 320
         },
         __self: this
       }, "Upload File")))) : '')));
@@ -4152,7 +3954,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\Buzzpe\\pages\\forgotPassword.js";
+var _jsxFileName = "/workspace/mybuzzpe/pages/forgotPassword.js";
 
 
 
@@ -4488,7 +4290,7 @@ function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _default; });
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js?f499");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
@@ -4515,7 +4317,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\Buzzpe\\pages\\login.js";
+var _jsxFileName = "/workspace/mybuzzpe/pages/login.js";
 
 
 
@@ -4902,7 +4704,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "D:\\Buzzpe\\pages\\register.js";
+var _jsxFileName = "/workspace/mybuzzpe/pages/register.js";
 
 
 
@@ -5537,14 +5339,14 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 3:
-/*!************************************!*\
-  !*** multi ./pages/addBusiness.js ***!
-  \************************************/
+/***/ 10:
+/*!***********************************!*\
+  !*** multi ./pages/addProject.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Buzzpe\pages\addBusiness.js */"./pages/addBusiness.js");
+module.exports = __webpack_require__(/*! /workspace/mybuzzpe/pages/addProject.js */"./pages/addProject.js");
 
 
 /***/ }),
@@ -5714,17 +5516,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-alert":
-/*!******************************!*\
-  !*** external "react-alert" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-alert");
-
-/***/ }),
-
 /***/ "react-select":
 /*!*******************************!*\
   !*** external "react-select" ***!
@@ -5733,6 +5524,17 @@ module.exports = require("react-alert");
 /***/ (function(module, exports) {
 
 module.exports = require("react-select");
+
+/***/ }),
+
+/***/ "react-tag-autocomplete":
+/*!*****************************************!*\
+  !*** external "react-tag-autocomplete" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-tag-autocomplete");
 
 /***/ }),
 
@@ -5759,4 +5561,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=addBusiness.js.map
+//# sourceMappingURL=addProject.js.map

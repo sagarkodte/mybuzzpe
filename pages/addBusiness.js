@@ -6,7 +6,6 @@ import Config from '../config';
 import Link from 'next/link';
 import category from '../Services/categoryService';
 import business from '../Services/businessService';
-import { Alert } from "react-alert";
 import { toast, ToastContainer } from 'react-toastify';
 import Router from 'next/router'
 import Loader from '../Components/Loader';
@@ -184,37 +183,37 @@ export default class extends React.Component {
                         <div className="form-group mb-3">
                             <label className="control-label">Business Name*</label>
                             <input className="form-control input-md" name="businessName" value={this.state.businessName} type="text" onChange={this.handleChange} />
-                            <p><font color="red">{this.state.errors.businessName}</font></p>
+
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address Line 1 *</label>
                             <input className="form-control input-md" name="addressLine1" value={this.state.addressLine1} type="text" onChange={this.handleChange} />
-                            <p><font color="red">{this.state.errors.addressLine1}</font></p>
+
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address Area *</label>
                             <input className="form-control input-md" name="addressArea" value={this.state.addressArea} type="text" onChange={this.handleChange} />
-                            <p><font color="red">{this.state.errors.addressArea}</font></p>
+
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address City *</label>
                             <input className="form-control input-md" name="addressCity" value={this.state.addressCity} type="text" onChange={this.handleChange} />
-                            <p><font color="red">{this.state.errors.addressCity}</font></p>
+
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address State*</label>
                             <input className="form-control input-md" name="addressState" value={this.state.addressState} type="text" onChange={this.handleChange} />
-                            <p><font color="red">{this.state.errors.addressState}</font></p>
+
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Pincode *</label>
                             <input className="form-control input-md" name="addressPincode" value={this.state.addressPincode} type="number" onChange={this.handleChange} />
-                            <p><font color="red">{this.state.errors.addressPincode}</font></p>
+
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Contact Number *</label>
                             <input className="form-control input-md" name="businessContactNumbers" value={this.state.businessContactNumbers} type="number" onChange={this.handleChange} />
-                            <p><font color="red">{this.state.errors.businessContactNumbers}</font></p>
+
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Select Category:</label>
@@ -227,13 +226,13 @@ export default class extends React.Component {
                         <div className="form-group mb-3">
                             <label className="control-label">Business Tags*</label>
                             <input className="form-control input-md" name="businessTags" value={this.state.businessTags} type="text" onChange={this.handleChange} />
-                            <p><font color="red">{this.state.errors.businessTags}</font></p>
+
                         </div>
 
                         <div className="form-group mb-3">
                             <label className="control-label">Business Description</label>
                             <textarea className="form-control" placeholder="" name="businessDescription" value={this.state.businessDescription} onChange={this.handleChange} rows={3} data-error="Write your message" required />
-                            <p><font color="red">{this.state.errors.businessDescription}</font></p>
+
                         </div>
                         {/* <div className="form-group mb-3">
                         <label className="control-label">Shop Photograph</label>
