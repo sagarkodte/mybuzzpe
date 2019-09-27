@@ -19,25 +19,7 @@ export default class extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            token: '',
-            businessName: '',
-            businessDescription: '',
-            addressLine1: '',
-            addressState: '',
-            addressArea: '',
-            addressCity: '',
-            addressPincode: '',
-            categoryType: 'Select Category Type',
-            category: 'Select Category',
-            subCategory: 'Select Sub Category',
-            businessContactNumbers: '',
-            businessTags: '',
-            categoryList: '',
-            subCategoryList: '',
-            subCategoryArray: [],
-            errors: {},
-            success: '',
-            error: '',
+
             // new vars
             categoryArray: [],
             selectedOption: null,
@@ -46,7 +28,9 @@ export default class extends React.Component {
             businessCategory: [],
             file: null,
             showUploadFile: false,
-            projectID: ''
+            projectID: '',
+            errors: {},
+            loader:false
         };
     }
 
@@ -73,24 +57,47 @@ export default class extends React.Component {
         this.setState({ [event.target.name]: event.target.value });
     }
     handleCategoryChange = selectedOption => {
-        this.setState({ selectedOption }, function () {
-            category.getSubCategories(this.state.selectedOption.value).then(res => {
-                let a = [];
-                res.data.forEach(function (item) {
-                    a.push({ value: item.path, label: item.name });
-                });
-                this.setState({ subCategoryArray: a }, function () {
-                    console.log(this.state.subCategoryArray);
-                });
-            }).catch(error => {
-                console.log('error 8', error)
-            });
-        });
+      console.log(selectedOption);
+      this.setState({ selectedOption }, function () {
+          category.getSubCategories(this.state.selectedOption.value).then(res => {
+              let a = [];
+              res.data.forEach(function (item) {
+                  a.push({ value: item.path, label: item.name });
+              });
+              this.setState({ subCategoryArray: a }, function () {
+                  console.log(this.state.subCategoryArray);
+              });
+          }).catch(error => {
+              console.log('error 8', error)
+          });
+      });
     }
     handleSubCategoryChange = selectedOption => {
         this.setState({ selectedSubOption: selectedOption });
     }
+    handleValidation = () => {
+      let errors = {};
+      console.log(this.state.selectedOption);
+      if(!this.state.businessName) errors.businessName = 'This field is required';
+      if(!this.state.addressLine1) errors.addressLine1 = 'This field is required';
+      if(!this.state.addressArea) errors.addressArea = 'This field is required';
+      if(!this.state.addressCity) errors.addressCity = 'This field is required';
+      if(!this.state.addressState) errors.addressState = 'This field is required';
+      if(!this.state.businessContactNumbers) errors.businessContactNumbers = 'This field is required';
+      if(!this.state.addressPincode) errors.addressPincode = 'This field is required';
+      if(!this.state.selectedOption) errors.selectedOption = 'This field is required';
+      if(!this.state.selectedSubOption) errors.selectedSubOption = 'This field is required';
+      if(!this.state.businessTags) errors.businessTags = 'This field is required';
+      if(!this.state.businessDescription) errors.businessDescription = 'This field is required';
+      this.setState({errors});
+      if(this.state.errors){
+                return false;
+      }
+      return true
+
+    }
     addBusiness = () => {
+      if(this.handleValidation()) {
         let cat = this.state.selectedOption;
         let subCat = this.state.selectedSubOption;
         let businessCategory = []
@@ -127,18 +134,20 @@ export default class extends React.Component {
                 console.log('err3', err);
             });
         });
+      }
     }
 
-    onChange = (e) => {
+    onChangeFile = (e) => {
         this.setState({ file: e.target.files[0] })
     }
 
-    onSubmit = (e) => {
+    onSubmitFile = (e) => {
         e.preventDefault()
         this.uploadFile(this.state.file);
     }
 
     uploadFile = (file) => {
+        this.setState({loader:true})
         const formData = new FormData();
         formData.append('sampleFile', file)
         formData.append('businessId', this.state.projectID)
@@ -149,6 +158,7 @@ export default class extends React.Component {
             }
         }).then(res => {
             console.log(res);
+            this.setState({loader:false})
             toast("Business Added Successfully.!", {
                 onClose: () => Router.push({
                     pathname: '/business-list',
@@ -168,10 +178,9 @@ export default class extends React.Component {
     }
 
     render() {
-
+        console.log(this.state.errors);
         return (<Layout>
             <ToastContainer />
-            <Loader/>
             <div className="page-content">
                 <div className="inner-box">
                     <div className="dashboard-box d-sm-flex align-items-center justify-content-between ">
@@ -183,56 +192,58 @@ export default class extends React.Component {
                         <div className="form-group mb-3">
                             <label className="control-label">Business Name*</label>
                             <input className="form-control input-md" name="businessName" value={this.state.businessName} type="text" onChange={this.handleChange} />
-
+                            <p style={{color:'red'}}>{this.state.errors.businessName || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address Line 1 *</label>
                             <input className="form-control input-md" name="addressLine1" value={this.state.addressLine1} type="text" onChange={this.handleChange} />
-
+                            <p style={{color:'red'}}>{this.state.errors.addressLine1 || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address Area *</label>
                             <input className="form-control input-md" name="addressArea" value={this.state.addressArea} type="text" onChange={this.handleChange} />
-
+                            <p style={{color:'red'}}>{this.state.errors.addressArea || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address City *</label>
                             <input className="form-control input-md" name="addressCity" value={this.state.addressCity} type="text" onChange={this.handleChange} />
-
+                            <p style={{color:'red'}}>{this.state.errors.addressCity || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address State*</label>
                             <input className="form-control input-md" name="addressState" value={this.state.addressState} type="text" onChange={this.handleChange} />
-
+                            <p style={{color:'red'}}>{this.state.errors.addressState || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Pincode *</label>
                             <input className="form-control input-md" name="addressPincode" value={this.state.addressPincode} type="number" onChange={this.handleChange} />
-
+                            <p style={{color:'red'}}>{this.state.errors.addressPincode || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Contact Number *</label>
                             <input className="form-control input-md" name="businessContactNumbers" value={this.state.businessContactNumbers} type="number" onChange={this.handleChange} />
-
+                            <p style={{color:'red'}}>{this.state.errors.businessContactNumbers || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Select Category:</label>
                             <Select onChange={this.handleCategoryChange} options={this.state.categoryArray} />
+                            <p style={{color:'red'}}>{this.state.errors.selectedOption || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Select Sub Category:</label>
                             <Select value={this.state.selectedSubOption} isMulti onChange={(...args) => this.handleSubCategoryChange(...args)} options={this.state.subCategoryArray} />
+                            <p style={{color:'red'}}>{this.state.errors.selectedSubOption || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Business Tags*</label>
                             <input className="form-control input-md" name="businessTags" value={this.state.businessTags} type="text" onChange={this.handleChange} />
-
+                            <p style={{color:'red'}}>{this.state.errors.businessTags || ''}</p>
                         </div>
 
                         <div className="form-group mb-3">
                             <label className="control-label">Business Description</label>
                             <textarea className="form-control" placeholder="" name="businessDescription" value={this.state.businessDescription} onChange={this.handleChange} rows={3} data-error="Write your message" required />
-
+                            <p style={{color:'red'}}>{this.state.errors.businessDescription || ''}</p>
                         </div>
                         {/* <div className="form-group mb-3">
                         <label className="control-label">Shop Photograph</label>
@@ -253,10 +264,11 @@ export default class extends React.Component {
                         <button className="btn btn-common" type="button" onClick={this.addBusiness}>Submit</button>
                         <button className="btn btn-common" type="button" onClick={this.hh}>Cancel</button>
                     </div>}
-                    {this.state.showUploadFile ? <div className="col-md-12 col-sm-12 col-sx-12"><div className="form-group mb-3">
+                    {this.state.showUploadFile ?
+                    <div className="col-md-12 col-sm-12 col-sx-12"><div className="form-group mb-3">
                         <label className="control-label">Add Image</label>
-                        <form onSubmit={this.onSubmit}>
-                            <input className="type_file" type="file" onChange={this.onChange} />
+                        <form onSubmitFile={this.onSubmitFile}>
+                            <input className="type_file" type="file" onChange={this.onChangeFile} />
                             <button className="btn btn-common" type="submit">Upload File</button>
                         </form>
                     </div></div> : ''}

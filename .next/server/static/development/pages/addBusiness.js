@@ -88,10 +88,39 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./Components/Loader.js":
+/*!******************************!*\
+  !*** ./Components/Loader.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/workspace/mybuzzpe/Components/Loader.js";
+
+
+var Loader = function Loader() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "loader",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: this
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Loader);
+
+/***/ }),
 
 /***/ "./Components/dashBoardLayout.js":
 /*!***************************************!*\
@@ -3187,10 +3216,10 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/addProject.js":
-/*!*****************************!*\
-  !*** ./pages/addProject.js ***!
-  \*****************************/
+/***/ "./pages/addBusiness.js":
+/*!******************************!*\
+  !*** ./pages/addBusiness.js ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3219,8 +3248,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Services_categoryService__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_Services_categoryService__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _Services_businessService__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Services/businessService */ "./Services/businessService.js");
 /* harmony import */ var _Services_businessService__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_Services_businessService__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var react_tag_autocomplete__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-tag-autocomplete */ "react-tag-autocomplete");
-/* harmony import */ var react_tag_autocomplete__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_tag_autocomplete__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-toastify */ "react-toastify");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_toastify__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _Components_Loader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../Components/Loader */ "./Components/Loader.js");
 
 
 
@@ -3228,7 +3260,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/workspace/mybuzzpe/pages/addProject.js";
+var _jsxFileName = "/workspace/mybuzzpe/pages/addBusiness.js";
+
+
 
 
 
@@ -3245,8 +3279,6 @@ function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(_default, _React$Component);
 
   function _default(props) {
-    var _this$state;
-
     var _this;
 
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, _default);
@@ -3287,30 +3319,9 @@ function (_React$Component) {
       _this.setState(Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])({}, event.target.name, event.target.value));
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getAllskills", function (query) {
-      console.log(query);
-      axios__WEBPACK_IMPORTED_MODULE_10___default.a.get(_config__WEBPACK_IMPORTED_MODULE_11___default.a.url + '/api/business/getallskills?p=' + query).then(function (res) {
-        var cata = res.data.data;
-        var arr = cata;
-        var newResponse = arr.map(function (name, id) {
-          return {
-            id: id,
-            name: name
-          };
-        });
-        console.log(newResponse);
-
-        _this.setState({
-          suggestions: newResponse
-        }); //this.setState({ categories: cata });
-        //console.log(this.state.categories)
-
-      }).catch(function (error) {
-        return error;
-      });
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleCategoryChange", function (selectedOption) {
+      console.log(selectedOption);
+
       _this.setState({
         selectedOption: selectedOption
       }, function () {
@@ -3336,14 +3347,6 @@ function (_React$Component) {
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getBudgetType", function (selectedOption) {
-      console.log(selectedOption.value);
-
-      _this.setState({
-        SelectedbudgetType: selectedOption.value
-      });
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleSubCategoryChange", function (selectedOption) {
       _this.setState({
         selectedSubOption: selectedOption
@@ -3353,50 +3356,61 @@ function (_React$Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleValidation", function () {
       var errors = {};
       console.log(_this.state.selectedOption);
-      if (!_this.state.projectDescription) errors.projectDescription = 'This field is required';
-      if (!_this.state.projectCategory) errors.projectCategory = 'This field is required';
-      if (!_this.state.services) errors.services = 'This field is required';
-      if (!_this.state.budgetAmt) errors.budgetAmt = 'This field is required';
-      if (!_this.state.SelectedbudgetType) errors.SelectedbudgetType = 'This field is required';
-      if (!_this.state.note) errors.note = 'This field is required';
+      if (!_this.state.businessName) errors.businessName = 'This field is required';
+      if (!_this.state.addressLine1) errors.addressLine1 = 'This field is required';
+      if (!_this.state.addressArea) errors.addressArea = 'This field is required';
+      if (!_this.state.addressCity) errors.addressCity = 'This field is required';
+      if (!_this.state.addressState) errors.addressState = 'This field is required';
+      if (!_this.state.businessContactNumbers) errors.businessContactNumbers = 'This field is required';
+      if (!_this.state.addressPincode) errors.addressPincode = 'This field is required';
       if (!_this.state.selectedOption) errors.selectedOption = 'This field is required';
       if (!_this.state.selectedSubOption) errors.selectedSubOption = 'This field is required';
+      if (!_this.state.businessTags) errors.businessTags = 'This field is required';
+      if (!_this.state.businessDescription) errors.businessDescription = 'This field is required';
 
       _this.setState({
         errors: errors
       });
 
-      return false;
+      if (_this.state.errors) {
+        return false;
+      }
+
+      return true;
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "addProject", function () {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "addBusiness", function () {
       if (_this.handleValidation()) {
         var cat = _this.state.selectedOption;
         var subCat = _this.state.selectedSubOption;
-        var projectCategory = [];
+        var businessCategory = [];
         subCat.push(cat);
         subCat.forEach(function (item) {
-          projectCategory.push(item.value);
+          businessCategory.push(item.value);
         });
 
         _this.setState({
-          projectCategory: projectCategory
+          businessCategory: businessCategory
         }, function () {
           var _this3 = this;
 
-          _Services_businessService__WEBPACK_IMPORTED_MODULE_14___default.a.addProject({
-            'description': this.state.projectDescription,
-            'category': this.state.projectCategory.toString(),
-            'services': this.state.services.toString(),
-            'budget': this.state.budgetAmt,
-            'budgetType': this.state.SelectedbudgetType,
-            'note': this.state.note
+          _Services_businessService__WEBPACK_IMPORTED_MODULE_14___default.a.addBusiness({
+            'businessName': this.state.businessName,
+            'businessDescription': this.state.businessDescription,
+            'addressLine1': this.state.addressLine1,
+            'addressArea': this.state.addressArea,
+            'addressCity': this.state.addressCity,
+            'addressState': this.state.addressState,
+            'addressPincode': this.state.addressPincode,
+            'businessContactNumbers': this.state.businessContactNumbers,
+            'businessCategory': this.state.businessCategory.toString(),
+            'businessTags': this.state.businessTags
           }, {
             headers: {
               'x-access-token': this.state.token
             }
           }).then(function (res) {
-            console.log('res3', res.data);
+            console.log('res3', res);
 
             _this3.setState({
               projectID: res.data._id
@@ -3415,29 +3429,46 @@ function (_React$Component) {
       }
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onSubmit", function (e) {
-      e.preventDefault();
-
-      _this.uploadFile(_this.state.file);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onChange", function (e) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onChangeFile", function (e) {
       _this.setState({
         file: e.target.files[0]
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onSubmitFile", function (e) {
+      e.preventDefault();
+
+      _this.uploadFile(_this.state.file);
+    });
+
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "uploadFile", function (file) {
+      _this.setState({
+        loader: true
+      });
+
       var formData = new FormData();
       formData.append('sampleFile', file);
-      formData.append('projectId', _this.state.projectID);
-      axios__WEBPACK_IMPORTED_MODULE_10___default.a.post(_config__WEBPACK_IMPORTED_MODULE_11___default.a.url + '/api/project/uploadfile', formData, {
+      formData.append('businessId', _this.state.projectID);
+      axios__WEBPACK_IMPORTED_MODULE_10___default.a.post(_config__WEBPACK_IMPORTED_MODULE_11___default.a.url + '/api/business/uploadphotos', formData, {
         headers: {
           'content-type': 'multipart/form-data',
           'x-access-token': _this.state.token
         }
       }).then(function (res) {
         console.log(res);
+
+        _this.setState({
+          loader: false
+        });
+
+        Object(react_toastify__WEBPACK_IMPORTED_MODULE_15__["toast"])("Business Added Successfully.!", {
+          onClose: function onClose() {
+            return next_router__WEBPACK_IMPORTED_MODULE_16___default.a.push({
+              pathname: '/business-list' //state: { detail: path }
+
+            });
+          }
+        });
       }).catch(function (error) {// return error;
       });
     });
@@ -3449,164 +3480,109 @@ function (_React$Component) {
       });
     });
 
-    _this.state = (_this$state = {
-      token: '',
-      businessName: '',
-      note: '',
-      addressLine1: '',
-      addressCity: '',
-      addressState: '',
-      addressPincode: '',
-      categoryType: 'Select Category Type',
-      category: 'Select Category',
-      subCategory: 'Select Sub Category',
-      budgetAmt: '',
-      businessTags: '',
-      categoryList: '',
-      subCategoryList: '',
-      subCategoryArray: [],
-      errors: {},
-      success: '',
-      error: '',
+    _this.state = {
       // new vars
       categoryArray: [],
-      selectedOption: null
-    }, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "subCategoryArray", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "selectedSubOption", null), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "projectCategory", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "tags", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "suggestions", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "budgetType", [{
-      value: 'Monthly',
-      label: 'Monthly'
-    }, {
-      value: 'Hourly',
-      label: 'Hourly'
-    }]), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "SelectedbudgetType", ''), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "services", ''), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "file", null), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "showUploadFile", false), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(_this$state, "projectID", ''), _this$state);
+      selectedOption: null,
+      subCategoryArray: [],
+      selectedSubOption: null,
+      businessCategory: [],
+      file: null,
+      showUploadFile: false,
+      projectID: '',
+      errors: {},
+      loader: false
+    };
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(_default, [{
-    key: "handleDelete",
-    value: function handleDelete(i) {
-      var tags = this.state.tags.slice(0);
-      tags.splice(i, 1);
-      this.setState({
-        tags: tags
-      }, function () {
-        var _this4 = this;
-
-        var array = [];
-        this.state.tags.map(function (item, i) {
-          array.push(item.name);
-          array.join(',');
-          console.log(array);
-
-          _this4.setState({
-            services: array
-          });
-        });
-      });
-    }
-  }, {
-    key: "handleAddition",
-    value: function handleAddition(tag) {
-      var tags = [].concat(this.state.tags, tag);
-      this.setState({
-        tags: tags
-      }, function () {
-        var _this5 = this;
-
-        var array = [];
-        this.state.tags.map(function (item, i) {
-          array.push(item.name);
-          array.join(',');
-          console.log(array);
-
-          _this5.setState({
-            services: array
-          });
-        });
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this6 = this;
+      var _this4 = this;
 
+      console.log(this.state.errors);
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Components_twoColumnLayout__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 227
+          lineNumber: 182
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_toastify__WEBPACK_IMPORTED_MODULE_15__["ToastContainer"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 183
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "page-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 228
+          lineNumber: 184
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "inner-box",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 185
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "dashboard-box d-sm-flex align-items-center justify-content-between ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 186
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
         className: "dashbord-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 231
+          lineNumber: 187
         },
         __self: this
-      }, "Add new project")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "Add new business")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         ref: function ref(el) {
-          _this6.uploadDiv = el;
+          _this4.uploadDiv = el;
         },
         class: "dashboard-wrapper",
         id: "business-list",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 190
         },
         __self: this
       }), this.state.showUploadFile ? '' : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-12 col-sm-12 col-sx-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 191
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 236
+          lineNumber: 192
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 237
+          lineNumber: 193
         },
         __self: this
-      }, "Project Description"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("textarea", {
-        className: "form-control",
-        placeholder: "",
-        name: "projectDescription",
-        value: this.state.projectDescription,
+      }, "Business Name*"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "form-control input-md",
+        name: "businessName",
+        value: this.state.businessName,
+        type: "text",
         onChange: this.handleChange,
-        rows: 3,
-        "data-error": "Write your message",
-        required: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 194
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
@@ -3615,21 +3591,225 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
+          lineNumber: 195
         },
         __self: this
-      }, this.state.errors.projectDescription)), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, this.state.errors.businessName || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 241
+          lineNumber: 197
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 242
+          lineNumber: 198
+        },
+        __self: this
+      }, "Address Line 1 *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "form-control input-md",
+        name: "addressLine1",
+        value: this.state.addressLine1,
+        type: "text",
+        onChange: this.handleChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+        style: {
+          color: 'red'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 200
+        },
+        __self: this
+      }, this.state.errors.addressLine1 || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "form-group mb-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 202
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "control-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 203
+        },
+        __self: this
+      }, "Address Area *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "form-control input-md",
+        name: "addressArea",
+        value: this.state.addressArea,
+        type: "text",
+        onChange: this.handleChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 204
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+        style: {
+          color: 'red'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 205
+        },
+        __self: this
+      }, this.state.errors.addressArea || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "form-group mb-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 207
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "control-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 208
+        },
+        __self: this
+      }, "Address City *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "form-control input-md",
+        name: "addressCity",
+        value: this.state.addressCity,
+        type: "text",
+        onChange: this.handleChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 209
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+        style: {
+          color: 'red'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 210
+        },
+        __self: this
+      }, this.state.errors.addressCity || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "form-group mb-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 212
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "control-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 213
+        },
+        __self: this
+      }, "Address State*"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "form-control input-md",
+        name: "addressState",
+        value: this.state.addressState,
+        type: "text",
+        onChange: this.handleChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 214
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+        style: {
+          color: 'red'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 215
+        },
+        __self: this
+      }, this.state.errors.addressState || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "form-group mb-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 217
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "control-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 218
+        },
+        __self: this
+      }, "Pincode *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "form-control input-md",
+        name: "addressPincode",
+        value: this.state.addressPincode,
+        type: "number",
+        onChange: this.handleChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 219
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+        style: {
+          color: 'red'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 220
+        },
+        __self: this
+      }, this.state.errors.addressPincode || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "form-group mb-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 222
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "control-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 223
+        },
+        __self: this
+      }, "Contact Number *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        className: "form-control input-md",
+        name: "businessContactNumbers",
+        value: this.state.businessContactNumbers,
+        type: "number",
+        onChange: this.handleChange,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 224
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+        style: {
+          color: 'red'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 225
+        },
+        __self: this
+      }, this.state.errors.businessContactNumbers || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "form-group mb-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 227
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
+        className: "control-label",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 228
         },
         __self: this
       }, "Select Category:"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -3637,7 +3817,7 @@ function (_React$Component) {
         options: this.state.categoryArray,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 243
+          lineNumber: 229
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
@@ -3646,33 +3826,33 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 244
+          lineNumber: 230
         },
         __self: this
-      }, this.state.errors.selectedOption)), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, this.state.errors.selectedOption || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 246
+          lineNumber: 232
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 247
+          lineNumber: 233
         },
         __self: this
       }, "Select Sub Category:"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_8___default.a, {
         value: this.state.selectedSubOption,
         isMulti: true,
         onChange: function onChange() {
-          return _this6.handleSubCategoryChange.apply(_this6, arguments);
+          return _this4.handleSubCategoryChange.apply(_this4, arguments);
         },
         options: this.state.subCategoryArray,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 248
+          lineNumber: 234
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
@@ -3681,67 +3861,32 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 249
+          lineNumber: 235
         },
         __self: this
-      }, this.state.errors.selectedSubOption)), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, this.state.errors.selectedSubOption || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 251
+          lineNumber: 237
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 252
+          lineNumber: 238
         },
         __self: this
-      }, "Add Skills *"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_tag_autocomplete__WEBPACK_IMPORTED_MODULE_15___default.a, {
-        handleInputChange: this.getAllskills,
-        minQueryLength: 1,
-        tags: this.state.tags,
-        suggestions: this.state.suggestions,
-        handleDelete: this.handleDelete.bind(this),
-        handleAddition: this.handleAddition.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 253
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        style: {
-          color: 'red'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 260
-        },
-        __self: this
-      }, this.state.errors.services)), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 262
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 263
-        },
-        __self: this
-      }, "Budget"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+      }, "Business Tags*"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
         className: "form-control input-md",
-        name: "budgetAmt",
-        value: this.state.budgetAmt,
-        type: "number",
+        name: "businessTags",
+        value: this.state.businessTags,
+        type: "text",
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 264
+          lineNumber: 239
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
@@ -3750,66 +3895,35 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 265
+          lineNumber: 240
         },
         __self: this
-      }, this.state.errors.budgetAmt)), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, this.state.errors.businessTags || '')), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 267
+          lineNumber: 243
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 268
+          lineNumber: 244
         },
         __self: this
-      }, "Budget Type"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        onChange: this.getBudgetType,
-        options: this.state.budgetType,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 269
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
-        style: {
-          color: 'red'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 270
-        },
-        __self: this
-      }, this.state.errors.SelectedbudgetType)), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "form-group mb-3",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 272
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
-        className: "control-label",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 273
-        },
-        __self: this
-      }, "Note"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("textarea", {
+      }, "Business Description"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("textarea", {
         className: "form-control",
         placeholder: "",
-        name: "note",
-        value: this.state.note,
+        name: "businessDescription",
+        value: this.state.businessDescription,
         onChange: this.handleChange,
         rows: 3,
         "data-error": "Write your message",
         required: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 274
+          lineNumber: 245
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
@@ -3818,76 +3932,76 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 275
+          lineNumber: 246
         },
         __self: this
-      }, this.state.errors.note)), this.state.success !== '' ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, this.state.errors.businessDescription || '')), this.state.success !== '' ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "alert alert-success",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 278
+          lineNumber: 258
         },
         __self: this
       }, this.state.success) : '', this.state.error ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "alert alert-danger",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 281
+          lineNumber: 261
         },
         __self: this
       }, this.state.error) : '', react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         className: "btn btn-common",
         type: "button",
-        onClick: this.addProject,
+        onClick: this.addBusiness,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284
+          lineNumber: 264
         },
         __self: this
       }, "Submit"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         className: "btn btn-common",
         type: "button",
-        onClick: this.onCanel,
+        onClick: this.hh,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 285
+          lineNumber: 265
         },
         __self: this
       }, "Cancel")), this.state.showUploadFile ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-12 col-sm-12 col-sx-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 287
+          lineNumber: 268
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 287
+          lineNumber: 268
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("label", {
         className: "control-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 288
+          lineNumber: 269
         },
         __self: this
-      }, "Add Project Related File"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
-        onSubmit: this.onSubmit,
+      }, "Add Image"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
+        onSubmitFile: this.onSubmitFile,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 289
+          lineNumber: 270
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
         className: "type_file",
         type: "file",
-        onChange: this.onChange,
+        onChange: this.onChangeFile,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 290
+          lineNumber: 271
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
@@ -3895,7 +4009,7 @@ function (_React$Component) {
         type: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 291
+          lineNumber: 272
         },
         __self: this
       }, "Upload File")))) : '')));
@@ -5329,14 +5443,14 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 7:
-/*!***********************************!*\
-  !*** multi ./pages/addProject.js ***!
-  \***********************************/
+/***/ 4:
+/*!************************************!*\
+  !*** multi ./pages/addBusiness.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /workspace/mybuzzpe/pages/addProject.js */"./pages/addProject.js");
+module.exports = __webpack_require__(/*! /workspace/mybuzzpe/pages/addBusiness.js */"./pages/addBusiness.js");
 
 
 /***/ }),
@@ -5517,14 +5631,14 @@ module.exports = require("react-select");
 
 /***/ }),
 
-/***/ "react-tag-autocomplete":
-/*!*****************************************!*\
-  !*** external "react-tag-autocomplete" ***!
-  \*****************************************/
+/***/ "react-toastify":
+/*!*********************************!*\
+  !*** external "react-toastify" ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("react-tag-autocomplete");
+module.exports = require("react-toastify");
 
 /***/ }),
 
@@ -5540,4 +5654,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=addProject.js.map
+//# sourceMappingURL=addBusiness.js.map
