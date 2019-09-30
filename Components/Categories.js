@@ -3,6 +3,8 @@ import axios from 'axios';
 import serverUrl from '../config';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Router from 'next/router'
+import Loader from '../Components/Loader'
+
 class Categories extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +12,8 @@ class Categories extends Component {
             categories: [],
             subCatename: [],
             subcatclick: false,
-            modal: false
+            modal: false,
+            loader: false
         };
         this.toggle = this.toggle.bind(this);
     }
@@ -23,10 +26,12 @@ class Categories extends Component {
         }));
     }
     categories = () => {
+        this.setState({ loader: true })
         axios.get(serverUrl.url + '/api/category/main').then(res => {
             var cata = res.data.data;
             ////console.log(cata)
             this.setState({ categories: cata });
+            this.setState({ loader: false })
             //console.log(this.state.categories)
         }).catch(error => {
             return error;
@@ -53,11 +58,12 @@ class Categories extends Component {
     }
     showQ = (path) => {
         //console.log(path);
+        this.setState({ loader: true })
         Router.push({
             pathname: '/category',
-            search: '?path='+path,
+            search: '?path=' + path,
             //state: { detail: path }
-          });
+        });
         // axios.post(serverUrl.url + '/api/question/list', {
         //     category: path,
         // })
@@ -74,27 +80,29 @@ class Categories extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="row">
-                    {
-                        this.state.categories.map((item, i) =>
-                            <div onClick={() => this.subCategories(item)}  className="col-md-4 main_categories text-center" key={i}>
-                                <img src={item.icon} />
-                                <h6>{item.name}</h6>
-                            </div>
-                        )
-                    }
-                    <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} id="homepage_cata_modal">
-                        <ModalHeader>
-                            <h5>Select Category</h5>
-                        </ModalHeader>
-                        <ModalBody>
-                            <Catalist clk={this.showQ} data={this.state.subCatename} />
-                        </ModalBody>
-                        <ModalFooter>
-                            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                        </ModalFooter>
-                    </Modal>
-                </div>
+                {this.state.loader ? <Loader /> :
+                    <div className="row">
+                        {
+                            this.state.categories.map((item, i) =>
+                                <div onClick={() => this.subCategories(item)} className="col-md-4 main_categories text-center" key={i}>
+                                    <img src={item.icon} />
+                                    <h6>{item.name}</h6>
+                                </div>
+                            )
+                        }
+                        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} id="homepage_cata_modal">
+                            <ModalHeader>
+                                <h5>Select Category</h5>
+                            </ModalHeader>
+                            <ModalBody>
+
+                                <Catalist clk={this.showQ} data={this.state.subCatename} />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                            </ModalFooter>
+                        </Modal>
+                    </div>}
             </React.Fragment>
         )
     }
@@ -107,7 +115,7 @@ function Catalist(props) {
     const clk = props.clk;
     if (data) {
         const listItems = data.map((singlecat, index) =>
-            <li  onClick={() => clk(singlecat.path)} key={index}>{singlecat.name}</li>
+            <li onClick={() => clk(singlecat.path)} key={index}>{singlecat.name}</li>
         );
         return (
             <ul>{listItems}</ul>

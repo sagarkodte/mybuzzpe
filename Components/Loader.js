@@ -1,6 +1,8 @@
 const Loader = () => {
     return(
-        <div class="loader"></div>
+        <div className="loader_parent">
+            <div className="loader"></div>
+        </div>
     )
 }
 export default Loader

@@ -25,6 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _Components_Loader__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Components/Loader */ "./Components/Loader.js");
 
 
 
@@ -33,6 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/workspace/mybuzzpe/Components/Categories.js";
+
 
 
 
@@ -60,11 +62,19 @@ function (_Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "categories", function () {
+      _this.setState({
+        loader: true
+      });
+
       axios__WEBPACK_IMPORTED_MODULE_8___default.a.get(_config__WEBPACK_IMPORTED_MODULE_9___default.a.url + '/api/category/main').then(function (res) {
         var cata = res.data.data; ////console.log(cata)
 
         _this.setState({
           categories: cata
+        });
+
+        _this.setState({
+          loader: false
         }); //console.log(this.state.categories)
 
       }).catch(function (error) {
@@ -96,6 +106,10 @@ function (_Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "showQ", function (path) {
       //console.log(path);
+      _this.setState({
+        loader: true
+      });
+
       next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push({
         pathname: '/category',
         search: '?path=' + path //state: { detail: path }
@@ -116,7 +130,8 @@ function (_Component) {
       categories: [],
       subCatename: [],
       subcatclick: false,
-      modal: false
+      modal: false,
+      loader: false
     };
     _this.toggle = _this.toggle.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     return _this;
@@ -135,14 +150,20 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 82
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, this.state.loader ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Components_Loader__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        },
+        __self: this
+      }) : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 84
         },
         __self: this
       }, this.state.categories.map(function (item, i) {
@@ -154,20 +175,20 @@ function (_Component) {
           key: i,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 87
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
           src: item.icon,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 81
+            lineNumber: 88
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h6", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 82
+            lineNumber: 89
           },
           __self: this
         }, item.name));
@@ -178,25 +199,25 @@ function (_Component) {
         id: "homepage_cata_modal",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 93
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["ModalHeader"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 94
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h5", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 95
         },
         __self: this
       }, "Select Category")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["ModalBody"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 97
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Catalist, {
@@ -204,13 +225,13 @@ function (_Component) {
         data: this.state.subCatename,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 99
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["ModalFooter"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 101
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Button"], {
@@ -218,7 +239,7 @@ function (_Component) {
         onClick: this.toggle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 102
         },
         __self: this
       }, "Cancel")))));
@@ -244,7 +265,7 @@ function Catalist(props) {
         key: index,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 118
         },
         __self: this
       }, singlecat.name);
@@ -252,7 +273,7 @@ function Catalist(props) {
     return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113
+        lineNumber: 121
       },
       __self: this
     }, listItems);
@@ -260,12 +281,48 @@ function Catalist(props) {
     return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 125
       },
       __self: this
     }, "hello");
   }
 }
+
+/***/ }),
+
+/***/ "./Components/Loader.js":
+/*!******************************!*\
+  !*** ./Components/Loader.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/workspace/mybuzzpe/Components/Loader.js";
+
+
+var Loader = function Loader() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "loader_parent",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "loader",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Loader);
 
 /***/ }),
 
@@ -30684,6 +30741,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _Components_Categories__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Components/Categories */ "./Components/Categories.js");
+/* harmony import */ var _Components_Loader__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../Components/Loader */ "./Components/Loader.js");
 
 
 
@@ -30692,6 +30750,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/workspace/mybuzzpe/pages/index.js";
+
 
 
 
@@ -30726,28 +30785,30 @@ function (_React$Component) {
         pathname: '/search',
         search: '?path=' + _this.state.Searchvalue //state: { detail: path }
 
-      }); // axios.post(serverUrl.url + '/api/business/search', {
-      //     query: this.state.Searchvalue
-      // })
-      //     .then((response) => {
-      //         this.setState({ allResult: response.data.data })
-      //         console.log(this.state.allResult)
-      //     })
-      //     .catch((error) => {
-      //         //console.log(error);
-      //     });
+      });
     });
 
     _this.state = {
-      categories: ''
+      categories: '',
+      loader: false
     };
     _this.getSearchvalue = _this.getSearchvalue.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.setState({
+        loader: true
+      });
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      this.setState({
+        loader: false
+      });
       console.log('loginSuccess :', this.props.loginSuccess);
 
       if (this.state.loginSuccess !== 'undefined') {
@@ -30759,121 +30820,120 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // console.log('this.state.categories :',this.state.categories);
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Components_dashBoardLayout__WEBPACK_IMPORTED_MODULE_8__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         id: "hero-area",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 53
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "overlay",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 54
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 55
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "row justify-content-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 56
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-12 col-lg-9 col-xs-12 text-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 57
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "contents",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 58
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
         className: "head-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 59
         },
         __self: this
       }, "Welcome to The Global  ", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
         className: "year buzc",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 59
         },
         __self: this
       }, "Marketplace")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 60
         },
         __self: this
       }, "Buzzpe is an online peer 2 peer platform to find local and nearby retail services at your doorstep and Recharge, Billing & Booking Services. ")))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         id: "search",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 66
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 67
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "row justify-content-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-lg-6 text-center col-md-6 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 69
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 70
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 71
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-lg-10 col-md-10 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 72
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -30883,14 +30943,14 @@ function (_React$Component) {
         placeholder: "Search",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 73
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-lg-2 col-md-2 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 75
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
@@ -30899,47 +30959,53 @@ function (_React$Component) {
         type: "button",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 76
         },
         __self: this
       }, "Search")))))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: "mt-3 mb-5",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 86
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 87
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "inner-box",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 88
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: "dashboard-wrapper mobile-recharge",
+        className: "homepage-wrapper mobile-recharge",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 89
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 90
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Components_Categories__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      }, this.state.loader ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Components_Loader__WEBPACK_IMPORTED_MODULE_15__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 91
+        },
+        __self: this
+      }) : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Components_Categories__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
         },
         __self: this
       })))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
@@ -30947,49 +31013,49 @@ function (_React$Component) {
         className: "section-padding",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 99
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 100
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 101
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-6 col-lg-6 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 102
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "about-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 103
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
         className: "intro-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112
+          lineNumber: 104
         },
         __self: this
       }, "Buzzpe Offerings"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         className: "intro-desc",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113
+          lineNumber: 105
         },
         __self: this
       }, "Over the last decade, there has been tremendous shift in financial transactions and payment ecosystem across the globe. Buzzpe is offering convenience and ease of use in peer to peer transactions. Buzzpe offers cashless recharges, money transfers and payments convenient by peer to peer transfers through Web and Mobile application. Buzzpe is known for its exceptional money transfer service. Making any online money transfer easy and quick, Buzzpe comes with multiple features. "), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
@@ -30997,14 +31063,14 @@ function (_React$Component) {
         className: "btn btn-common btn-lg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 110
         },
         __self: this
       }, "Read More"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-6 col-lg-6 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 113
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
@@ -31012,56 +31078,56 @@ function (_React$Component) {
         src: "http://3.17.162.108:8200/assets/img/welcome.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 114
         },
         __self: this
       }))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: "works section-padding bg-light",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 119
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 120
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 121
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 122
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
         className: "section-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 123
         },
         __self: this
       }, "How It Works?")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-lg-4 col-md-4 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 125
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "works-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 126
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
@@ -31069,27 +31135,27 @@ function (_React$Component) {
         className: "img-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 127
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 128
         },
         __self: this
       }, "Explore"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-lg-4 col-md-4 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 131
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "works-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 132
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
@@ -31097,27 +31163,27 @@ function (_React$Component) {
         className: "img-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 133
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 134
         },
         __self: this
       }, "Buy "))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-lg-4 col-md-4 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 137
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "works-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 138
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
@@ -31125,62 +31191,62 @@ function (_React$Component) {
         className: "img-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147
+          lineNumber: 139
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148
+          lineNumber: 140
         },
         __self: this
       }, " Enjoy"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("hr", {
         className: "works-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 143
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: "services section-padding ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155
+          lineNumber: 147
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156
+          lineNumber: 148
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157
+          lineNumber: 149
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158
+          lineNumber: 150
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
         className: "section-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159
+          lineNumber: 151
         },
         __self: this
       }, "Key Features")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-6 col-lg-4 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 161
+          lineNumber: 153
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -31194,14 +31260,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 162
+          lineNumber: 154
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 163
+          lineNumber: 155
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
@@ -31209,40 +31275,40 @@ function (_React$Component) {
         "aria-hidden": "true",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164
+          lineNumber: 156
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "services-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 166
+          lineNumber: 158
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 167
+          lineNumber: 159
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "JavaScript:Void(0);",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 167
+          lineNumber: 159
         },
         __self: this
       }, "Modern eCash transfer app")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168
+          lineNumber: 160
         },
         __self: this
       }, "Buzzpe is a point of convenience for eCash transfers between users and merchants ")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-6 col-lg-4 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 164
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -31256,14 +31322,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 165
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 166
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
@@ -31271,40 +31337,40 @@ function (_React$Component) {
         "aria-hidden": "true",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 167
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "services-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 169
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 170
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "JavaScript:Void(0);",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 170
         },
         __self: this
       }, "eCash Transfer online")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 171
         },
         __self: this
       }, "Users can transfer eCash through app and save time and efforts")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-6 col-lg-4 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 175
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -31318,14 +31384,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 176
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 177
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
@@ -31333,40 +31399,40 @@ function (_React$Component) {
         "aria-hidden": "true",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 178
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "services-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 180
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 181
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "JavaScript:Void(0);",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 181
         },
         __self: this
       }, " Scan and Pay")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 182
         },
         __self: this
       }, "User can scan and pay to other users and merchants")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-6 col-lg-4 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194
+          lineNumber: 186
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -31380,14 +31446,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195
+          lineNumber: 187
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 196
+          lineNumber: 188
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
@@ -31395,40 +31461,40 @@ function (_React$Component) {
         "aria-hidden": "true",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 189
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "services-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199
+          lineNumber: 191
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200
+          lineNumber: 192
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "JavaScript:Void(0);",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200
+          lineNumber: 192
         },
         __self: this
       }, "Track and manage expenses")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201
+          lineNumber: 193
         },
         __self: this
       }, "Users can have record of there daily and monthly expenses over app")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-6 col-lg-4 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 205
+          lineNumber: 197
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -31442,14 +31508,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206
+          lineNumber: 198
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 207
+          lineNumber: 199
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
@@ -31457,40 +31523,40 @@ function (_React$Component) {
         "aria-hidden": "true",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 208
+          lineNumber: 200
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "services-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 210
+          lineNumber: 202
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 211
+          lineNumber: 203
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "JavaScript:Void(0);",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 211
+          lineNumber: 203
         },
         __self: this
       }, "Pay postpaid bills")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 212
+          lineNumber: 204
         },
         __self: this
       }, "Users have convenience to pay bills like phone, electrcity bills etc.")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-6 col-lg-4 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 216
+          lineNumber: 208
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -31504,14 +31570,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 217
+          lineNumber: 209
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 218
+          lineNumber: 210
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
@@ -31519,218 +31585,218 @@ function (_React$Component) {
         "aria-hidden": "true",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 219
+          lineNumber: 211
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "services-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 221
+          lineNumber: 213
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 222
+          lineNumber: 214
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "JavaScript:Void(0);",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 222
+          lineNumber: 214
         },
         __self: this
       }, "Pay through UPI applications")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 223
+          lineNumber: 215
         },
         __self: this
       }, "The users can use integrated UPI applications to make payments "))))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: "counter-section section-padding",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 222
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 231
+          lineNumber: 223
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 232
+          lineNumber: 224
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-3 col-sm-6 work-counter-widget",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 225
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "counter",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 226
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 227
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         className: "lni-users",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 227
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
         className: "counterUp",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 236
+          lineNumber: 228
         },
         __self: this
       }, "500"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 237
+          lineNumber: 229
         },
         __self: this
       }, "Users"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-3 col-sm-6 work-counter-widget",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240
+          lineNumber: 232
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "counter",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 241
+          lineNumber: 233
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 242
+          lineNumber: 234
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         className: "lni-briefcase",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 242
+          lineNumber: 234
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
         className: "counterUp",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 243
+          lineNumber: 235
         },
         __self: this
       }, "200"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 244
+          lineNumber: 236
         },
         __self: this
       }, "Business Listing"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-3 col-sm-6 work-counter-widget",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 247
+          lineNumber: 239
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "counter",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 248
+          lineNumber: 240
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 249
+          lineNumber: 241
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         className: "lni-gift",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 249
+          lineNumber: 241
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
         className: "counterUp",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 250
+          lineNumber: 242
         },
         __self: this
       }, "50"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 251
+          lineNumber: 243
         },
         __self: this
       }, "Offers"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "col-md-3 col-sm-6 work-counter-widget",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 254
+          lineNumber: 246
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "counter",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 255
+          lineNumber: 247
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 256
+          lineNumber: 248
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         className: "lni-map",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 256
+          lineNumber: 248
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
         className: "counterUp",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 257
+          lineNumber: 249
         },
         __self: this
       }, "320"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 258
+          lineNumber: 250
         },
         __self: this
       }, "Buzzpe ")))))));
@@ -31774,6 +31840,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_forgotPassword__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../pages/forgotPassword */ "./pages/forgotPassword.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _Components_Loader__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../Components/Loader */ "./Components/Loader.js");
 
 
 
@@ -31783,6 +31850,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/workspace/mybuzzpe/pages/login.js";
+
 
 
 
@@ -31815,6 +31883,10 @@ function (_React$Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "login", function () {
+      _this.setState({
+        loader: true
+      });
+
       if (_this.state.user !== '' && _this.state.password !== '') {
         var userData = {
           "user": _this.state.user,
@@ -31936,7 +32008,8 @@ function (_React$Component) {
       user: '',
       password: '',
       loginError: '',
-      loginSuccess: ''
+      loginSuccess: '',
+      loader: false
     };
     return _this;
   }
@@ -31947,79 +32020,85 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_Components_dashBoardLayout__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 129
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("section", {
         className: "login mt-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 130
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 131
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "row justify-content-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 132
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "col-lg-5 col-md-12 col-xs-12",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 133
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "login-form login-area",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 134
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h3", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 135
         },
         __self: this
-      }, "Login Here"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+      }, "Login Here"), this.state.loader ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_Components_Loader__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 138
+        },
+        __self: this
+      }) : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         role: "form",
         className: "login-form",
         id: "loginForm",
         noValidate: "novalidate",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 139
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 140
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "input-icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 141
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
         className: "lni-user",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 142
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("input", {
@@ -32032,28 +32111,28 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 143
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 146
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "input-icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 147
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("i", {
         className: "lni-lock",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 148
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("input", {
@@ -32065,49 +32144,49 @@ function (_React$Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 149
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "form-group mb-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 152
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
         href: "/forgotPassword",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 149
+          lineNumber: 157
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("a", {
         className: "forgetpassword",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 149
+          lineNumber: 157
         },
         __self: this
       }, "Forgot Password?"))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 159
         },
         __self: this
       }, this.state.loginSuccess !== '' ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "alert alert-success",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152
+          lineNumber: 160
         },
         __self: this
       }, this.state.loginSuccess) : '', this.state.loginError ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "alert alert-danger",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155
+          lineNumber: 163
         },
         __self: this
       }, this.state.loginError) : '', react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -32115,7 +32194,7 @@ function (_React$Component) {
         onClick: this.login,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158
+          lineNumber: 166
         },
         __self: this
       }, "Submit")))))))));
@@ -32795,7 +32874,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 3:
 /*!***********************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fworkspace%2Fmybuzzpe%2Fpages%2Findex.js ***!
   \***********************************************************************************************************/
@@ -32818,5 +32897,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[3,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

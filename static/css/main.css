@@ -3134,7 +3134,9 @@ a.back-to-top:focus {
 .dashboard-wrapper {
 	padding: 10px 15px
 }
-
+.homepage-wrapper {
+    padding: 35px 15px
+}
 .dashboard-wrapper .select select {
 	border: 0;
 	width: 100%;
@@ -3149,7 +3151,7 @@ a.back-to-top:focus {
 #editor {
 	position: relative
 }
-.dashboard-wrapper img , .dashboard-wrapper h6 {
+.homepage-wrapper img , .homepage-wrapper h6 {
     cursor:pointer
 }
 
@@ -6717,4 +6719,8 @@ div#search_result_question_modal h5 {
     border-bottom: 2px solid #cdcdcd;
     padding: 5px 0 10px;
     margin: 0px 0 10px;
+}
+.loader_parent {
+    text-align: center;
+    margin: 50px 0;
 }

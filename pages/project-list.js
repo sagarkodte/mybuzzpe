@@ -45,7 +45,7 @@ export default class extends React.Component {
                             </div>
                         </td>
                         <td>
-                            {value.description}>
+                            {value.description}
                         </td>
                         <td>{value.budget}</td>
                         <td>{value.budgetType}</td>

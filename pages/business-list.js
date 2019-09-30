@@ -47,7 +47,8 @@ export default class extends React.Component {
                         <td>
                             <img src={value.businessLogo}></img>
                         </td>
-                        <td>{value.businessName}<br />{value.addressLine1}<br />{value.addressLine2}<br />{value.addressPincode}</td>
+                        <td>{value.businessDescription}</td>
+                        <td>{value.businessName}<br />{value.addressLine1}<br />{value.addressLine2}{value.addressPincode}</td>
                         <td>{value.businessContactNumbers ? value.businessContactNumbers : 'No Data'}</td>
                         <td>{value.gstNumber ? value.gstNumber : 'No Data'}</td>
                         <td>
@@ -82,7 +83,8 @@ export default class extends React.Component {
                                     </th>
                                     <th>Business Logo</th>
                                     <th>Business Details</th>
-                                    <th>Contact details</th>
+                                    <th>Business Address</th>
+                                    <th>Contact Details</th>
                                     <th>GSTIN</th>
                                     <th>Pincode</th>
                                     {/* <th>City</th>

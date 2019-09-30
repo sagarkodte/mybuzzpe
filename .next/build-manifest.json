@@ -17,13 +17,13 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/category": [
+    "/index": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
       "static/runtime/main.js"
     ],
-    "/index": [
+    "/login": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
@@ -31,6 +31,12 @@
     ],
     "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/register": [
+      "static/runtime/webpack.js",
+      "static/css/styles.chunk.css",
+      "static/chunks/styles.js",
       "static/runtime/main.js"
     ]
   }

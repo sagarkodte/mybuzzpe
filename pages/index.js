@@ -6,18 +6,24 @@ import { toast } from 'react-toastify'
 import Link from 'next/link';
 import Router from 'next/router'
 import Categories from '../Components/Categories'
+import Loader from '../Components/Loader'
+
 
 
 export default class Index extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            categories: ''
+            categories: '',
+            loader: false
         };
-            this.getSearchvalue = this.getSearchvalue.bind(this)
+        this.getSearchvalue = this.getSearchvalue.bind(this)
     }
-
+    componentWillMount() {
+        this.setState({ loader: true })
+    }
     componentDidMount() {
+        this.setState({ loader: false })
         console.log('loginSuccess :', this.props.loginSuccess);
         if (this.state.loginSuccess !== 'undefined') {
             toast.success("Success Notification !", {
@@ -26,38 +32,23 @@ export default class Index extends React.Component {
         }
     }
 
-        getSearchvalue = (event) => {
+    getSearchvalue = (event) => {
         this.setState({ Searchvalue: event.target.value }, function() {
             console.log(this.state.Searchvalue)
         })
     }
 
     searchResult = () => {
-
         Router.push({
             pathname: '/search',
             search: '?path=' + this.state.Searchvalue,
             //state: { detail: path }
         });
-
-        // axios.post(serverUrl.url + '/api/business/search', {
-        //     query: this.state.Searchvalue
-        // })
-        //     .then((response) => {
-        //         this.setState({ allResult: response.data.data })
-        //         console.log(this.state.allResult)
-        //     })
-        //     .catch((error) => {
-        //         //console.log(error);
-        //     });
     }
 
 
     render() {
-        // console.log('this.state.categories :',this.state.categories);
-
         return (
-
             <Layout>
                 <div id="hero-area">
                     <div className="overlay" />
@@ -77,15 +68,15 @@ export default class Index extends React.Component {
                         <div className="row justify-content-center">
                             <div className="col-lg-6 text-center col-md-6 col-xs-12">
                                 <form>
-                                 <div className="row">
-                                 <div className="col-lg-10 col-md-10 col-xs-12">
-                                    <input onChange={this.getSearchvalue} className="form-control" type="text" placeholder="Search" />
-                                 </div>
-                                  <div className="col-lg-2 col-md-2 col-xs-12">
-                                    <button onClick={this.searchResult} className="btn btn-success my-2 my-sm-0" type="button">Search</button>
+                                    <div className="row">
+                                        <div className="col-lg-10 col-md-10 col-xs-12">
+                                            <input onChange={this.getSearchvalue} className="form-control" type="text" placeholder="Search" />
+                                        </div>
+                                        <div className="col-lg-2 col-md-2 col-xs-12">
+                                            <button onClick={this.searchResult} className="btn btn-success my-2 my-sm-0" type="button">Search</button>
 
-                                  </div>
-                                  </div>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -95,9 +86,10 @@ export default class Index extends React.Component {
                 <section className="mt-3 mb-5">
                     <div className="container">
                         <div className="inner-box">
-                            <div className="dashboard-wrapper mobile-recharge">
+                            <div className="homepage-wrapper mobile-recharge">
                                 <div>
-                                    <Categories />
+                                    {this.state.loader ? <Loader /> :
+                                        <Categories />}
                                 </div>
                             </div>
                         </div>
