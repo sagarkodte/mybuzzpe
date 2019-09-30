@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2860,7 +2860,8 @@ function (_React$Component) {
           },
           __self: this
         }, item.question), item.options.map(function (opt, i) {
-          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+            for: opt.title,
             className: "search_result_questions",
             key: i,
             __source: {
@@ -2879,6 +2880,7 @@ function (_React$Component) {
             onChange: _this2.getRadioValue.bind(_this2),
             type: "radio",
             name: "options",
+            id: opt.title,
             value: opt.title,
             __source: {
               fileName: _jsxFileName,
@@ -2898,13 +2900,21 @@ function (_React$Component) {
             },
             type: "checkbox",
             name: "options[]",
+            id: opt.title,
             value: opt.title,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 296
             },
             __self: this
-          })), opt.title);
+          })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+            for: opt.title,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 296
+            },
+            __self: this
+          }, opt.title));
         }));
       }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_14__["ModalFooter"], {
         __source: {
@@ -4368,7 +4378,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 5:
 /*!*********************************!*\
   !*** multi ./pages/category.js ***!
   \*********************************/

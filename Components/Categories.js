@@ -77,13 +77,16 @@ class Categories extends Component {
                 <div className="row">
                     {
                         this.state.categories.map((item, i) =>
-                            <div onClick={() => this.subCategories(item)}  className="col-md-4 text-center" key={i}>
+                            <div onClick={() => this.subCategories(item)}  className="col-md-4 main_categories text-center" key={i}>
                                 <img src={item.icon} />
                                 <h6>{item.name}</h6>
                             </div>
                         )
                     }
                     <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} id="homepage_cata_modal">
+                        <ModalHeader>
+                            <h5>Select Category</h5>
+                        </ModalHeader>
                         <ModalBody>
                             <Catalist clk={this.showQ} data={this.state.subCatename} />
                         </ModalBody>
@@ -104,7 +107,7 @@ function Catalist(props) {
     const clk = props.clk;
     if (data) {
         const listItems = data.map((singlecat, index) =>
-            <li onClick={() => clk(singlecat.path)} key={index}>{singlecat.name}</li>
+            <li  onClick={() => clk(singlecat.path)} key={index}>{singlecat.name}</li>
         );
         return (
             <ul>{listItems}</ul>

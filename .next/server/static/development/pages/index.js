@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -244,7 +244,7 @@ function (_Component) {
           onClick: function onClick() {
             return _this2.subCategories(item);
           },
-          className: "col-md-4 text-center",
+          className: "col-md-4 main_categories text-center",
           key: i,
           __source: {
             fileName: _jsxFileName,
@@ -275,10 +275,22 @@ function (_Component) {
           lineNumber: 86
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["ModalBody"], {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["ModalHeader"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 87
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h5", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
+        },
+        __self: this
+      }, "Select Category")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["ModalBody"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Catalist, {
@@ -286,13 +298,13 @@ function (_Component) {
         data: this.state.subCatename,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 91
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["ModalFooter"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 93
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Button"], {
@@ -300,7 +312,7 @@ function (_Component) {
         onClick: this.toggle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 94
         },
         __self: this
       }, "Cancel")))));
@@ -326,7 +338,7 @@ function Catalist(props) {
         key: index,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 110
         },
         __self: this
       }, singlecat.name);
@@ -334,7 +346,7 @@ function Catalist(props) {
     return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 110
+        lineNumber: 113
       },
       __self: this
     }, listItems);
@@ -342,7 +354,7 @@ function Catalist(props) {
     return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 117
       },
       __self: this
     }, "hello");
@@ -2678,7 +2690,7 @@ function (_React$Component) {
         },
         __self: this
       }, "Buzzpe is an online peer 2 peer platform to find local and nearby retail services at your doorstep and Recharge, Billing & Booking Services. ")))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
-        id: "categories",
+        id: "search",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 75
@@ -4644,7 +4656,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 10:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

@@ -292,9 +292,9 @@ export default class Index extends React.Component {
                 <div key={i}>
                   <h5>{item.question}</h5>
                   {item.options.map((opt, i) =>
-                    <div className="search_result_questions" key={i}>
-                      {item.type === 'radio' ? <span className="optRadio" ><input onChange={this.getRadioValue.bind(this)} type='radio' name="options" value={opt.title} /></span> : <span><input className="checkbox" onChange={(event) => this.getCheckboxValue(event)} type='checkbox' name='options[]' value={opt.title} /></span>}{opt.title}
-                    </div>
+                    <label for={opt.title} className="search_result_questions" key={i}>
+                      {item.type === 'radio' ? <span className="optRadio" ><input onChange={this.getRadioValue.bind(this)} type='radio' name="options" id={opt.title} value={opt.title} /></span> : <span><input className="checkbox" onChange={(event) => this.getCheckboxValue(event)} type='checkbox' name='options[]' id={opt.title} value={opt.title} /></span>}<label for={opt.title}>{opt.title}</label>
+                    </label>
                   )}
 
                 </div>

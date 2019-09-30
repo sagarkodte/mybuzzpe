@@ -35587,7 +35587,8 @@ function (_React$Component) {
           },
           __self: this
         }, item.question), item.options.map(function (opt, i) {
-          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+          return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+            for: opt.title,
             className: "search_result_questions",
             key: i,
             __source: {
@@ -35606,6 +35607,7 @@ function (_React$Component) {
             onChange: _this2.getRadioValue.bind(_this2),
             type: "radio",
             name: "options",
+            id: opt.title,
             value: opt.title,
             __source: {
               fileName: _jsxFileName,
@@ -35625,13 +35627,21 @@ function (_React$Component) {
             },
             type: "checkbox",
             name: "options[]",
+            id: opt.title,
             value: opt.title,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 296
             },
             __self: this
-          })), opt.title);
+          })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("label", {
+            for: opt.title,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 296
+            },
+            __self: this
+          }, opt.title));
         }));
       }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_14__["ModalFooter"], {
         __source: {
@@ -37095,7 +37105,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!**********************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcategory&absolutePagePath=%2Fworkspace%2Fmybuzzpe%2Fpages%2Fcategory.js ***!
   \**********************************************************************************************************************/
@@ -37118,5 +37128,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js","styles"]]]);
+},[[3,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=category.js.map

@@ -2014,35 +2014,35 @@ a.back-to-top:focus {
 	color: #fff
 }
 
-#categories {
+#search {
 	background: rgba(40, 55, 104, 0.89);
 	position: relative;
     padding:30px;
 }
 
-#categories .categories-wrapper {
+#search .categories-wrapper {
 	background: #fff;
 	padding: 20px 30px;
 	box-shadow: 0 0 10px rgba(175, 175, 175, .23)
 }
 
-#categories .owl-theme .owl-nav {
+#search .owl-theme .owl-nav {
 	position: relative;
 	top: -85px;
 	left: 0
 }
 
-#categories .owl-theme .owl-nav div.owl-prev {
+#search .owl-theme .owl-nav div.owl-prev {
 	float: left;
 	margin-left: -50px
 }
 
-#categories .owl-theme .owl-nav div.owl-next {
+#search .owl-theme .owl-nav div.owl-next {
 	float: right!important;
 	margin-right: -50px
 }
 
-#categories .owl-theme .owl-nav div {
+#search .owl-theme .owl-nav div {
 	width: 40px;
 	height: 40px;
 	display: block!important;
@@ -2058,12 +2058,12 @@ a.back-to-top:focus {
 	-o-transition: all .4s ease-in-out
 }
 
-#categories .owl-theme .owl-nav div:hover {
+#search .owl-theme .owl-nav div:hover {
 	background: #f06292!important;
 	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15)
 }
 
-#categories .owl-theme .owl-nav div i {
+#search .owl-theme .owl-nav div i {
 	color: #fff;
 	font-size: 16px;
 	line-height: 40px
@@ -6672,4 +6672,49 @@ h4.panel-title{margin:10px 0px !important;}
 }
 .search_result_questions span{
     margin:0 7px
+}
+.main_categories {
+    margin:20px 0px;
+}
+div#homepage_cata_modal .modal-body {
+    background: #eeee;
+    padding: 0;
+}
+
+#homepage_cata_modal ul li {
+    cursor: pointer;
+    background: #fff;
+    padding: 10px;
+    margin: 15px;
+}
+#homepage_cata_modal ul li:active {
+    background:#f5862d;
+    color:#fff
+}
+.search_result_questions {
+    background: #eee;
+    margin: 10px 0 ;
+    padding: 7px;
+    width: 100%;
+    cursor: pointer;
+}
+label.search_result_questions:active , label.search_result_questions:focus {
+    background:#f5862d;
+    color:#fff
+}
+label.search_result_questions:hover {
+    box-shadow: 2px 2px 7px -5px;
+
+}
+.search_result_questions label {
+    cursor: pointer;
+}
+div#search_result_question_modal .modal-body {
+    max-height:500px;
+    overflow-y: auto
+}
+div#search_result_question_modal h5 {
+    border-bottom: 2px solid #cdcdcd;
+    padding: 5px 0 10px;
+    margin: 0px 0 10px;
 }

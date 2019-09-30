@@ -72,7 +72,7 @@ export default class Index extends React.Component {
                         </div>
                     </div>
                 </div>
-                <section id="categories">
+                <section id="search">
                     <div className="container">
                         <div className="row justify-content-center">
                             <div className="col-lg-6 text-center col-md-6 col-xs-12">
