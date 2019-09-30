@@ -35,7 +35,7 @@ class Categories extends Component {
 
     subCategories = (item) => {
         //console.log(item)
-        
+
         axios.post(serverUrl.url + '/api/category/children', {
             category: item.path,
         })
@@ -62,7 +62,7 @@ class Categories extends Component {
         //     category: path,
         // })
         //     .then((response) => {
-                
+
         //         //console.log(response.data.data);
         //     })
         //     .catch((error) => {
@@ -83,12 +83,11 @@ class Categories extends Component {
                             </div>
                         )
                     }
-                    <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                    <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} id="homepage_cata_modal">
                         <ModalBody>
                             <Catalist clk={this.showQ} data={this.state.subCatename} />
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
                             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
                     </Modal>

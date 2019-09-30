@@ -20,7 +20,7 @@ export default class extends React.Component{
   }
 
   componentDidMount=()=>{
-    
+
   }
 
   register=()=>{
@@ -30,7 +30,7 @@ export default class extends React.Component{
       "email": this.state.email,
       "mobile":this.state.mobileNumber,
       "password":this.state.password
-      } 
+      }
     if(this.validateForm()){
       axios.post(Config.url+'/api/user/add',userData,{headers: {
         'Content-Type': 'application/json'
@@ -164,10 +164,10 @@ export default class extends React.Component{
         console.log('handle change5 :',eventName,e.target.value);
        break;
      case 'confirmPassword':
-       this.setState({confirmPassword:e.target.value, errors:'',registerError:''}); 
+       this.setState({confirmPassword:e.target.value, errors:'',registerError:''});
        break;
      default:
-       break;  
+       break;
    }
   }
 
@@ -242,7 +242,7 @@ export default class extends React.Component{
                               </div>
                            </div>
                         </div>
-                     */}   
+                     */}
                   {/* <div className="form-group mb-3">
                     <div className="custom-control custom-checkbox">
                       <input type="checkbox" className="custom-control-input" id="checkedall" />
@@ -250,7 +250,7 @@ export default class extends React.Component{
                         Conditions</label>
                     </div>
                   </div> */}
-                  <div className="text-center">
+                  <div className="">
                   {this.state.registerSuccess!==''?<div className="alert alert-success">
                      {this.state.registerSuccess}
                     </div>:''}

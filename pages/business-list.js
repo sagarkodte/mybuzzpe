@@ -71,7 +71,7 @@ export default class extends React.Component {
                         <Link href="/addBusiness"><a className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Add new business</a></Link>
                     </div>
                     <div className="dashboard-wrapper" id="business-list">
-                        <table className="table table-responsive dashboardtable tablemyads">
+                        <table className="table">
                             <thead>
                                 <tr>
                                     <th>

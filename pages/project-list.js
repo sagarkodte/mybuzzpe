@@ -71,7 +71,7 @@ export default class extends React.Component {
                         <Link href="/addProject"><a className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Add new project</a></Link>
                     </div>
                     <div className="dashboard-wrapper" id="business-list">
-                        <table className="table table-responsive dashboardtable tablemyads">
+                        <table className="table">
                             <thead>
                                 <tr>
                                     <th>
@@ -84,12 +84,6 @@ export default class extends React.Component {
                                     <th>Budget</th>
                                     <th>Budget Type</th>
                                     <th>Note</th>
-                                    <th>Pincode</th>
-                                    {/* <th>City</th>
-                        <th>State</th>
-                        <th>Country</th>
-                        <th>Opening Time</th>
-                        <th>Closing Time</th> */}
                                 </tr>
                             </thead>
                             <tbody>{this.state.projectList}

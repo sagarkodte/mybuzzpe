@@ -108,12 +108,12 @@ export default class extends React.Component {
                                         </div>
                                         <nav className="navdashboard">
                                             <ul>
-                                                <li>
+                                                {/* <li>
                                                     <Link href="dashboard"><a className="active" >
                                                         <i className="fas fa-tachometer-alt" />
                                                         <span>Dashboard</span>
                                                     </a></Link>
-                                                </li>
+                                                </li> */}
                                                 <li>
                                                     <Link href="profile"><a >
                                                         <i className="far fa-user-circle" />
@@ -126,12 +126,12 @@ export default class extends React.Component {
                                                         <span>KYC </span>
                                                     </a></Link>
                                                 </li>
-                                                <li>
+                                                {/* <li>
                                                     <Link href="profilesetting"><a >
                                                         <i className="fas fa-cog" />
                                                         <span>Account Setting</span>
                                                     </a></Link>
-                                                </li>
+                                                </li> */}
                                                 <li>
                                                     <Link href="business-list"><a >
                                                         <i className="far fa-edit" />
@@ -144,19 +144,19 @@ export default class extends React.Component {
                                                         <span>Projects</span>
                                                     </a></Link>
                                                 </li>
-                                                <li>
+                                                {/* <li>
                                                     <Link href="coupon"><a >
                                                         <i className="fas fa-tags" />
                                                         <span>Coupan</span>
                                                     </a></Link>
-                                                </li>
-                                                <li>
+                                                </li> */}
+                                                {/* <li>
                                                     <Link href="transactionHistory"><a >
                                                         <i className="fas fa-history" />
                                                         <span>Transaction History</span>
                                                     </a></Link>
-                                                </li>
-                                                <li>
+                                                </li> */}
+                                                {/* <li>
                                                     <Link href="wallet"><a  >
                                                         <i className="fas fa-wallet" />
                                                         <span>Wallet</span>
@@ -164,14 +164,14 @@ export default class extends React.Component {
                                                 </li>
                                                 <li>
                                                     <Link href="/"><a onClick={this.handleLogout} > <i className="fas fa-sign-out-alt" /><span>Logout</span></a></Link>
-                                                </li>
+                                                </li> */}
                                             </ul>
                                         </nav>
                                     </div>
                                     <div className="widget">
                                         <h4 className="widget-title">Advertisement</h4>
                                         <div className="add-box">
-                                            <img className="img-fluid" src="http://3.17.162.108:8200/assets/img/img1.jpg" />
+                                            <div data-WRID="WRID-147797939370775915" data-widgetType="Push Content" data-class="affiliateAdsByFlipkart" height="250" width="300"></div><script async src="//affiliate.flipkart.com/affiliate/widgets/FKAffiliateWidgets.js"></script>
                                         </div>
                                     </div>
                                 </aside>

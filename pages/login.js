@@ -41,10 +41,10 @@ export default class extends React.Component{
       localStorage.setItem('user', JSON.stringify(res.data.user));
       localStorage.setItem('token',res.data.token);
       this.setState({loginSuccess:'Successfully logged In'});
-  
+
         this.props.url.push('/')
         this.setState({loginSuccess:''});
-    
+
       // }else{
       //   this.setState({loginError:'Email is not activated'});
       // }
@@ -55,7 +55,7 @@ export default class extends React.Component{
     });
    }else{
      this.setState({loginError:'Please enter the fields'})
-   } 
+   }
   }
 
   validateForm=()=>{
@@ -112,9 +112,9 @@ export default class extends React.Component{
        case 'password':
           console.log('pass :',eventName,e.target.value);
          this.setState({password:e.target.value,loginError:''});
-         break;   
+         break;
        default :
-         break;   
+         break;
      }
   }
 
@@ -148,7 +148,7 @@ export default class extends React.Component{
                     </div> */}
                   <Link href="/forgotPassword"><a className="forgetpassword" >Forgot Password?</a></Link>
                   </div>
-                  <div className="text-center">
+                  <div className="">
                     {this.state.loginSuccess!==''?<div className="alert alert-success">
                      {this.state.loginSuccess}
                     </div>:''}
@@ -156,7 +156,7 @@ export default class extends React.Component{
                     {this.state.loginError}
                     </div>:''}
                     <button className="btn btn-common log-btn" onClick={this.login}>Submit</button>
-                    <div className="modal fade" id="myModal" role="dialog" />
+
                   </div>
                 </div>
               </div>

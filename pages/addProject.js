@@ -44,7 +44,8 @@ export default class extends React.Component {
             services: '',
             file: null,
             showUploadFile: false,
-            projectID: ''
+            projectID: '',
+            uploadError: ''
         };
     }
 
@@ -148,8 +149,12 @@ export default class extends React.Component {
         if (!this.state.note) errors.note = 'This field is required';
         if (!this.state.selectedOption) errors.selectedOption = 'This field is required';
         if (!this.state.selectedSubOption) errors.selectedSubOption = 'This field is required';
-        this.setState({ errors });
-        return false;
+        if (Object.entries(errors).length > 0) {
+            this.setState({ errors });
+            return false;
+        } else {
+            return true;
+        }
     }
 
     addProject = () => {
@@ -194,7 +199,11 @@ export default class extends React.Component {
     }
     onSubmit = (e) => {
         e.preventDefault()
-        this.uploadFile(this.state.file);
+        if (this.state.file) {
+            this.uploadFile(this.state.file);
+        } else {
+            this.setState({ uploadError: 'File is required.' })
+        }
     }
     onChange = (e) => {
         this.setState({ file: e.target.files[0] })
@@ -211,8 +220,11 @@ export default class extends React.Component {
             }
         }).then(res => {
             console.log(res);
+
         }).catch(error => {
             // return error;
+            console.log(error);
+            console.log(error.message);
         });
     }
     scrollToTop = () => {
@@ -231,22 +243,22 @@ export default class extends React.Component {
                         <h2 className="dashbord-title">Add new project</h2>
                         {/* <Link href="addProject"><a data-toggle="modal"  className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Create</a></Link> */}
                     </div>
-                    <div ref={(el) => { this.uploadDiv = el; }} class="dashboard-wrapper" id="business-list"></div>
+                    <div ref={(el) => { this.uploadDiv = el; }} className="dashboard-wrapper" id="business-list"></div>
                     {this.state.showUploadFile ? '' : <div className="col-md-12 col-sm-12 col-sx-12">
                         <div className="form-group mb-3">
                             <label className="control-label">Project Description</label>
                             <textarea className="form-control" placeholder="" name="projectDescription" value={this.state.projectDescription} onChange={this.handleChange} rows={3} data-error="Write your message" required />
-                            <p style={{color:'red'}}>{this.state.errors.projectDescription}</p>
+                            <p style={{ color: 'red' }}>{this.state.errors.projectDescription}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Select Category:</label>
                             <Select onChange={this.handleCategoryChange} options={this.state.categoryArray} />
-                            <p style={{color:'red'}}>{this.state.errors.selectedOption}</p>
+                            <p style={{ color: 'red' }}>{this.state.errors.selectedOption}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Select Sub Category:</label>
                             <Select value={this.state.selectedSubOption} isMulti onChange={(...args) => this.handleSubCategoryChange(...args)} options={this.state.subCategoryArray} />
-                            <p style={{color:'red'}}>{this.state.errors.selectedSubOption}</p>
+                            <p style={{ color: 'red' }}>{this.state.errors.selectedSubOption}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Add Skills *</label>
@@ -257,22 +269,22 @@ export default class extends React.Component {
                                 suggestions={this.state.suggestions}
                                 handleDelete={this.handleDelete.bind(this)}
                                 handleAddition={this.handleAddition.bind(this)} />
-                            <p style={{color:'red'}}>{this.state.errors.services}</p>
+                            <p style={{ color: 'red' }}>{this.state.errors.services}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Budget</label>
                             <input className="form-control input-md" name="budgetAmt" value={this.state.budgetAmt} type="number" onChange={this.handleChange} />
-                            <p style={{color:'red'}}>{this.state.errors.budgetAmt}</p>
+                            <p style={{ color: 'red' }}>{this.state.errors.budgetAmt}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Budget Type</label>
                             <Select onChange={this.getBudgetType} options={this.state.budgetType} />
-                             <p style={{color:'red'}}>{this.state.errors.SelectedbudgetType}</p>
+                            <p style={{ color: 'red' }}>{this.state.errors.SelectedbudgetType}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Note</label>
                             <textarea className="form-control" placeholder="" name="note" value={this.state.note} onChange={this.handleChange} rows={3} data-error="Write your message" required />
-                            <p style={{color:'red'}}>{this.state.errors.note}</p>
+                            <p style={{ color: 'red' }}>{this.state.errors.note}</p>
                         </div>
 
                         {this.state.success !== '' ? <div className="alert alert-success">
@@ -290,6 +302,7 @@ export default class extends React.Component {
                             <input className="type_file" type="file" onChange={this.onChange} />
                             <button className="btn btn-common" type="submit">Upload File</button>
                         </form>
+                        <p style={{ color: 'red' }}>{this.state.uploadError}</p>
                     </div></div> : ''}
                 </div>
             </div>

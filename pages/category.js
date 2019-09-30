@@ -280,7 +280,7 @@ export default class Index extends React.Component {
           </div>
         </div>
 
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} id="search_result_question_modal" className={this.props.className}>
           <ModalBody>
             <Slider
               swipe={false}
@@ -292,7 +292,7 @@ export default class Index extends React.Component {
                 <div key={i}>
                   <h5>{item.question}</h5>
                   {item.options.map((opt, i) =>
-                    <div key={i}>
+                    <div className="search_result_questions" key={i}>
                       {item.type === 'radio' ? <span className="optRadio" ><input onChange={this.getRadioValue.bind(this)} type='radio' name="options" value={opt.title} /></span> : <span><input className="checkbox" onChange={(event) => this.getCheckboxValue(event)} type='checkbox' name='options[]' value={opt.title} /></span>}{opt.title}
                     </div>
                   )}

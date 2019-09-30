@@ -30,7 +30,7 @@ export default class extends React.Component {
             showUploadFile: false,
             projectID: '',
             errors: {},
-            loader:false
+            uploadError:''
         };
     }
 
@@ -46,9 +46,7 @@ export default class extends React.Component {
             res.data.forEach(function (item) {
                 a.push({ value: item.path, label: item.name });
             });
-            this.setState({ categoryArray: a }, function () {
-                console.log(this.state.categoryArray);
-            });
+            this.setState({ categoryArray: a });
         }).catch(error => {
             console.log('error 8', error)
         });
@@ -57,16 +55,14 @@ export default class extends React.Component {
         this.setState({ [event.target.name]: event.target.value });
     }
     handleCategoryChange = selectedOption => {
-      console.log(selectedOption);
+      // console.log(selectedOption);
       this.setState({ selectedOption }, function () {
           category.getSubCategories(this.state.selectedOption.value).then(res => {
               let a = [];
               res.data.forEach(function (item) {
                   a.push({ value: item.path, label: item.name });
               });
-              this.setState({ subCategoryArray: a }, function () {
-                  console.log(this.state.subCategoryArray);
-              });
+              this.setState({ subCategoryArray: a });
           }).catch(error => {
               console.log('error 8', error)
           });
@@ -77,7 +73,6 @@ export default class extends React.Component {
     }
     handleValidation = () => {
       let errors = {};
-      console.log(this.state.selectedOption);
       if(!this.state.businessName) errors.businessName = 'This field is required';
       if(!this.state.addressLine1) errors.addressLine1 = 'This field is required';
       if(!this.state.addressArea) errors.addressArea = 'This field is required';
@@ -89,14 +84,15 @@ export default class extends React.Component {
       if(!this.state.selectedSubOption) errors.selectedSubOption = 'This field is required';
       if(!this.state.businessTags) errors.businessTags = 'This field is required';
       if(!this.state.businessDescription) errors.businessDescription = 'This field is required';
-      this.setState({errors});
-      if(this.state.errors){
-                return false;
+      if(Object.entries(errors).length > 0) {
+        this.setState({errors});
+        return false;
+      } else {
+        return true;
       }
-      return true
-
     }
     addBusiness = () => {
+
       if(this.handleValidation()) {
         let cat = this.state.selectedOption;
         let subCat = this.state.selectedSubOption;
@@ -137,17 +133,20 @@ export default class extends React.Component {
       }
     }
 
-    onChangeFile = (e) => {
+    onChange = (e) => {
         this.setState({ file: e.target.files[0] })
     }
 
-    onSubmitFile = (e) => {
+    onSubmit = (e) => {
         e.preventDefault()
-        this.uploadFile(this.state.file);
+        if(this.state.file){
+            this.uploadFile(this.state.file);
+        }else{
+            this.setState({uploadError:'Image is required.'})
+        }
     }
 
     uploadFile = (file) => {
-        this.setState({loader:true})
         const formData = new FormData();
         formData.append('sampleFile', file)
         formData.append('businessId', this.state.projectID)
@@ -158,7 +157,6 @@ export default class extends React.Component {
             }
         }).then(res => {
             console.log(res);
-            this.setState({loader:false})
             toast("Business Added Successfully.!", {
                 onClose: () => Router.push({
                     pathname: '/business-list',
@@ -178,9 +176,9 @@ export default class extends React.Component {
     }
 
     render() {
-        console.log(this.state.errors);
         return (<Layout>
-            <ToastContainer />
+            {/* <ToastContainer />
+            <Loader/> */}
             <div className="page-content">
                 <div className="inner-box">
                     <div className="dashboard-box d-sm-flex align-items-center justify-content-between ">
@@ -255,22 +253,22 @@ export default class extends React.Component {
                         <input id="tg-photogallery" className="tg-fileinput" type="file" name="file" />
                         </label>
                     </div> */}
-                        {this.state.success !== '' ? <div className="alert alert-success">
+                        {/* {this.state.success !== '' ? <div className="alert alert-success">
                             {this.state.success}
                         </div> : ''}
                         {this.state.error ? <div className="alert alert-danger">
                             {this.state.error}
-                        </div> : ''}
+                        </div> : ''} */}
                         <button className="btn btn-common" type="button" onClick={this.addBusiness}>Submit</button>
                         <button className="btn btn-common" type="button" onClick={this.hh}>Cancel</button>
                     </div>}
-                    {this.state.showUploadFile ?
-                    <div className="col-md-12 col-sm-12 col-sx-12"><div className="form-group mb-3">
+                    {this.state.showUploadFile ? <div className="col-md-12 col-sm-12 col-sx-12"><div className="form-group mb-3">
                         <label className="control-label">Add Image</label>
-                        <form onSubmitFile={this.onSubmitFile}>
-                            <input className="type_file" type="file" onChange={this.onChangeFile} />
+                        <form onSubmit={this.onSubmit}>
+                            <input className="type_file" type="file" onChange={this.onChange} />
                             <button className="btn btn-common" type="submit">Upload File</button>
                         </form>
+                        <p style={{color:'red'}}>{this.state.uploadError}</p>
                     </div></div> : ''}
                 </div>
             </div>
