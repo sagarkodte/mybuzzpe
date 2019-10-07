@@ -49,6 +49,7 @@ constructor(props){
             <meta name='viewport' content='initial-scale=1.0, width=device-width' />
 
             <link rel="stylesheet" href="/static/css/main.css" />
+            <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet"/>
 
 
         </Head>
