@@ -5,13 +5,14 @@ import Config from '../config';
 import register from '../pages/register.js';
 import login from '../pages/login.js'
 import Link from 'next/link'
+import Router from 'next/router'
 
 export default class extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             businessList: '',
-            token:''
+            token: ''
 
         };
     }
@@ -24,7 +25,14 @@ export default class extends React.Component {
                 this.businessDetails();
             });
         }
+    }
 
+    edit = (event) => {
+        Router.push({
+            pathname: '/editBusiness',
+            search: '?path=' + event.target.id,
+            //state: { detail: path }
+        });
     }
 
     businessDetails = () => {
@@ -50,10 +58,10 @@ export default class extends React.Component {
                         <td>{value.businessDescription}</td>
                         <td>{value.businessName}<br />{value.addressLine1}<br />{value.addressLine2}{value.addressPincode}</td>
                         <td>{value.businessContactNumbers ? value.businessContactNumbers : 'No Data'}</td>
-                        <td>{value.gstNumber ? value.gstNumber : 'No Data'}</td>
                         <td>
                             {value.addressPincode}
                         </td>
+                        <td><button id={value._id} className="btn btn-common log-btn" onClick={this.edit}>Edit</button></td>
                     </tr>
                 );
             });
@@ -85,8 +93,8 @@ export default class extends React.Component {
                                     <th>Business Details</th>
                                     <th>Business Address</th>
                                     <th>Contact Details</th>
-                                    <th>GSTIN</th>
                                     <th>Pincode</th>
+                                    <th>Edit Business</th>
                                     {/* <th>City</th>
                         <th>State</th>
                         <th>Country</th>
