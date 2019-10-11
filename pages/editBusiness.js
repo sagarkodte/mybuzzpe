@@ -25,6 +25,7 @@ export default class extends React.Component {
             selectedOption: null,
             subCategoryArray: [],
             selectedSubOption: null,
+            selectedSubOptionDefault: [],
             businessCategory: [],
             file: null,
             showUploadFile: false,
@@ -75,9 +76,19 @@ export default class extends React.Component {
                     this.setState({addressPincode:this.state.businessDetails.addressPincode})
                     this.setState({businessContactNumbers:this.state.businessDetails.businessContactNumbers})
                     this.setState({businessTags:this.state.businessDetails.businessTags})
-                    this.setState({businessDescription:this.state.businessDetails.businessDescription})
-                    this.setState({selectedOption:this.state.businessDetails.businessCategory})
-                    this.setState({selectedSubOption:this.state.businessDetails.businessCategory})
+                    this.setState({businessDescription:this.state.businessDetails.businessDescription});
+                    let self = this;
+                    let selectedSubOption = [];
+                    this.state.businessDetails.businessCategory.forEach(function(index){
+                      if(index.split('/').length == 2) {
+                        self.setState({ selectedOption: {value: index}}, function(){
+                          self.handleCategoryChange(this.state.selectedOption);
+                        });
+                      } else {
+                        selectedSubOption.push(index);
+                      }
+                    });
+                    this.setState({selectedSubOptionDefault: selectedSubOption});
                 });
 
 
@@ -93,14 +104,19 @@ export default class extends React.Component {
         this.setState({ [event.target.name]: event.target.value });
     }
     handleCategoryChange = selectedOption => {
-        // console.log(selectedOption);
         this.setState({ selectedOption }, function() {
             category.getSubCategories(this.state.selectedOption.value).then(res => {
-                let a = [];
+                let a = [], b = [], self = this;
                 res.data.forEach(function(item) {
-                    a.push({ value: item.path, label: item.name });
+                  if(self.state.selectedSubOptionDefault.includes(item.path)) {
+                    b.push({value: item.path, label: item.name});
+                  }
+                  a.push({ value: item.path, label: item.name });
                 });
                 this.setState({ subCategoryArray: a });
+                if(b) {
+                  this.setState({ selectedSubOption: b });
+                }
             }).catch(error => {
                 console.log('error 8', error)
             });
@@ -187,7 +203,7 @@ export default class extends React.Component {
     uploadFile = (file) => {
         const formData = new FormData();
         formData.append('sampleFile', file)
-        formData.append('businessId', this.state.projectID)
+        formData.append('businessId', this.props.url.query.path)
         axios.post(Config.url + '/api/business/uploadphotos', formData, {
             headers: {
                 'content-type': 'multipart/form-data',
@@ -214,6 +230,7 @@ export default class extends React.Component {
     }
 
     render() {
+      console.log(this.state.selectedSubOption);
         return (<Layout>
             <ToastContainer />
             {/* <Loader /> */}
@@ -223,62 +240,73 @@ export default class extends React.Component {
                         <h2 className="dashbord-title">Edit business</h2>
                         {/* <Link href="addBusiness"><a data-toggle="modal"  className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Create</a></Link> */}
                     </div>
-                    <div ref={(el) => { this.uploadDiv = el; }} class="dashboard-wrapper" id="business-list"></div>
-                    {this.state.showUploadFile ? '' : <div className="col-md-12 col-sm-12 col-sx-12">
+                    <div ref={(el) => { this.uploadDiv = el; }} className="dashboard-wrapper" id="business-list"></div>
+                    <div className="col-md-12 col-sm-12 col-sx-12">
                         <div className="form-group mb-3">
                             <label className="control-label">Business Name*</label>
-                            <input className="form-control input-md" name="businessName" value={this.state.businessName} type="text" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="businessName" value={this.state.businessName || ''} type="text" onChange={this.handleChange} />
                             <p style={{ color: 'red' }}>{this.state.errors.businessName || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address Line 1 *</label>
-                            <input className="form-control input-md" name="addressLine1" value={this.state.addressLine1} type="text" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="addressLine1" value={this.state.addressLine1 || ''} type="text" onChange={this.handleChange} />
                             <p style={{ color: 'red' }}>{this.state.errors.addressLine1 || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address Area *</label>
-                            <input className="form-control input-md" name="addressArea" value={this.state.addressArea} type="text" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="addressArea" value={this.state.addressArea || ''} type="text" onChange={this.handleChange} />
                             <p style={{ color: 'red' }}>{this.state.errors.addressArea || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address City *</label>
-                            <input className="form-control input-md" name="addressCity" value={this.state.addressCity} type="text" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="addressCity" value={this.state.addressCity || ''} type="text" onChange={this.handleChange} />
                             <p style={{ color: 'red' }}>{this.state.errors.addressCity || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Address State*</label>
-                            <input className="form-control input-md" name="addressState" value={this.state.addressState} type="text" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="addressState" value={this.state.addressState || ''} type="text" onChange={this.handleChange} />
                             <p style={{ color: 'red' }}>{this.state.errors.addressState || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Pincode *</label>
-                            <input className="form-control input-md" name="addressPincode" value={this.state.addressPincode} type="number" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="addressPincode" value={this.state.addressPincode || ''} type="number" onChange={this.handleChange} />
                             <p style={{ color: 'red' }}>{this.state.errors.addressPincode || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Contact Number *</label>
-                            <input className="form-control input-md" name="businessContactNumbers" value={this.state.businessContactNumbers} type="number" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="businessContactNumbers" value={this.state.businessContactNumbers || ''} type="number" onChange={this.handleChange} />
                             <p style={{ color: 'red' }}>{this.state.errors.businessContactNumbers || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Select Category:</label>
-                            <Select onChange={this.handleCategoryChange} options={this.state.categoryArray} />
+                            <Select
+                              value={(this.state.categoryArray && this.state.selectedOption) ? this.state.categoryArray.find(op => {
+                                return op.value === this.state.selectedOption.value
+                              }) : ''}
+                              onChange={this.handleCategoryChange}
+                              options={this.state.categoryArray}
+                            />
                             <p style={{ color: 'red' }}>{this.state.errors.selectedOption || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Select Sub Category:</label>
-                            <Select value={this.state.selectedSubOption} isMulti onChange={(...args) => this.handleSubCategoryChange(...args)} options={this.state.subCategoryArray} />
+                            <Select
+                               isMulti
+                               onChange={(...args) => this.handleSubCategoryChange(...args)}
+                               options={this.state.subCategoryArray}
+                               value={this.state.selectedSubOption}
+                            />
                             <p style={{ color: 'red' }}>{this.state.errors.selectedSubOption || ''}</p>
                         </div>
                         <div className="form-group mb-3">
                             <label className="control-label">Business Tags*</label>
-                            <input className="form-control input-md" name="businessTags" value={this.state.businessTags} type="text" onChange={this.handleChange} />
+                            <input className="form-control input-md" name="businessTags" value={this.state.businessTags || ''} type="text" onChange={this.handleChange} />
                             <p style={{ color: 'red' }}>{this.state.errors.businessTags || ''}</p>
                         </div>
 
                         <div className="form-group mb-3">
                             <label className="control-label">Business Description</label>
-                            <textarea className="form-control" placeholder="" name="businessDescription" value={this.state.businessDescription} onChange={this.handleChange} rows={3} data-error="Write your message" required />
+                            <textarea className="form-control" placeholder="" name="businessDescription" value={this.state.businessDescription || ''} onChange={this.handleChange} rows={3} data-error="Write your message" required />
                             <p style={{ color: 'red' }}>{this.state.errors.businessDescription || ''}</p>
                         </div>
                         {/* <div className="form-group mb-3">
@@ -299,15 +327,15 @@ export default class extends React.Component {
                         </div> : ''} */}
                         <button className="btn btn-common" type="button" onClick={this.addBusiness}>Submit</button>
                         <button className="btn btn-common" type="button" onClick={this.hh}>Cancel</button>
-                    </div>}
-                    {this.state.showUploadFile ? <div className="col-md-12 col-sm-12 col-sx-12"><div className="form-group mb-3">
+                    </div>
+                     <div className="col-md-12 col-sm-12 col-sx-12"><div className="form-group mb-3">
                         <label className="control-label">Add Image</label>
                         <form onSubmit={this.onSubmit}>
                             <input className="type_file" type="file" onChange={this.onChange} />
                             <button className="btn btn-common" type="submit">Upload File</button>
                         </form>
                         <p style={{ color: 'red' }}>{this.state.uploadError}</p>
-                    </div></div> : ''}
+                    </div></div>
                 </div>
             </div>
         </Layout>);

@@ -39,12 +39,6 @@ export default class extends React.Component {
                 return (
                     <tr key={key}>
                         <td>
-                            <div className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input" id="adone" />
-                                <label className="custom-control-label" ></label>
-                            </div>
-                        </td>
-                        <td>
                             {value.description}
                         </td>
                         <td>{value.budget}</td>
@@ -69,17 +63,11 @@ export default class extends React.Component {
                     <div className="dashboard-box d-sm-flex align-items-center justify-content-between ">
                         <h2 className="dashbord-title">Project Details</h2>
                         <Link href="/addProject"><a className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Add new project</a></Link>
-                    </div>
+                    </div>s
                     <div className="dashboard-wrapper" id="business-list">
-                        <table className="table">
+                        <table className="projectList_table">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <div className="custom-control custom-checkbox">
-                                            <input type="checkbox" className="custom-control-input" id="checkedall" />
-                                            <label className="custom-control-label" htmlFor="checkedall" />
-                                        </div>
-                                    </th>
                                     <th>Project Description</th>
                                     <th>Budget</th>
                                     <th>Budget Type</th>

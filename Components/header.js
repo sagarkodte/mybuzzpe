@@ -65,7 +65,7 @@ class Header extends Component {
                                         } src={this.state.user.avatar} className="profile-cir" /> {this.state.user.firstname} {this.state.user.lastname} <b className="caret"><i className="lni-arrow-down" /></b>
                                     </a>
                                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <Link href="profile"><a className="dropdown-item" >My Account </a></Link>
+                                        <Link href="business-list"><a className="dropdown-item" >My Account </a></Link>
                                         {/* <Link href="profile"><a className="dropdown-item" >Profile </a></Link> */}
                                         {/* <Link href="profilesetting"><a className="dropdown-item" >Setting</a></Link> */}
                                         <div className="dropdown-divider" />

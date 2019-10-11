@@ -22,10 +22,10 @@ export default class extends React.Component {
 
     componentDidMount = () => {
         // console.log('dasdh boeadr ', localStorage.getItem("user"));
-        // this.setState({
-        //     token: localStorage.getItem("token"),
-        //     user: JSON.parse(localStorage.getItem("user")),
-        // });
+        this.setState({
+            token: localStorage.getItem("token"),
+            user: JSON.parse(localStorage.getItem("user")),
+        });
     }
 
     handleLogout = (e) => {
@@ -99,11 +99,15 @@ export default class extends React.Component {
                                     <div className="sidebar-box">
                                         <div className="user">
                                             <figure>
-                                                <a href="#"><img src="assets/img/author/img1.jpg" /></a>
+                                                <a href="#">
+                                                     <img ref={img => this.img = img} onError={
+                                            () => this.img.src = 'static/img/user.png'
+                                        } src={this.state.user.avatar} className="profile-cir" />
+                                                </a>
                                             </figure>
                                             <div className="usercontent">
-                                                <h3>Hello William!</h3>
-                                                <h4>Administrator</h4>
+                                                <h3>{this.state.user.firstname} {this.state.user.lastname}</h3>
+
                                             </div>
                                         </div>
                                         <nav className="navdashboard">
@@ -114,18 +118,18 @@ export default class extends React.Component {
                                                         <span>Dashboard</span>
                                                     </a></Link>
                                                 </li> */}
-                                                <li>
+                                                {/* <li>
                                                     <Link href="profile"><a >
                                                         <i className="far fa-user-circle" />
                                                         <span>Profile </span>
                                                     </a></Link>
-                                                </li>
-                                                <li>
+                                                </li> */}
+                                                {/* <li>
                                                     <Link href="kyc"><a >
                                                         <i className="far fa-file-alt" />
                                                         <span>KYC </span>
                                                     </a></Link>
-                                                </li>
+                                                </li> */}
                                                 {/* <li>
                                                     <Link href="profilesetting"><a >
                                                         <i className="fas fa-cog" />

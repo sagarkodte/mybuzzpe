@@ -178,7 +178,7 @@ export default class extends React.Component {
     render() {
         return (<Layout>
              <ToastContainer/>
-            <Loader/>
+            {/* <Loader/> */}
             <div className="page-content">
                 <div className="inner-box">
                     <div className="dashboard-box d-sm-flex align-items-center justify-content-between ">

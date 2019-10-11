@@ -46,12 +46,12 @@ export default class extends React.Component {
             let businessList = res.data.data.map((value, key) => {
                 return (
                     <tr key={key}>
-                        <td>
+                        {/* <td>
                             <div className="custom-control custom-checkbox">
                                 <input type="checkbox" className="custom-control-input" id="adone" />
                                 <label className="custom-control-label" ></label>
                             </div>
-                        </td>
+                        </td> */}
                         <td>
                             <img src={value.businessLogo}></img>
                         </td>
@@ -83,18 +83,18 @@ export default class extends React.Component {
                         <table className="table">
                             <thead>
                                 <tr>
-                                    <th>
+                                    {/* <th>
                                         <div className="custom-control custom-checkbox">
                                             <input type="checkbox" className="custom-control-input" id="checkedall" />
                                             <label className="custom-control-label" htmlFor="checkedall" />
                                         </div>
-                                    </th>
-                                    <th>Business Logo</th>
-                                    <th>Business Details</th>
-                                    <th>Business Address</th>
-                                    <th>Contact Details</th>
+                                    </th> */}
+                                    <th>Logo</th>
+                                    <th> Details</th>
+                                    <th> Address</th>
+                                    <th>Contact</th>
                                     <th>Pincode</th>
-                                    <th>Edit Business</th>
+                                    <th></th>
                                     {/* <th>City</th>
                         <th>State</th>
                         <th>Country</th>

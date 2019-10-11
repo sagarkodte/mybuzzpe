@@ -31,14 +31,7 @@ export default class extends React.Component{
                     <div className="col-md-12 col-sm-12 col-sx-12">
                       <div className="panel-group" id="accordion4" role="tablist" aria-multiselectable="true">
                         <div className="panel panel-default">
-                          <div className="panel-heading" role="tab" id="headingOne4">
-                            <h4 className="panel-title">
-                              <a role="button" data-toggle="collapse" data-parent="#accordion4" href="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4">
-                                <i className="icon fa fa-user" />
-                                Personal Information
-                              </a>
-                            </h4>
-                          </div>
+
                           <div id="collapseOne4" className="panel-collapse in" role="tabpanel" aria-labelledby="headingOne4">
                             <div className="panel-body">
                               <form className="login-form" id="registrationForm" noValidate="novalidate">
@@ -95,13 +88,13 @@ export default class extends React.Component{
                           </div>
                         </div>
                         <div className="panel panel-default">
-                          <div className="panel-heading" role="tab" id="headingOne5">
+                          {/* <div className="panel-heading" role="tab" id="headingOne5">
                             <h4 className="panel-title">
                               <a role="button" data-parent="#accordion5" href="#collapseOne5" aria-expanded="true" aria-controls="collapseOne5" data-toggle="collapse" >
                                 <i className="icon fa fa-user" />
                                 Upgrade to Bussines</a>
                             </h4>
-                          </div>
+                          </div> */}
                           <div id="collapseOne5" className="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne5" style={{}}>
                             <div className="panel-body">
                               <form id="upgradeBusinessForm" noValidate="novalidate">
