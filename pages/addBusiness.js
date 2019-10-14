@@ -182,6 +182,7 @@ export default class extends React.Component {
             <div className="page-content">
                 <div className="inner-box">
                     <div className="dashboard-box d-sm-flex align-items-center justify-content-between ">
+
                         <h2 className="dashbord-title">Add new business</h2>
                         {/* <Link href="addBusiness"><a data-toggle="modal"  className="d-none d-sm-inline-block btn btn-sm btn-common shadow-sm"><i className="lni-plus" /> Create</a></Link> */}
                     </div>

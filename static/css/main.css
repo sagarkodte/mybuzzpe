@@ -2497,7 +2497,8 @@ a.back-to-top:focus {
 }
 
 .page-sidebar .categories-list li {
-	padding: 7px 0
+	padding: 7px 0;
+    cursor: pointer;
 }
 
 .page-sidebar .categories-list li a {
@@ -6673,7 +6674,8 @@ h4.panel-title{margin:10px 0px !important;}
     cursor: pointer;
 }
 .search_result_questions span{
-    margin:0 7px
+    margin:0 7px;
+    float:left
 }
 .main_categories {
     margin:20px 0px;

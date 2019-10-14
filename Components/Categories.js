@@ -92,7 +92,7 @@ class Categories extends Component {
                         }
                         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} id="homepage_cata_modal">
                             <ModalHeader>
-                                <h5>Select Category</h5>
+                                Select Category
                             </ModalHeader>
                             <ModalBody>
 
